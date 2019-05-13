@@ -1,0 +1,28 @@
+//
+//  LabCategory.swift
+//  WbmHealth
+//
+//  Created by WBM on 5/6/19.
+//  Copyright © 2019 WBM. All rights reserved.
+//
+
+import Foundation
+import SwiftyJSON
+
+class LabCategory{
+    
+    var id : String!
+    var name : String!
+    
+    
+    /**
+     * Instantiate the instance using the passed json values to set the properties values
+     */
+    init(fromJson json: JSON!){
+        if json.isEmpty{
+            return
+        }
+        id = json["_id"].stringValue
+        name = json["text"].stringValue
+    }
+}
