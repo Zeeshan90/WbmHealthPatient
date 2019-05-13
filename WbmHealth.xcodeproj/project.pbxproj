@@ -53,6 +53,8 @@
 		065FFE8922842694009D2AD3 /* SpecialityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065FFE8822842694009D2AD3 /* SpecialityViewController.swift */; };
 		065FFE8B228427E5009D2AD3 /* SpecialityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065FFE8A228427E5009D2AD3 /* SpecialityTableViewCell.swift */; };
 		065FFE8D22842DE0009D2AD3 /* Speciality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065FFE8C22842DE0009D2AD3 /* Speciality.swift */; };
+		0661BAFD2289441B00D459B2 /* DoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0661BAFC2289441B00D459B2 /* DoctorViewController.swift */; };
+		0661BAFF2289452000D459B2 /* DoctorBioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0661BAFE2289452000D459B2 /* DoctorBioViewController.swift */; };
 		066595E22273096200E893F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066595E12273096200E893F5 /* AppDelegate.swift */; };
 		066595E42273096200E893F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066595E32273096200E893F5 /* ViewController.swift */; };
 		066595E72273096200E893F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066595E52273096200E893F5 /* Main.storyboard */; };
@@ -161,6 +163,8 @@
 		065FFE8822842694009D2AD3 /* SpecialityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialityViewController.swift; sourceTree = "<group>"; };
 		065FFE8A228427E5009D2AD3 /* SpecialityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialityTableViewCell.swift; sourceTree = "<group>"; };
 		065FFE8C22842DE0009D2AD3 /* Speciality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speciality.swift; sourceTree = "<group>"; };
+		0661BAFC2289441B00D459B2 /* DoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorViewController.swift; sourceTree = "<group>"; };
+		0661BAFE2289452000D459B2 /* DoctorBioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorBioViewController.swift; sourceTree = "<group>"; };
 		066595DE2273096200E893F5 /* WbmHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WbmHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		066595E12273096200E893F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		066595E32273096200E893F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -390,6 +394,8 @@
 				065FFE842283E9BC009D2AD3 /* AddChildViewController.swift */,
 				065FFE862284263E009D2AD3 /* scheduleViewController.swift */,
 				065FFE8822842694009D2AD3 /* SpecialityViewController.swift */,
+				0661BAFC2289441B00D459B2 /* DoctorViewController.swift */,
+				0661BAFE2289452000D459B2 /* DoctorBioViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -852,6 +858,7 @@
 				065039872278192100F83929 /* PrivacyPolicyViewController.swift in Sources */,
 				067E2DA22277118E00E313A7 /* HospitalTableViewCell.swift in Sources */,
 				065FFE8D22842DE0009D2AD3 /* Speciality.swift in Sources */,
+				0661BAFD2289441B00D459B2 /* DoctorViewController.swift in Sources */,
 				06575E9522829A98007E95BF /* SeeADocViewController.swift in Sources */,
 				067E2D942276D10A00E313A7 /* LabortaryTableViewCell.swift in Sources */,
 				06575F012282D182007E95BF /* SymptomsTableViewCell.swift in Sources */,
@@ -869,6 +876,7 @@
 				B350BDCF22759320000447BC /* WorkoutCollectionCell.swift in Sources */,
 				065FFE852283E9BC009D2AD3 /* AddChildViewController.swift in Sources */,
 				067A64E722802E1100E51319 /* LabCategory.swift in Sources */,
+				0661BAFF2289452000D459B2 /* DoctorBioViewController.swift in Sources */,
 				06575EFF2282D0F0007E95BF /* SymptomsViewController.swift in Sources */,
 				067E2DA42277251700E313A7 /* SeeDocViewController.swift in Sources */,
 				065B0367228160A1006EBA5A /* CarePlanTableViewCell.swift in Sources */,

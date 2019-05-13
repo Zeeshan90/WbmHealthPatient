@@ -1199,7 +1199,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
         <!--Doctors-->
         <scene sceneID="uXm-MH-Izw">
             <objects>
-                <viewController id="3jT-XT-8oA" sceneMemberID="viewController">
+                <viewController id="3jT-XT-8oA" customClass="DoctorViewController" customModule="WbmHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ouu-pW-WPp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1293,60 +1293,142 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
         <!--Doctor Bio-->
         <scene sceneID="ctg-X0-erB">
             <objects>
-                <viewController id="xaD-E9-vSo" sceneMemberID="viewController">
+                <viewController id="xaD-E9-vSo" customClass="DoctorBioViewController" customModule="WbmHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0xr-SE-zKa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7U-qs-ymR">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="876"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceS-GG-Gbo">
-                                        <rect key="frame" x="8" y="8" width="398" height="247"/>
+                                        <rect key="frame" x="8" y="8" width="398" height="205"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pkY-pi-WZ8">
-                                                <rect key="frame" x="89" y="46" width="240" height="128"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Noimage" translatesAutoresizingMaskIntoConstraints="NO" id="pkY-pi-WZ8">
+                                                <rect key="frame" x="121" y="0.0" width="157" height="124"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="124" id="ekb-L5-pgc"/>
+                                                    <constraint firstAttribute="width" constant="157" id="tzo-sq-K0x"/>
+                                                </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZB-ac-XWT">
+                                                <rect key="frame" x="8" y="132" width="382" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="fwb-Fd-9fU"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="pkY-pi-WZ8" firstAttribute="top" secondItem="ceS-GG-Gbo" secondAttribute="top" constant="46" id="5jT-Vw-uuN"/>
-                                            <constraint firstItem="pkY-pi-WZ8" firstAttribute="leading" secondItem="ceS-GG-Gbo" secondAttribute="leading" constant="89" id="BaO-2Q-b6q"/>
-                                            <constraint firstAttribute="height" constant="247" id="NDq-av-BE4"/>
-                                            <constraint firstAttribute="trailing" secondItem="pkY-pi-WZ8" secondAttribute="trailing" constant="69" id="heN-C9-sPG"/>
-                                            <constraint firstAttribute="bottom" secondItem="pkY-pi-WZ8" secondAttribute="bottom" constant="73" id="pwz-4A-hdq"/>
+                                            <constraint firstItem="pkY-pi-WZ8" firstAttribute="top" secondItem="ceS-GG-Gbo" secondAttribute="top" id="0ZI-Pm-pOY"/>
+                                            <constraint firstItem="8ZB-ac-XWT" firstAttribute="leading" secondItem="ceS-GG-Gbo" secondAttribute="leading" constant="8" id="9IC-he-KXF"/>
+                                            <constraint firstAttribute="trailing" secondItem="8ZB-ac-XWT" secondAttribute="trailing" constant="8" id="KEM-8b-VPl"/>
+                                            <constraint firstAttribute="height" constant="205" id="QMn-3T-dcK"/>
+                                            <constraint firstItem="pkY-pi-WZ8" firstAttribute="leading" secondItem="ceS-GG-Gbo" secondAttribute="leading" constant="121" id="dpb-GH-Jmd"/>
+                                            <constraint firstItem="8ZB-ac-XWT" firstAttribute="top" secondItem="pkY-pi-WZ8" secondAttribute="bottom" constant="8" id="gbL-yK-xaF"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbp-Mg-mMm">
-                                        <rect key="frame" x="8" y="263" width="398" height="338"/>
+                                        <rect key="frame" x="8" y="221" width="398" height="647"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXP-E5-pf4">
+                                                <rect key="frame" x="0.0" y="0.0" width="398" height="47"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8p2-aj-hWK">
+                                                        <rect key="frame" x="8" y="8" width="382" height="31"/>
+                                                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway Light" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="8p2-aj-hWK" secondAttribute="bottom" constant="8" id="3B0-IL-q33"/>
+                                                    <constraint firstItem="8p2-aj-hWK" firstAttribute="top" secondItem="dXP-E5-pf4" secondAttribute="top" constant="8" id="85S-OB-Fkw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8p2-aj-hWK" secondAttribute="trailing" constant="8" id="dB3-Q6-LLI"/>
+                                                    <constraint firstAttribute="height" constant="47" id="mkf-kM-fGs"/>
+                                                    <constraint firstItem="8p2-aj-hWK" firstAttribute="leading" secondItem="dXP-E5-pf4" secondAttribute="leading" constant="8" id="yI1-YH-11U"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vrv-Ne-l0v">
+                                                <rect key="frame" x="8" y="55" width="382" height="412"/>
+                                                <mutableString key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="338" id="otK-u9-wmZ"/>
+                                            <constraint firstItem="dXP-E5-pf4" firstAttribute="top" secondItem="Rbp-Mg-mMm" secondAttribute="top" id="1iL-0m-Q7U"/>
+                                            <constraint firstItem="Vrv-Ne-l0v" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" constant="8" id="1s0-UR-7aR"/>
+                                            <constraint firstAttribute="trailing" secondItem="dXP-E5-pf4" secondAttribute="trailing" id="EOj-lw-Ovm"/>
+                                            <constraint firstAttribute="height" constant="647" id="ZJv-BC-zYK"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vrv-Ne-l0v" secondAttribute="trailing" constant="8" id="a1B-nw-4FR"/>
+                                            <constraint firstItem="dXP-E5-pf4" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" id="zm2-sB-BXQ"/>
+                                            <constraint firstItem="Vrv-Ne-l0v" firstAttribute="top" secondItem="dXP-E5-pf4" secondAttribute="bottom" constant="8" id="zqN-AG-8f0"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Rbp-Mg-mMm" secondAttribute="bottom" id="6PF-tq-UQt"/>
-                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" id="AzS-OQ-Ws4"/>
-                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="leading" secondItem="E7U-qs-ymR" secondAttribute="leadingMargin" id="Gp2-l6-OWC"/>
-                                    <constraint firstItem="Rbp-Mg-mMm" firstAttribute="top" secondItem="ceS-GG-Gbo" secondAttribute="bottom" constant="8" symbolic="YES" id="Jki-kt-9qT"/>
-                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="trailing" secondItem="Rbp-Mg-mMm" secondAttribute="trailing" id="dLC-9n-itP"/>
-                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="centerX" secondItem="E7U-qs-ymR" secondAttribute="centerX" id="hSt-Mb-XG2"/>
-                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="trailing" secondItem="E7U-qs-ymR" secondAttribute="trailingMargin" id="jbU-wy-cek"/>
-                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="top" secondItem="E7U-qs-ymR" secondAttribute="topMargin" id="s4H-vy-soG"/>
+                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" id="F8N-pg-RK3"/>
+                                    <constraint firstItem="Rbp-Mg-mMm" firstAttribute="bottom" secondItem="E7U-qs-ymR" secondAttribute="bottomMargin" id="Hn3-nU-57m"/>
+                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="top" secondItem="E7U-qs-ymR" secondAttribute="topMargin" id="QLP-eA-eJ5"/>
+                                    <constraint firstItem="Rbp-Mg-mMm" firstAttribute="top" secondItem="ceS-GG-Gbo" secondAttribute="bottom" constant="8" id="QNB-1E-NDC"/>
+                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="centerX" secondItem="E7U-qs-ymR" secondAttribute="centerX" id="TBW-Rc-Esr"/>
+                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="leading" secondItem="E7U-qs-ymR" secondAttribute="leadingMargin" id="ab4-En-NNV"/>
+                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="trailing" secondItem="E7U-qs-ymR" secondAttribute="trailingMargin" id="acU-Tn-mvZ"/>
+                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="trailing" secondItem="Rbp-Mg-mMm" secondAttribute="trailing" id="m9x-fB-5no"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wkm-vt-pCq">
+                                <rect key="frame" x="0.0" y="950" width="414" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See Availability" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxA-UX-Y7x">
+                                        <rect key="frame" x="69" y="8" width="114" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="NUN-bg-3an"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calender" translatesAutoresizingMaskIntoConstraints="NO" id="udw-ck-PtQ">
+                                        <rect key="frame" x="8" y="8" width="39" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="39" id="XiL-yK-uCv"/>
+                                            <constraint firstAttribute="height" constant="36" id="bin-e1-gs9"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="udw-ck-PtQ" firstAttribute="leading" secondItem="wkm-vt-pCq" secondAttribute="leading" constant="8" id="KUu-YN-8rR"/>
+                                    <constraint firstAttribute="bottom" secondItem="lxA-UX-Y7x" secondAttribute="bottom" constant="6" id="Zmc-Yk-sQS"/>
+                                    <constraint firstItem="lxA-UX-Y7x" firstAttribute="leading" secondItem="udw-ck-PtQ" secondAttribute="trailing" constant="22" id="bru-Gr-day"/>
+                                    <constraint firstItem="lxA-UX-Y7x" firstAttribute="top" secondItem="wkm-vt-pCq" secondAttribute="top" constant="8" id="nCJ-2m-dOC"/>
+                                    <constraint firstItem="udw-ck-PtQ" firstAttribute="top" secondItem="wkm-vt-pCq" secondAttribute="top" constant="8" id="q5X-7p-x2H"/>
+                                    <constraint firstAttribute="height" constant="50" id="uyl-ZF-fFc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="E7U-qs-ymR" firstAttribute="leading" secondItem="ocR-qg-zxs" secondAttribute="leading" id="BDj-rt-sCU"/>
-                            <constraint firstItem="E7U-qs-ymR" firstAttribute="top" secondItem="ocR-qg-zxs" secondAttribute="top" id="GTn-Ns-uhW"/>
-                            <constraint firstItem="ocR-qg-zxs" firstAttribute="trailing" secondItem="E7U-qs-ymR" secondAttribute="trailing" id="RHV-AS-vJa"/>
-                            <constraint firstItem="ocR-qg-zxs" firstAttribute="bottom" secondItem="E7U-qs-ymR" secondAttribute="bottom" id="Ue0-jq-sOM"/>
+                            <constraint firstItem="E7U-qs-ymR" firstAttribute="leading" secondItem="wkm-vt-pCq" secondAttribute="leading" id="6ZM-gD-McP"/>
+                            <constraint firstItem="wkm-vt-pCq" firstAttribute="leading" secondItem="ocR-qg-zxs" secondAttribute="leading" id="JsC-sN-rNA"/>
+                            <constraint firstItem="wkm-vt-pCq" firstAttribute="bottom" secondItem="ocR-qg-zxs" secondAttribute="bottom" id="MeV-cc-xJ6"/>
+                            <constraint firstItem="E7U-qs-ymR" firstAttribute="trailing" secondItem="wkm-vt-pCq" secondAttribute="trailing" id="Z8p-F1-wjH"/>
+                            <constraint firstItem="wkm-vt-pCq" firstAttribute="trailing" secondItem="ocR-qg-zxs" secondAttribute="trailing" id="cAW-zg-pHf"/>
+                            <constraint firstItem="E7U-qs-ymR" firstAttribute="top" secondItem="ocR-qg-zxs" secondAttribute="top" id="e01-vz-R5H"/>
+                            <constraint firstItem="wkm-vt-pCq" firstAttribute="top" secondItem="E7U-qs-ymR" secondAttribute="bottom" constant="10" id="wA1-su-a3L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ocR-qg-zxs"/>
                     </view>
                     <navigationItem key="navigationItem" title="Doctor Bio" id="WaM-VM-UHu"/>
+                    <size key="freeformSize" width="414" height="1000"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1q1-jD-TjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4402,6 +4484,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
         <image name="abdominal_bg" width="290" height="435"/>
         <image name="approved" width="16" height="16"/>
         <image name="avatar" width="256" height="256"/>
+        <image name="calender" width="37.5" height="37.5"/>
         <image name="cash" width="24" height="24"/>
         <image name="cross_body_crunch_1" width="483" height="559"/>
         <image name="declined" width="21.333333969116211" height="21.333333969116211"/>
