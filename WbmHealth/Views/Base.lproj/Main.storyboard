@@ -1298,26 +1298,43 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E7U-qs-ymR">
-                                <rect key="frame" x="0.0" y="64" width="414" height="601"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7U-qs-ymR">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ceS-GG-Gbo">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceS-GG-Gbo">
                                         <rect key="frame" x="8" y="8" width="398" height="247"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pkY-pi-WZ8">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pkY-pi-WZ8">
                                                 <rect key="frame" x="89" y="46" width="240" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="pkY-pi-WZ8" firstAttribute="top" secondItem="ceS-GG-Gbo" secondAttribute="top" constant="46" id="5jT-Vw-uuN"/>
+                                            <constraint firstItem="pkY-pi-WZ8" firstAttribute="leading" secondItem="ceS-GG-Gbo" secondAttribute="leading" constant="89" id="BaO-2Q-b6q"/>
+                                            <constraint firstAttribute="height" constant="247" id="NDq-av-BE4"/>
+                                            <constraint firstAttribute="trailing" secondItem="pkY-pi-WZ8" secondAttribute="trailing" constant="69" id="heN-C9-sPG"/>
+                                            <constraint firstAttribute="bottom" secondItem="pkY-pi-WZ8" secondAttribute="bottom" constant="73" id="pwz-4A-hdq"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rbp-Mg-mMm">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbp-Mg-mMm">
                                         <rect key="frame" x="8" y="263" width="398" height="338"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="338" id="otK-u9-wmZ"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Rbp-Mg-mMm" secondAttribute="bottom" id="6PF-tq-UQt"/>
+                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" id="AzS-OQ-Ws4"/>
+                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="leading" secondItem="E7U-qs-ymR" secondAttribute="leadingMargin" id="Gp2-l6-OWC"/>
+                                    <constraint firstItem="Rbp-Mg-mMm" firstAttribute="top" secondItem="ceS-GG-Gbo" secondAttribute="bottom" constant="8" symbolic="YES" id="Jki-kt-9qT"/>
+                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="trailing" secondItem="Rbp-Mg-mMm" secondAttribute="trailing" id="dLC-9n-itP"/>
+                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="centerX" secondItem="E7U-qs-ymR" secondAttribute="centerX" id="hSt-Mb-XG2"/>
+                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="trailing" secondItem="E7U-qs-ymR" secondAttribute="trailingMargin" id="jbU-wy-cek"/>
+                                    <constraint firstItem="ceS-GG-Gbo" firstAttribute="top" secondItem="E7U-qs-ymR" secondAttribute="topMargin" id="s4H-vy-soG"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
