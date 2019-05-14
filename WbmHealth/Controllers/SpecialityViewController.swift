@@ -28,10 +28,17 @@ class SpecialityViewController: UIViewController,UITableViewDelegate,UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = specialityTblVu.dequeueReusableCell(withIdentifier: "specialitycell", for: indexPath) as! SpecialityTableViewCell
         cell.titleLbl.text = specialityArr[indexPath.row].specialityDesc
-        cell.img.downloaded(from: "\(AppUtils.returnBaseUrl())\(specialityArr[indexPath.row].photo[indexPath.row])")
+        
+        cell.img.downloaded(from: "\(AppUtils.returnBaseUrl())\(specialityArr[indexPath.row].image!)")
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       let selectedCellId = specialityArr[indexPath.row].id
+        WbmDefaults.instance.setString(key: "specialityId", value: selectedCellId!)
+        performSegue(withIdentifier: "todoctors", sender: self)
+        
+    }
     
     func getSpeciality(){
         specialityArr = [Speciality]()

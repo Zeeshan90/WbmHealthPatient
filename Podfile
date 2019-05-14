@@ -26,14 +26,15 @@ target 'WbmHealth' do
   pod 'ProgressHUD'
   pod 'paper-onboarding'
   pod 'Hero'
-  pod "SkeletonView"
+  pod 'SkeletonView'
   pod 'Nominatim'
   pod 'YouTubePlayer-Swift', '~> 1.0'
   pod 'UICircularProgressRing'
   pod 'SwiftChart'
   pod 'PickerView'
   pod 'M13Checkbox'
-  pod "McPicker"
+  pod 'McPicker'
+  pod 'TuyaSmartHomeKit'
   target 'WbmHealthTests' do
     inherit! :search_paths
     # Pods for testing

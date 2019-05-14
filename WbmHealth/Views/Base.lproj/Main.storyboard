@@ -1146,11 +1146,11 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qwk-a0-HrB">
-                                                    <rect key="frame" x="20" y="11" width="50" height="50"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qwk-a0-HrB">
+                                                    <rect key="frame" x="20" y="26" width="25" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="PuI-Dg-z3K"/>
-                                                        <constraint firstAttribute="width" constant="50" id="dZK-Bc-Kn5"/>
+                                                        <constraint firstAttribute="height" constant="25" id="PuI-Dg-z3K"/>
+                                                        <constraint firstAttribute="width" constant="25" id="dZK-Bc-Kn5"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -1158,9 +1158,10 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                                 <constraint firstItem="MFD-Fo-vBF" firstAttribute="centerY" secondItem="ufB-KD-SxA" secondAttribute="centerY" id="2Jz-HZ-3N0"/>
                                                 <constraint firstItem="bkc-29-VTh" firstAttribute="top" secondItem="ufB-KD-SxA" secondAttribute="top" id="4ZP-xw-1Pf"/>
                                                 <constraint firstItem="Qwk-a0-HrB" firstAttribute="leading" secondItem="ufB-KD-SxA" secondAttribute="leading" constant="20" id="818-bo-PXT"/>
+                                                <constraint firstItem="MFD-Fo-vBF" firstAttribute="leading" secondItem="bkc-29-VTh" secondAttribute="trailing" constant="18" id="BKi-js-ZZQ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="MFD-Fo-vBF" secondAttribute="trailing" constant="9" id="OWI-AO-jb3"/>
-                                                <constraint firstItem="bkc-29-VTh" firstAttribute="leading" secondItem="Qwk-a0-HrB" secondAttribute="trailing" constant="8" id="SXw-T6-95g"/>
-                                                <constraint firstItem="Qwk-a0-HrB" firstAttribute="top" secondItem="ufB-KD-SxA" secondAttribute="top" constant="11" id="qQ4-JM-ZXE"/>
+                                                <constraint firstItem="bkc-29-VTh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Qwk-a0-HrB" secondAttribute="trailing" constant="8" symbolic="YES" id="SXw-T6-95g"/>
+                                                <constraint firstItem="Qwk-a0-HrB" firstAttribute="top" secondItem="ufB-KD-SxA" secondAttribute="top" constant="26" id="qQ4-JM-ZXE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1208,7 +1209,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="137" id="NNU-bv-sAY">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="doctorcell" rowHeight="137" id="NNU-bv-sAY" customClass="DoctorTableViewCell" customModule="WbmHealth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NNU-bv-sAY" id="zyY-3D-ewE">
@@ -1262,6 +1263,12 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                                 <constraint firstItem="S2K-ds-7Lb" firstAttribute="top" secondItem="zyY-3D-ewE" secondAttribute="top" constant="29" id="z6U-JS-gnq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="availabilityLbl" destination="y7w-uJ-gk5" id="8r6-gG-EeV"/>
+                                            <outlet property="doctorImg" destination="S2K-ds-7Lb" id="ziw-El-pMn"/>
+                                            <outlet property="doctorNamelbl" destination="fJ8-C8-Oe8" id="0oR-i6-bVe"/>
+                                            <outlet property="languageLbl" destination="P2V-Ua-44C" id="7Xq-ZM-Q47"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1283,7 +1290,8 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                         <barButtonItem key="backBarButtonItem" title="  " id="3Za-2q-uWG"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="xaD-E9-vSo" kind="push" id="Rdi-x0-Y38"/>
+                        <outlet property="doctorTblVu" destination="Afv-Rr-C8F" id="os8-9n-OZm"/>
+                        <segue destination="xaD-E9-vSo" kind="push" identifier="doctorbio" id="Rdi-x0-Y38"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUH-Vh-I44" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1355,7 +1363,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vrv-Ne-l0v">
                                                 <rect key="frame" x="8" y="55" width="382" height="412"/>
-                                                <mutableString key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</mutableString>
+                                                <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

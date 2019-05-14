@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 import IQKeyboardManager
-
+import TuyaSmartBaseKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        TuyaSmartSDK.sharedInstance()?.start(withAppKey: "xngta74n8ar54q3vqu5w", secretKey: "nkqqky4xdhq8d5e94uhfsqptem54j8wy")
+        if ((TuyaSmartSDK.sharedInstance()?.checkVersionUpgrade) != nil) {
+            TuyaSmartSDK.sharedInstance()?.upgradeVersion({
+                
+            }, failure: { (e) in
+                
+            })
+        }
         return true
     }
 

@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
+  - CocoaAsyncSocket (7.6.3)
   - Cosmos (19.0.3)
   - DropDown (2.3.13)
   - Firebase/Core (6.0.0):
@@ -76,6 +77,14 @@ PODS:
   - LGSideMenuController (2.1.1)
   - M13Checkbox (3.4.0)
   - McPicker (2.0.1)
+  - MQTTClient (0.14.0):
+    - MQTTClient/Core (= 0.14.0)
+  - MQTTClient/Core (0.14.0):
+    - MQTTClient/Manager
+    - MQTTClient/Min
+  - MQTTClient/Manager (0.14.0):
+    - MQTTClient/Min
+  - MQTTClient/Min (0.14.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -94,13 +103,54 @@ PODS:
   - PickerView (0.4.0)
   - ProgressHUD (2.60)
   - Protobuf (3.7.0)
+  - Reachability (3.2)
   - SkeletonView (1.5)
   - SwiftChart (1.0.1)
   - SwiftGifOrigin (1.7.0)
   - SwiftToast (1.1.3)
   - SwiftyJSON (5.0.0)
+  - TuyaSmartBaseKit (2.8.43):
+    - Reachability
+    - TuyaSmartUtil
+    - YYModel
+  - TuyaSmartBLEKit (2.8.43):
+    - TuyaSmartBaseKit
+    - TuyaSmartDeviceKit
+    - TYBluetooth
+  - TuyaSmartBLEMeshKit (2.8.43):
+    - TuyaSmartBaseKit
+    - TuyaSmartDeviceKit
+    - TYBluetooth
+  - TuyaSmartDeviceKit (2.8.44):
+    - CocoaAsyncSocket
+    - MQTTClient (= 0.14.0)
+    - TuyaSmartBaseKit
+  - TuyaSmartFeedbackKit (2.8.43):
+    - TuyaSmartBaseKit
+  - TuyaSmartHomeKit (2.8.43):
+    - TuyaSmartBaseKit
+    - TuyaSmartBLEKit
+    - TuyaSmartBLEMeshKit
+    - TuyaSmartDeviceKit
+    - TuyaSmartFeedbackKit
+    - TuyaSmartMessageKit
+    - TuyaSmartSceneKit
+    - TuyaSmartTimerKit
+  - TuyaSmartMessageKit (2.8.43):
+    - TuyaSmartBaseKit
+  - TuyaSmartSceneKit (2.8.43):
+    - TuyaSmartBaseKit
+    - TuyaSmartDeviceKit
+  - TuyaSmartTimerKit (2.8.43):
+    - TuyaSmartBaseKit
+    - TuyaSmartDeviceKit
+  - TuyaSmartUtil (2.8.43):
+    - UICKeyChainStore
+  - TYBluetooth (2.8.43)
   - UICircularProgressRing (6.1.0)
+  - UICKeyChainStore (2.1.2)
   - YouTubePlayer-Swift (1.0)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - Alamofire
@@ -128,12 +178,14 @@ DEPENDENCIES:
   - SwiftGifOrigin
   - SwiftToast
   - SwiftyJSON
+  - TuyaSmartHomeKit
   - UICircularProgressRing
   - YouTubePlayer-Swift (~> 1.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - CocoaAsyncSocket
     - Cosmos
     - DropDown
     - Firebase
@@ -153,6 +205,7 @@ SPEC REPOS:
     - LGSideMenuController
     - M13Checkbox
     - McPicker
+    - MQTTClient
     - nanopb
     - NJKWebViewProgress
     - Nominatim
@@ -161,16 +214,31 @@ SPEC REPOS:
     - PickerView
     - ProgressHUD
     - Protobuf
+    - Reachability
     - SkeletonView
     - SwiftChart
     - SwiftGifOrigin
     - SwiftToast
     - SwiftyJSON
+    - TuyaSmartBaseKit
+    - TuyaSmartBLEKit
+    - TuyaSmartBLEMeshKit
+    - TuyaSmartDeviceKit
+    - TuyaSmartFeedbackKit
+    - TuyaSmartHomeKit
+    - TuyaSmartMessageKit
+    - TuyaSmartSceneKit
+    - TuyaSmartTimerKit
+    - TuyaSmartUtil
+    - TYBluetooth
     - UICircularProgressRing
+    - UICKeyChainStore
     - YouTubePlayer-Swift
+    - YYModel
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
   Cosmos: a6fb17284281fa12cf4c85c2efecd440a215ec44
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   Firebase: fa80b9d987ca014a1ba9357496ef2a0178b28b12
@@ -190,6 +258,7 @@ SPEC CHECKSUMS:
   LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
   M13Checkbox: 6f59404540ac98ba83a3d1afac335895a40c6a5d
   McPicker: a0a6b8ece8f1642e05401a29867463aba501188b
+  MQTTClient: eea2eaaa6ddef852a1019a4dda091e22ad928b58
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   Nominatim: 2083a9f3073c4f738c1e6669e3f3381494072cb7
@@ -198,14 +267,28 @@ SPEC CHECKSUMS:
   PickerView: a736ea986d992aa3ef32423f475fdf3f3a0cf7d4
   ProgressHUD: 4e4efbaf4f5de8bd32e0c4c3b6644a90ea1a8c3e
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SkeletonView: 6cbb80f82f8bdee3f9093e2fa03b84819b4bd826
   SwiftChart: ba767a678d568a5ee22d419e146a0582865e1aff
   SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
   SwiftToast: 029cbeda85c04fb3fa5df774ba461b19971bc6c5
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  TuyaSmartBaseKit: c1798280150db605f6d86856822925dcf12af526
+  TuyaSmartBLEKit: 1cb7f659d52e5c3bcd1f1f623abb39104eb4a78f
+  TuyaSmartBLEMeshKit: ae228a24d93a308ef1f5fd75f6bee8c44b7f9393
+  TuyaSmartDeviceKit: 54a2d6d148fe3a02ce70ad0d5652a04b455054c8
+  TuyaSmartFeedbackKit: 79d165de51fa80cd9733dbfea047d26329c8f136
+  TuyaSmartHomeKit: 2bd231108b064a6cad097b23478db040263033d8
+  TuyaSmartMessageKit: 7ff813a0b12b2191d3440605b09b815e208136bb
+  TuyaSmartSceneKit: f5e684da34c31bf87d3241e36c5f7e9a36255d54
+  TuyaSmartTimerKit: 3769768e51cbe88a5484ab3a2766efb7a85bcbc6
+  TuyaSmartUtil: e113cab92bfa482bc129bbe1a0849a048829d510
+  TYBluetooth: 1a5dcabc5d37c162ffb7bb800eb1b3fffd8be2ad
   UICircularProgressRing: b3eba859a515e4d9d38503eec913f09c28450785
+  UICKeyChainStore: 85db518bb1d294366d15ec9b92a416c4e670518f
   YouTubePlayer-Swift: ae82f4bcb504162a872b852596a9dc1fa3828c34
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: f94572536931cb5fea71b98ef3f827f0c3947e51
+PODFILE CHECKSUM: 5011562a3f6a4a64a97db38ff381267ea5df755e
 
 COCOAPODS: 1.6.1

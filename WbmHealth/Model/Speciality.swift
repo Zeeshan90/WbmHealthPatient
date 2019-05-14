@@ -13,7 +13,7 @@ class Speciality {
         var id : String!
         var photo : [AnyObject]!
         var specialityDesc : String!
-        
+        var image: String!
         /**
          * Instantiate the instance using the passed json values to set the properties values
          */
@@ -27,8 +27,8 @@ class Speciality {
             let photoArray = json["photo"].arrayValue
             print(photoArray)
             for photoJson in photoArray{
-               // image = photoJson["url"].stringValue
-                photo.append(photoJson["url"].string as AnyObject)
+                image = photoJson["url"].stringValue
+               // photo.append(photoJson["url"].string as AnyObject)
             }
             
         }

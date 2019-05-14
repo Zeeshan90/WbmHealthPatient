@@ -55,6 +55,8 @@
 		065FFE8D22842DE0009D2AD3 /* Speciality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065FFE8C22842DE0009D2AD3 /* Speciality.swift */; };
 		0661BAFD2289441B00D459B2 /* DoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0661BAFC2289441B00D459B2 /* DoctorViewController.swift */; };
 		0661BAFF2289452000D459B2 /* DoctorBioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0661BAFE2289452000D459B2 /* DoctorBioViewController.swift */; };
+		0661BB012289484800D459B2 /* DoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0661BB002289484800D459B2 /* DoctorTableViewCell.swift */; };
+		0661BB0322895BF600D459B2 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0661BB0222895BF600D459B2 /* Doctor.swift */; };
 		066595E22273096200E893F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066595E12273096200E893F5 /* AppDelegate.swift */; };
 		066595E42273096200E893F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066595E32273096200E893F5 /* ViewController.swift */; };
 		066595E72273096200E893F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066595E52273096200E893F5 /* Main.storyboard */; };
@@ -89,6 +91,16 @@
 		06BDB92322734811007F4ED2 /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BDB92222734811007F4ED2 /* AppUtils.swift */; };
 		06BDB9262273493E007F4ED2 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BDB9252273493E007F4ED2 /* SideMenu.swift */; };
 		06BDB92922734BD8007F4ED2 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BDB92822734BD8007F4ED2 /* LeftMenuViewController.swift */; };
+		06D5F94E228A8514008E7EC4 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06D5F94D228A8514008E7EC4 /* Registration.storyboard */; };
+		06D5F950228A8E98008E7EC4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D5F94F228A8E98008E7EC4 /* LoginViewController.swift */; };
+		06D5F952228A8EAE008E7EC4 /* VerifyCodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D5F951228A8EAE008E7EC4 /* VerifyCodeLoginViewController.swift */; };
+		06D5F954228A8EC7008E7EC4 /* RegisterEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D5F953228A8EC7008E7EC4 /* RegisterEmailViewController.swift */; };
+		06D5F956228A905D008E7EC4 /* t_s.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 06D5F955228A905D008E7EC4 /* t_s.bmp */; };
+		06D5F95B228A9F18008E7EC4 /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D5F95A228A9F18008E7EC4 /* VerifyCodeViewController.swift */; };
+		06D5F95D228AA523008E7EC4 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D5F95C228AA523008E7EC4 /* PasswordViewController.swift */; };
+		06D5F960228ACBF7008E7EC4 /* CreateFamilyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D5F95F228ACBF7008E7EC4 /* CreateFamilyViewController.swift */; };
+		06D5F963228ACC21008E7EC4 /* AddFamilyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D5F962228ACC21008E7EC4 /* AddFamilyViewController.swift */; };
+		06D66C10228AD6D700823E92 /* AddFamilyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D66C0F228AD6D700823E92 /* AddFamilyTableViewCell.swift */; };
 		B350BDCD227592E2000447BC /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350BDCC227592E2000447BC /* WorkoutViewController.swift */; };
 		B350BDCF22759320000447BC /* WorkoutCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350BDCE22759320000447BC /* WorkoutCollectionCell.swift */; };
 		B3E64D612274C84500C1A9A9 /* TopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E64D602274C84500C1A9A9 /* TopCollectionViewCell.swift */; };
@@ -165,6 +177,8 @@
 		065FFE8C22842DE0009D2AD3 /* Speciality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speciality.swift; sourceTree = "<group>"; };
 		0661BAFC2289441B00D459B2 /* DoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorViewController.swift; sourceTree = "<group>"; };
 		0661BAFE2289452000D459B2 /* DoctorBioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorBioViewController.swift; sourceTree = "<group>"; };
+		0661BB002289484800D459B2 /* DoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableViewCell.swift; sourceTree = "<group>"; };
+		0661BB0222895BF600D459B2 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		066595DE2273096200E893F5 /* WbmHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WbmHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		066595E12273096200E893F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		066595E32273096200E893F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +219,17 @@
 		06BDB92222734811007F4ED2 /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppUtils.swift; path = "../New Group/AppUtils.swift"; sourceTree = "<group>"; };
 		06BDB9252273493E007F4ED2 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		06BDB92822734BD8007F4ED2 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		06D5F94D228A8514008E7EC4 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		06D5F94F228A8E98008E7EC4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		06D5F951228A8EAE008E7EC4 /* VerifyCodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeLoginViewController.swift; sourceTree = "<group>"; };
+		06D5F953228A8EC7008E7EC4 /* RegisterEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmailViewController.swift; sourceTree = "<group>"; };
+		06D5F955228A905D008E7EC4 /* t_s.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = t_s.bmp; path = ../../../../Downloads/t_s.bmp; sourceTree = "<group>"; };
+		06D5F957228A9071008E7EC4 /* WbmHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WbmHealth.entitlements; sourceTree = "<group>"; };
+		06D5F95A228A9F18008E7EC4 /* VerifyCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewController.swift; sourceTree = "<group>"; };
+		06D5F95C228AA523008E7EC4 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		06D5F95F228ACBF7008E7EC4 /* CreateFamilyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFamilyViewController.swift; sourceTree = "<group>"; };
+		06D5F962228ACC21008E7EC4 /* AddFamilyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFamilyViewController.swift; sourceTree = "<group>"; };
+		06D66C0F228AD6D700823E92 /* AddFamilyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFamilyTableViewCell.swift; sourceTree = "<group>"; };
 		27FECD7EE9ECC59CC5EE1342 /* Pods-WbmHealthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WbmHealthUITests.debug.xcconfig"; path = "Target Support Files/Pods-WbmHealthUITests/Pods-WbmHealthUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5509E1C851AEFCACF00E8807 /* Pods-WbmHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WbmHealth.release.xcconfig"; path = "Target Support Files/Pods-WbmHealth/Pods-WbmHealth.release.xcconfig"; sourceTree = "<group>"; };
 		5B5E1DFC782D9251946CDE69 /* Pods_WbmHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WbmHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -339,10 +364,13 @@
 		066595E02273096200E893F5 /* WbmHealth */ = {
 			isa = PBXGroup;
 			children = (
-				06575ED12282C746007E95BF /* Fonts */,
+				06D5F957228A9071008E7EC4 /* WbmHealth.entitlements */,
+				06D5F955228A905D008E7EC4 /* t_s.bmp */,
 				066595E12273096200E893F5 /* AppDelegate.swift */,
+				06575ED12282C746007E95BF /* Fonts */,
 				066F8C6C227AF0E300451E6D /* Utils */,
 				06BDB92422734821007F4ED2 /* Cells */,
+				06D5F95E228AC469008E7EC4 /* Tuya */,
 				066596142273229200E893F5 /* Model */,
 				066596132273228500E893F5 /* Views */,
 				066596122273227A00E893F5 /* Controllers */,
@@ -404,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				066595E52273096200E893F5 /* Main.storyboard */,
+				06D5F94D228A8514008E7EC4 /* Registration.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -418,6 +447,7 @@
 				067A64EA228037CA00E51319 /* Test.swift */,
 				067A64EC2280384400E51319 /* Photo.swift */,
 				065FFE8C22842DE0009D2AD3 /* Speciality.swift */,
+				0661BB0222895BF600D459B2 /* Doctor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -462,6 +492,7 @@
 				06575F002282D182007E95BF /* SymptomsTableViewCell.swift */,
 				06575F042282ECEC007E95BF /* MedicalTableViewCell.swift */,
 				065FFE8A228427E5009D2AD3 /* SpecialityTableViewCell.swift */,
+				0661BB002289484800D459B2 /* DoctorTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -473,6 +504,21 @@
 				06BDB92822734BD8007F4ED2 /* LeftMenuViewController.swift */,
 			);
 			path = SideViewController;
+			sourceTree = "<group>";
+		};
+		06D5F95E228AC469008E7EC4 /* Tuya */ = {
+			isa = PBXGroup;
+			children = (
+				06D5F95C228AA523008E7EC4 /* PasswordViewController.swift */,
+				06D5F951228A8EAE008E7EC4 /* VerifyCodeLoginViewController.swift */,
+				06D5F95A228A9F18008E7EC4 /* VerifyCodeViewController.swift */,
+				06D5F953228A8EC7008E7EC4 /* RegisterEmailViewController.swift */,
+				06D5F94F228A8E98008E7EC4 /* LoginViewController.swift */,
+				06D5F95F228ACBF7008E7EC4 /* CreateFamilyViewController.swift */,
+				06D5F962228ACC21008E7EC4 /* AddFamilyViewController.swift */,
+				06D66C0F228AD6D700823E92 /* AddFamilyTableViewCell.swift */,
+			);
+			path = Tuya;
 			sourceTree = "<group>";
 		};
 		15A546FC9F938F9AC88B75EA /* Pods */ = {
@@ -571,6 +617,11 @@
 				TargetAttributes = {
 					066595DD2273096200E893F5 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
+						};
 					};
 					066595F42273096400E893F5 = {
 						CreatedOnToolsVersion = 10.1;
@@ -616,11 +667,13 @@
 				06575EF42282C78C007E95BF /* Raleway-Regular.ttf in Resources */,
 				06575EF12282C78C007E95BF /* Raleway-MediumItalic.ttf in Resources */,
 				06575EFC2282C78D007E95BF /* Raleway-ExtraLight.ttf in Resources */,
+				06D5F94E228A8514008E7EC4 /* Registration.storyboard in Resources */,
 				06575EEC2282C78C007E95BF /* Raleway-SemiBold.ttf in Resources */,
 				06575EF82282C78C007E95BF /* Raleway-BlackItalic.ttf in Resources */,
 				06575ED72282C76E007E95BF /* CinzelDecorative-Black.ttf in Resources */,
 				066595EF2273096400E893F5 /* LaunchScreen.storyboard in Resources */,
 				06575EFA2282C78C007E95BF /* Raleway-Light.ttf in Resources */,
+				06D5F956228A905D008E7EC4 /* t_s.bmp in Resources */,
 				06575EF92282C78C007E95BF /* Raleway-ThinItalic.ttf in Resources */,
 				06575EF32282C78C007E95BF /* Raleway-Medium.ttf in Resources */,
 				06575EEB2282C78C007E95BF /* Raleway-BoldItalic.ttf in Resources */,
@@ -754,6 +807,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WbmHealth/Pods-WbmHealth-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/FlexibleSteppedProgressBar/FlexibleSteppedProgressBar.framework",
@@ -762,6 +816,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/LGSideMenuController/LGSideMenuController.framework",
 				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
+				"${BUILT_PRODUCTS_DIR}/MQTTClient/MQTTClient.framework",
 				"${BUILT_PRODUCTS_DIR}/McPicker/McPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/NJKWebViewProgress/NJKWebViewProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
@@ -769,12 +824,15 @@
 				"${BUILT_PRODUCTS_DIR}/PickerView/PickerView.framework",
 				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftChart/SwiftChart.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftToast/SwiftToast.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/UICKeyChainStore/UICKeyChainStore.framework",
 				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/YouTubePlayer-Swift/YouTubePlayer_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework",
@@ -784,6 +842,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlexibleSteppedProgressBar.framework",
@@ -792,6 +851,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGSideMenuController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MQTTClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/McPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NJKWebViewProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
@@ -799,12 +859,15 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PickerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftChart.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftToast.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICKeyChainStore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/paper_onboarding.framework",
@@ -831,10 +894,13 @@
 				06575E9722829AAF007E95BF /* SeeADocTableViewCell.swift in Sources */,
 				064FFEEB227AD3B1004ED6A1 /* AppointDeclinedViewController.swift in Sources */,
 				066F8C72227B19DD00451E6D /* Labortaries.swift in Sources */,
+				06D5F960228ACBF7008E7EC4 /* CreateFamilyViewController.swift in Sources */,
 				067E2D9A2276E42300E313A7 /* LabCategoryTableViewCell.swift in Sources */,
+				06D66C10228AD6D700823E92 /* AddFamilyTableViewCell.swift in Sources */,
 				06AB20782276B57500FF00C7 /* WorkoutCategoriesController.swift in Sources */,
 				065AC0B322786BDA0099B7BF /* MedicalHistoryViewController.swift in Sources */,
 				06BDB9262273493E007F4ED2 /* SideMenu.swift in Sources */,
+				0661BB012289484800D459B2 /* DoctorTableViewCell.swift in Sources */,
 				065AC0B1227839540099B7BF /* DocDetailViewController.swift in Sources */,
 				064FFEE9227AD39A004ED6A1 /* AppointAprovedViewController.swift in Sources */,
 				06575F032282EAEA007E95BF /* MedicalViewController.swift in Sources */,
@@ -843,6 +909,7 @@
 				064FFEED227AD3C5004ED6A1 /* AppointPendingViewController.swift in Sources */,
 				06AB207A2276B59100FF00C7 /* WorkoutDetailViewController.swift in Sources */,
 				067E2D9C2276F28E00E313A7 /* LabTestDetailViewController.swift in Sources */,
+				06D5F952228A8EAE008E7EC4 /* VerifyCodeLoginViewController.swift in Sources */,
 				06BDB92922734BD8007F4ED2 /* LeftMenuViewController.swift in Sources */,
 				06BDB92322734811007F4ED2 /* AppUtils.swift in Sources */,
 				06575E9922829CD8007E95BF /* Utils.swift in Sources */,
@@ -855,6 +922,7 @@
 				065FFE872284263E009D2AD3 /* scheduleViewController.swift in Sources */,
 				066595E22273096200E893F5 /* AppDelegate.swift in Sources */,
 				067A64ED2280384400E51319 /* Photo.swift in Sources */,
+				0661BB0322895BF600D459B2 /* Doctor.swift in Sources */,
 				065039872278192100F83929 /* PrivacyPolicyViewController.swift in Sources */,
 				067E2DA22277118E00E313A7 /* HospitalTableViewCell.swift in Sources */,
 				065FFE8D22842DE0009D2AD3 /* Speciality.swift in Sources */,
@@ -863,8 +931,11 @@
 				067E2D942276D10A00E313A7 /* LabortaryTableViewCell.swift in Sources */,
 				06575F012282D182007E95BF /* SymptomsTableViewCell.swift in Sources */,
 				06AB207C2276B6A800FF00C7 /* WorkoutCategoryCollectionCell.swift in Sources */,
+				06D5F950228A8E98008E7EC4 /* LoginViewController.swift in Sources */,
 				06BDB92122734348007F4ED2 /* LeftTableViewCell.swift in Sources */,
+				06D5F95D228AA523008E7EC4 /* PasswordViewController.swift in Sources */,
 				B3E64D612274C84500C1A9A9 /* TopCollectionViewCell.swift in Sources */,
+				06D5F963228ACC21008E7EC4 /* AddFamilyViewController.swift in Sources */,
 				065FFE8B228427E5009D2AD3 /* SpecialityTableViewCell.swift in Sources */,
 				065FFE8922842694009D2AD3 /* SpecialityViewController.swift in Sources */,
 				067E2DA62277258E00E313A7 /* SeeDocTableViewCell.swift in Sources */,
@@ -873,6 +944,8 @@
 				067E2DAA22772F2400E313A7 /* DoctorsViewController.swift in Sources */,
 				066595EA2273096200E893F5 /* WbmHealth.xcdatamodeld in Sources */,
 				067E2D982276E3FF00E313A7 /* LabCategoryViewController.swift in Sources */,
+				06D5F95B228A9F18008E7EC4 /* VerifyCodeViewController.swift in Sources */,
+				06D5F954228A8EC7008E7EC4 /* RegisterEmailViewController.swift in Sources */,
 				B350BDCF22759320000447BC /* WorkoutCollectionCell.swift in Sources */,
 				065FFE852283E9BC009D2AD3 /* AddChildViewController.swift in Sources */,
 				067A64E722802E1100E51319 /* LabCategory.swift in Sources */,
@@ -1055,6 +1128,7 @@
 			baseConfigurationReference = D1D66B245F7E2D7C16D56738 /* Pods-WbmHealth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WbmHealth/WbmHealth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9A7874J6KG;
 				INFOPLIST_FILE = WbmHealth/Info.plist;
@@ -1074,6 +1148,7 @@
 			baseConfigurationReference = 5509E1C851AEFCACF00E8807 /* Pods-WbmHealth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WbmHealth/WbmHealth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9A7874J6KG;
 				INFOPLIST_FILE = WbmHealth/Info.plist;
