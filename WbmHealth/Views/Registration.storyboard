@@ -347,6 +347,9 @@
                                                 <constraint firstItem="QKt-lM-n3Q" firstAttribute="leading" secondItem="CzQ-ta-8Xj" secondAttribute="leading" constant="15" id="Zip-MK-nq1"/>
                                                 <constraint firstAttribute="bottom" secondItem="QKt-lM-n3Q" secondAttribute="bottom" constant="14" id="aNb-r8-wCP"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="checkMark" destination="vgR-nW-gp7" id="QuT-fE-Key"/>
@@ -354,6 +357,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="ffd-Kq-R7I" id="Sks-Lm-fpU"/>
                                     <outlet property="delegate" destination="ffd-Kq-R7I" id="0lr-Hc-dDg"/>

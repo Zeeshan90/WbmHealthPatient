@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.8.2)
   - CocoaAsyncSocket (7.6.3)
   - Cosmos (19.0.3)
+  - CVCalendar (1.6.2)
   - DropDown (2.3.13)
   - Firebase/Core (6.0.0):
     - Firebase/CoreOnly
@@ -38,6 +39,7 @@ PODS:
     - GoogleUtilities/UserDefaults (~> 6.0)
     - Protobuf (~> 3.1)
   - FlexibleSteppedProgressBar (0.6.1)
+  - GCCalendar (2.5.0)
   - GoogleAppMeasurement (6.0.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -155,10 +157,12 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Cosmos
+  - CVCalendar (~> 1.6.2)
   - DropDown
   - Firebase/Core
   - Firebase/Messaging
   - FlexibleSteppedProgressBar
+  - GCCalendar
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
@@ -187,6 +191,7 @@ SPEC REPOS:
     - Alamofire
     - CocoaAsyncSocket
     - Cosmos
+    - CVCalendar
     - DropDown
     - Firebase
     - FirebaseAnalytics
@@ -195,6 +200,7 @@ SPEC REPOS:
     - FirebaseInstanceID
     - FirebaseMessaging
     - FlexibleSteppedProgressBar
+    - GCCalendar
     - GoogleAppMeasurement
     - GoogleMaps
     - GooglePlacePicker
@@ -240,6 +246,7 @@ SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
   Cosmos: a6fb17284281fa12cf4c85c2efecd440a215ec44
+  CVCalendar: 515092247b9c5059855643c2a2220f259bd5417f
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   Firebase: fa80b9d987ca014a1ba9357496ef2a0178b28b12
   FirebaseAnalytics: 1743c5f4de3687d0745709dfdc4b1dea1484f44c
@@ -248,6 +255,7 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 0e0348a3c00a734fa376a070f5ad4533ad975cb5
   FirebaseMessaging: c796d50864dc822a3c06c9c1c1444b37732b795b
   FlexibleSteppedProgressBar: 402203e2981409ce3785a5dbd3df0234093fbd58
+  GCCalendar: 88978ad35e25e26725dcb9372fc3b091362d78eb
   GoogleAppMeasurement: 7f028ea162b72c8f326daec74afc95d94f7a47d6
   GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
   GooglePlacePicker: 1c60c2a26e9d1e73bcb0c6f89609db8d777d13c1
@@ -289,6 +297,6 @@ SPEC CHECKSUMS:
   YouTubePlayer-Swift: ae82f4bcb504162a872b852596a9dc1fa3828c34
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 5011562a3f6a4a64a97db38ff381267ea5df755e
+PODFILE CHECKSUM: 9ed07acdddbe7d0750b11a1c17b7b3448f8ff42f
 
 COCOAPODS: 1.6.1

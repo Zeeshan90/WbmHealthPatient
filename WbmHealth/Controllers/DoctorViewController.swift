@@ -29,6 +29,7 @@ class DoctorViewController: UIViewController,UITableViewDelegate,UITableViewData
         let cell = doctorTblVu.dequeueReusableCell(withIdentifier: "doctorcell", for: indexPath) as! DoctorTableViewCell
         cell.doctorNamelbl.text = doctorArr[indexPath.row].doctorName
         let arr = doctorArr[indexPath.row].intervals
+        cell.doctorImg.layer.cornerRadius = cell.doctorImg.frame.width/2
         cell.doctorImg.downloaded(from: "\(AppUtils.returnBaseUrl())\(doctorArr[indexPath.row].image!)")
         return cell
     }

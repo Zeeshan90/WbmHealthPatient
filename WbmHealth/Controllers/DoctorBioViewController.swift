@@ -10,21 +10,18 @@ import UIKit
 
 class DoctorBioViewController: UIViewController {
 
+    @IBOutlet weak var availabilityVu: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let availableClick = UITapGestureRecognizer(target: self, action: #selector(tapOnAvailable))
+        availabilityVu.addGestureRecognizer(availableClick)
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func tapOnAvailable(){
+        performSegue(withIdentifier: "toavailble", sender: self)
     }
-    */
+    
 
 }

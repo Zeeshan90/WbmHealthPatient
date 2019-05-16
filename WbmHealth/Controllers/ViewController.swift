@@ -30,19 +30,21 @@ class ViewController: UIViewController {
     var topNameArr = ["My Accounts","Forums","Emergency","Health Blogs"]
     var topImgArr = ["1","2","3","4"]
     var testArr = ["test1","test2","test3","test4"]
+    let util = Utils()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cardView(view: labortaryVu)
-        cardView(view: medHisVu)
-        cardView(view: workOutVu)
-        cardView(view: bmmiCalVu)
-        cardView(view: healthTipsVu)
-        cardView(view: appoinmentVu)
-        cardView(view: seeADocVu)
-        cardView(view: nearByPharmmancyVu)
-        cardView(view: nearByHospitalVu)
-        cardView(view: bottomVu)
+        util.cardView(view: labortaryVu)
+        util.cardView(view: labortaryVu)
+        util.cardView(view: medHisVu)
+        util.cardView(view: workOutVu)
+        util.cardView(view: bmmiCalVu)
+        util.cardView(view: healthTipsVu)
+        util.cardView(view: appoinmentVu)
+        util.cardView(view: seeADocVu)
+        util.cardView(view: nearByPharmmancyVu)
+        util.cardView(view: nearByHospitalVu)
+        util.cardView(view: bottomVu)
         
         let workOutClick = UITapGestureRecognizer(target: self, action: #selector(tapOnWorkOut))
         workOutVu.addGestureRecognizer(workOutClick)
@@ -83,7 +85,7 @@ class ViewController: UIViewController {
         
     }
     @objc func tapOnNearHosp(){
-        performSegue(withIdentifier: "hospital", sender: self)
+       // performSegue(withIdentifier: "hospital", sender: self)
     }
     
     @objc func tapOnWorkOut(){
@@ -132,16 +134,6 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource {
 }
 
 extension ViewController{
-    
-    /// CardView
-    func cardView(view:UIView){
-        view.layer.masksToBounds = false
-        view.layer.shadowColor = UIColor.gray.cgColor
-        view.layer.shadowOpacity = 0.5
-        view.layer.shadowOffset = CGSize(width: 0, height: 1)
-        view.layer.shadowRadius = 1
-        view.layer.cornerRadius = 10
-    }
     
     // AlertController
     func getAlert(message:String?,title:String?){

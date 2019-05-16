@@ -35,6 +35,8 @@ target 'WbmHealth' do
   pod 'M13Checkbox'
   pod 'McPicker'
   pod 'TuyaSmartHomeKit'
+  pod 'CVCalendar', '~> 1.6.2'
+  pod 'GCCalendar'
   target 'WbmHealthTests' do
     inherit! :search_paths
     # Pods for testing
