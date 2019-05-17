@@ -28,15 +28,20 @@ class DoctorViewController: UIViewController,UITableViewDelegate,UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = doctorTblVu.dequeueReusableCell(withIdentifier: "doctorcell", for: indexPath) as! DoctorTableViewCell
         cell.doctorNamelbl.text = doctorArr[indexPath.row].doctorName
-        let arr = doctorArr[indexPath.row].intervals
-        cell.doctorImg.layer.cornerRadius = cell.doctorImg.frame.width/2
+        cell.languageLbl.text = doctorArr[indexPath.row].languageLbl
+        cell.availabilityLbl.text = doctorArr[indexPath.row].availableLbl
+        cell.doctorImg.layer.cornerRadius = cell.doctorImg.frame.height/2
         cell.doctorImg.downloaded(from: "\(AppUtils.returnBaseUrl())\(doctorArr[indexPath.row].image!)")
         return cell
     }
    
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let docId:String = doctorArr[indexPath.row].id
+        WbmDefaults.instance.setString(key: "docId", value: docId)
         performSegue(withIdentifier: "doctorbio", sender: self)
+        doctorTblVu.deselectRow(at: indexPath, animated: true)
     }
     
     func getDoctors(){

@@ -13,6 +13,9 @@
         <array key="Raleway-Bold.ttf">
             <string>Raleway-Bold</string>
         </array>
+        <array key="Raleway-ExtraBold.ttf">
+            <string>Raleway-ExtraBold</string>
+        </array>
         <array key="Raleway-ExtraLight.ttf">
             <string>Raleway-ExtraLight</string>
         </array>
@@ -1199,6 +1202,9 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                             <constraint firstItem="mCL-Y1-hea" firstAttribute="top" secondItem="qLd-av-y49" secondAttribute="top" id="i4F-VC-cYg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qLd-av-y49"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Choose Speciality" id="VTk-7g-4kR">
                         <barButtonItem key="backBarButtonItem" title="  " id="Ied-d5-YQl"/>
@@ -1231,15 +1237,8 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="136.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S2K-ds-7Lb">
-                                                    <rect key="frame" x="9" y="29" width="76" height="78"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="76" id="S4g-zv-rrZ"/>
-                                                        <constraint firstAttribute="height" constant="78" id="bBA-xg-XPG"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJ8-C8-Oe8">
-                                                    <rect key="frame" x="104" y="9" width="101.66666666666669" height="37"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJ8-C8-Oe8">
+                                                    <rect key="frame" x="103" y="16" width="107.66666666666669" height="37"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="37" id="UO6-Aw-7au"/>
                                                     </constraints>
@@ -1247,37 +1246,47 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Availablity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7w-uJ-gk5">
-                                                    <rect key="frame" x="104" y="87" width="76.666666666666686" height="32"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="32" id="01z-xz-45U"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sunday monday tuesday wednesday thursday friday,ufh,fueihfu,fueihf,fuiehf,ufheui" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7w-uJ-gk5">
+                                                    <rect key="frame" x="104" y="77" width="290" height="39"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway Light" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Languages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2V-Ua-44C">
-                                                    <rect key="frame" x="103" y="51" width="84.333333333333314" height="35"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Languages" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2V-Ua-44C">
+                                                    <rect key="frame" x="102.99999999999999" y="51" width="61.333333333333329" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="b7s-L9-c7a"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway Light" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S2K-ds-7Lb">
+                                                    <rect key="frame" x="0.0" y="16" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="S4g-zv-rrZ"/>
+                                                        <constraint firstAttribute="height" constant="100" id="bBA-xg-XPG"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="y7w-uJ-gk5" firstAttribute="leading" secondItem="S2K-ds-7Lb" secondAttribute="trailing" constant="19" id="4XJ-5C-qnY"/>
-                                                <constraint firstItem="fJ8-C8-Oe8" firstAttribute="top" secondItem="zyY-3D-ewE" secondAttribute="top" constant="9" id="FvD-Ay-lHg"/>
-                                                <constraint firstItem="P2V-Ua-44C" firstAttribute="leading" secondItem="S2K-ds-7Lb" secondAttribute="trailing" constant="18" id="H7h-e0-OZD"/>
-                                                <constraint firstItem="P2V-Ua-44C" firstAttribute="top" secondItem="fJ8-C8-Oe8" secondAttribute="bottom" constant="5" id="JkQ-BQ-ws2"/>
-                                                <constraint firstItem="S2K-ds-7Lb" firstAttribute="leading" secondItem="zyY-3D-ewE" secondAttribute="leading" constant="9" id="Klq-Ef-qOc"/>
-                                                <constraint firstAttribute="bottom" secondItem="y7w-uJ-gk5" secondAttribute="bottom" constant="17.666666666666657" id="PXx-pn-IOb"/>
-                                                <constraint firstItem="fJ8-C8-Oe8" firstAttribute="leading" secondItem="S2K-ds-7Lb" secondAttribute="trailing" constant="19" id="WZw-9Y-mlI"/>
-                                                <constraint firstItem="y7w-uJ-gk5" firstAttribute="top" secondItem="P2V-Ua-44C" secondAttribute="bottom" constant="1" id="lO6-Sk-RQI"/>
-                                                <constraint firstItem="S2K-ds-7Lb" firstAttribute="top" secondItem="zyY-3D-ewE" secondAttribute="top" constant="29" id="z6U-JS-gnq"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fJ8-C8-Oe8" secondAttribute="trailing" constant="20" symbolic="YES" id="1TD-mb-zAk"/>
+                                                <constraint firstAttribute="bottom" secondItem="y7w-uJ-gk5" secondAttribute="bottom" constant="20.666666666666657" id="6EA-vj-XOq"/>
+                                                <constraint firstItem="fJ8-C8-Oe8" firstAttribute="top" secondItem="zyY-3D-ewE" secondAttribute="top" constant="16" id="FvD-Ay-lHg"/>
+                                                <constraint firstItem="P2V-Ua-44C" firstAttribute="leading" secondItem="S2K-ds-7Lb" secondAttribute="trailing" constant="2.9999999999999858" id="H7h-e0-OZD"/>
+                                                <constraint firstItem="P2V-Ua-44C" firstAttribute="top" secondItem="fJ8-C8-Oe8" secondAttribute="bottom" constant="-2" id="JkQ-BQ-ws2"/>
+                                                <constraint firstItem="S2K-ds-7Lb" firstAttribute="leading" secondItem="zyY-3D-ewE" secondAttribute="leading" id="Klq-Ef-qOc"/>
+                                                <constraint firstItem="fJ8-C8-Oe8" firstAttribute="leading" secondItem="S2K-ds-7Lb" secondAttribute="trailing" constant="3" id="WZw-9Y-mlI"/>
+                                                <constraint firstItem="y7w-uJ-gk5" firstAttribute="top" secondItem="P2V-Ua-44C" secondAttribute="bottom" constant="-9" id="b93-tQ-e47"/>
+                                                <constraint firstAttribute="trailing" secondItem="y7w-uJ-gk5" secondAttribute="trailing" constant="20" id="dPL-VR-vhe"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P2V-Ua-44C" secondAttribute="trailing" constant="20" symbolic="YES" id="o45-fh-yGb"/>
+                                                <constraint firstItem="y7w-uJ-gk5" firstAttribute="leading" secondItem="S2K-ds-7Lb" secondAttribute="trailing" constant="4" id="t1s-oz-Jgh"/>
+                                                <constraint firstItem="S2K-ds-7Lb" firstAttribute="top" secondItem="zyY-3D-ewE" secondAttribute="top" constant="16" id="z6U-JS-gnq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="availabilityLbl" destination="y7w-uJ-gk5" id="8r6-gG-EeV"/>
                                             <outlet property="doctorImg" destination="S2K-ds-7Lb" id="ziw-El-pMn"/>
@@ -1318,11 +1327,11 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
             <objects>
                 <viewController id="xaD-E9-vSo" customClass="DoctorBioViewController" customModule="WbmHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0xr-SE-zKa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7U-qs-ymR">
-                                <rect key="frame" x="0.0" y="64" width="414" height="1076"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="1276"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceS-GG-Gbo">
                                         <rect key="frame" x="8" y="8" width="398" height="205"/>
@@ -1333,6 +1342,9 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                                     <constraint firstAttribute="height" constant="124" id="ekb-L5-pgc"/>
                                                     <constraint firstAttribute="width" constant="157" id="tzo-sq-K0x"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZB-ac-XWT">
                                                 <rect key="frame" x="8" y="132" width="382" height="32"/>
@@ -1342,6 +1354,9 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                                 <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1355,7 +1370,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbp-Mg-mMm">
-                                        <rect key="frame" x="8" y="221" width="398" height="855"/>
+                                        <rect key="frame" x="8" y="221" width="398" height="1055"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXP-E5-pf4">
                                                 <rect key="frame" x="0.0" y="0.0" width="398" height="47"/>
@@ -1378,16 +1393,16 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vrv-Ne-l0v">
                                                 <rect key="frame" x="8" y="55" width="382" height="215"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="215" id="4JU-LL-vhi"/>
-                                                </constraints>
                                                 <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of psum.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Etl-FS-1nq">
-                                                <rect key="frame" x="8" y="270" width="382" height="47"/>
+                                                <rect key="frame" x="8" y="278" width="382" height="47"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Experiance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uK5-xV-yMp">
                                                         <rect key="frame" x="8" y="8" width="366" height="31"/>
@@ -1406,17 +1421,77 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Bq-pg-HCb">
-                                                <rect key="frame" x="8" y="317" width="382" height="128"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="8" y="325" width="382" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="3G2-N5-Zj0"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dj5-Sl-4zL">
-                                                <rect key="frame" x="8" y="503" width="382" height="129"/>
-                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="8" y="511" width="382" height="129"/>
+                                                <subviews>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ApV-0H-AYS">
+                                                        <rect key="frame" x="5" y="5" width="372" height="119"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t9c-oA-71T">
+                                                            <size key="itemSize" width="111" height="106"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="languagecell" id="zGY-ls-qPq" customClass="LanguageCollectionViewCell" customModule="WbmHealth" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="6.666666666666667" width="111" height="106"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="111" height="106"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xvJ-hr-02x">
+                                                                            <rect key="frame" x="5" y="5" width="101" height="96"/>
+                                                                            <subviews>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mr-Zc-nXt">
+                                                                                    <rect key="frame" x="8" y="8" width="85" height="79"/>
+                                                                                    <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway SemiBold" pointSize="17"/>
+                                                                                    <nil key="textColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                            </subviews>
+                                                                            <color key="backgroundColor" white="0.66666666669999997" alpha="0.13695954623287671" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <constraints>
+                                                                                <constraint firstItem="2mr-Zc-nXt" firstAttribute="top" secondItem="xvJ-hr-02x" secondAttribute="topMargin" id="BL2-Xy-7WA"/>
+                                                                                <constraint firstItem="2mr-Zc-nXt" firstAttribute="trailing" secondItem="xvJ-hr-02x" secondAttribute="trailingMargin" id="SYq-o7-DFT"/>
+                                                                                <constraint firstItem="2mr-Zc-nXt" firstAttribute="centerY" secondItem="xvJ-hr-02x" secondAttribute="centerY" id="YQx-ON-oR8"/>
+                                                                                <constraint firstItem="2mr-Zc-nXt" firstAttribute="leading" secondItem="xvJ-hr-02x" secondAttribute="leadingMargin" id="k43-Wr-dZG"/>
+                                                                            </constraints>
+                                                                        </view>
+                                                                    </subviews>
+                                                                </view>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="bottom" secondItem="xvJ-hr-02x" secondAttribute="bottom" constant="5" id="1FQ-hD-Pg1"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="xvJ-hr-02x" secondAttribute="trailing" constant="5" id="903-fP-zik"/>
+                                                                    <constraint firstItem="xvJ-hr-02x" firstAttribute="top" secondItem="zGY-ls-qPq" secondAttribute="top" constant="5" id="EfW-YZ-TEc"/>
+                                                                    <constraint firstItem="xvJ-hr-02x" firstAttribute="leading" secondItem="zGY-ls-qPq" secondAttribute="leading" constant="5" id="fgE-jl-AhE"/>
+                                                                </constraints>
+                                                                <connections>
+                                                                    <outlet property="nameLbl" destination="2mr-Zc-nXt" id="umS-Qd-GyB"/>
+                                                                    <outlet property="vu" destination="xvJ-hr-02x" id="neJ-dd-KdB"/>
+                                                                </connections>
+                                                            </collectionViewCell>
+                                                        </cells>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="xaD-E9-vSo" id="4Pq-MJ-avY"/>
+                                                            <outlet property="delegate" destination="xaD-E9-vSo" id="3Cg-1b-1ne"/>
+                                                        </connections>
+                                                    </collectionView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="ApV-0H-AYS" secondAttribute="trailing" constant="5" id="01R-mE-MXW"/>
+                                                    <constraint firstItem="ApV-0H-AYS" firstAttribute="top" secondItem="dj5-Sl-4zL" secondAttribute="top" constant="5" id="5MC-HY-VME"/>
+                                                    <constraint firstItem="ApV-0H-AYS" firstAttribute="leading" secondItem="dj5-Sl-4zL" secondAttribute="leading" constant="5" id="Scc-o3-mrp"/>
                                                     <constraint firstAttribute="height" constant="129" id="Xcy-ky-wQw"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ApV-0H-AYS" secondAttribute="bottom" constant="5" id="yM8-iF-ohI"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="starSize">
@@ -1428,65 +1503,141 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZw-xK-mv0">
-                                                <rect key="frame" x="8" y="456" width="382" height="47"/>
+                                                <rect key="frame" x="8" y="464" width="382" height="47"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hr5-1f-fyY">
+                                                        <rect key="frame" x="8" y="8" width="366" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="47" id="SnZ-Ly-S84"/>
+                                                    <constraint firstAttribute="bottom" secondItem="hr5-1f-fyY" secondAttribute="bottom" constant="8" id="WyT-3x-OBf"/>
+                                                    <constraint firstItem="hr5-1f-fyY" firstAttribute="top" secondItem="FZw-xK-mv0" secondAttribute="top" constant="8" id="dtO-aJ-Mgb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hr5-1f-fyY" secondAttribute="trailing" constant="8" id="e0Z-fr-Q3Q"/>
+                                                    <constraint firstItem="hr5-1f-fyY" firstAttribute="leading" secondItem="FZw-xK-mv0" secondAttribute="leading" constant="8" id="nek-Qw-C20"/>
                                                 </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1eR-P0-BP5">
-                                                <rect key="frame" x="10" y="652" width="382" height="50"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="7AJ-aU-gFg"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDp-Af-Woy">
-                                                <rect key="frame" x="8" y="722" width="382" height="114"/>
-                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="8" y="949" width="382" height="106"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service Charges" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3t-ys-JZE">
+                                                        <rect key="frame" x="8" y="8" width="366" height="33"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="33" id="D1G-ZX-P3V"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway Medium" pointSize="20"/>
+                                                        <color key="textColor" red="0.0052183414809999999" green="0.30667454" blue="0.46874523159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1000000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izk-zn-hci">
+                                                        <rect key="frame" x="120.66666666666666" y="49" width="140.99999999999997" height="57"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="57" id="gNO-qQ-fgk"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Raleway-ExtraBold" family="Raleway ExtraBold" pointSize="29"/>
+                                                        <color key="textColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="114" id="c2r-aw-GSY"/>
+                                                    <constraint firstAttribute="height" constant="106" id="IqH-z2-JPT"/>
+                                                    <constraint firstItem="A3t-ys-JZE" firstAttribute="top" secondItem="fDp-Af-Woy" secondAttribute="top" constant="8" id="J9v-lf-Iw7"/>
+                                                    <constraint firstItem="izk-zn-hci" firstAttribute="top" secondItem="A3t-ys-JZE" secondAttribute="bottom" constant="8" id="bOz-g3-YEl"/>
+                                                    <constraint firstItem="izk-zn-hci" firstAttribute="centerX" secondItem="fDp-Af-Woy" secondAttribute="centerX" id="jJf-a6-upj"/>
+                                                    <constraint firstItem="A3t-ys-JZE" firstAttribute="leading" secondItem="fDp-Af-Woy" secondAttribute="leading" constant="8" id="l0u-Qm-W4T"/>
+                                                    <constraint firstAttribute="trailing" secondItem="A3t-ys-JZE" secondAttribute="trailing" constant="8" id="uCT-nh-lEw"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgw-P4-A0a">
+                                                <rect key="frame" x="8" y="738" width="382" height="203"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eR-P0-BP5" customClass="CosmosView" customModule="Cosmos">
+                                                        <rect key="frame" x="55" y="8" width="252" height="52"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="52" id="Jgz-dA-WPl"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                                <real key="value" value="48"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                <real key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                                <color key="value" red="0.0052183414809999999" green="0.30667454" blue="0.46874523159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                                <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                                                <real key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BN0-SH-jGU">
+                                                        <rect key="frame" x="8" y="86" width="366" height="109"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="109" id="Hkj-Ev-gDG"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="BN0-SH-jGU" secondAttribute="bottom" constant="8" id="5hT-dT-tUQ"/>
+                                                    <constraint firstItem="BN0-SH-jGU" firstAttribute="top" secondItem="1eR-P0-BP5" secondAttribute="bottom" constant="26" id="ARd-DK-YZa"/>
+                                                    <constraint firstItem="BN0-SH-jGU" firstAttribute="leading" secondItem="qgw-P4-A0a" secondAttribute="leading" constant="8" id="G2l-FX-drw"/>
+                                                    <constraint firstItem="1eR-P0-BP5" firstAttribute="leading" secondItem="qgw-P4-A0a" secondAttribute="leading" constant="55" id="MfI-Zl-fNz"/>
+                                                    <constraint firstAttribute="height" constant="203" id="QIb-Tf-mUG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="BN0-SH-jGU" secondAttribute="trailing" constant="8" id="RcA-qg-Iko"/>
+                                                    <constraint firstItem="1eR-P0-BP5" firstAttribute="top" secondItem="qgw-P4-A0a" secondAttribute="top" constant="8" id="Y9V-Vf-Pg9"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="dj5-Sl-4zL" firstAttribute="top" secondItem="FZw-xK-mv0" secondAttribute="bottom" id="0KS-N6-6R8"/>
-                                            <constraint firstItem="fDp-Af-Woy" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" constant="8" id="0qO-gm-Uw6"/>
                                             <constraint firstItem="dj5-Sl-4zL" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" constant="8" id="1eJ-iw-Hck"/>
                                             <constraint firstItem="dXP-E5-pf4" firstAttribute="top" secondItem="Rbp-Mg-mMm" secondAttribute="top" id="1iL-0m-Q7U"/>
-                                            <constraint firstItem="Etl-FS-1nq" firstAttribute="top" secondItem="Vrv-Ne-l0v" secondAttribute="bottom" id="3Xx-GF-yNc"/>
                                             <constraint firstItem="4Bq-pg-HCb" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" constant="8" id="3xL-bp-foU"/>
-                                            <constraint firstItem="Vrv-Ne-l0v" firstAttribute="top" secondItem="dXP-E5-pf4" secondAttribute="bottom" constant="8" id="8HO-t0-0hn"/>
                                             <constraint firstAttribute="trailing" secondItem="dXP-E5-pf4" secondAttribute="trailing" id="EOj-lw-Ovm"/>
-                                            <constraint firstItem="1eR-P0-BP5" firstAttribute="top" secondItem="dj5-Sl-4zL" secondAttribute="bottom" constant="20" id="NBR-4r-oJL"/>
+                                            <constraint firstAttribute="trailing" secondItem="qgw-P4-A0a" secondAttribute="trailing" constant="8" id="FQI-ud-jvc"/>
+                                            <constraint firstItem="qgw-P4-A0a" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" constant="8" id="H5u-6p-Eb7"/>
+                                            <constraint firstItem="fDp-Af-Woy" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" constant="8" id="LQe-ze-cgM"/>
+                                            <constraint firstItem="Etl-FS-1nq" firstAttribute="top" secondItem="Vrv-Ne-l0v" secondAttribute="bottom" constant="8" id="M8s-iC-rHT"/>
+                                            <constraint firstItem="fDp-Af-Woy" firstAttribute="top" secondItem="qgw-P4-A0a" secondAttribute="bottom" constant="8" id="O0n-SO-U7U"/>
                                             <constraint firstItem="4Bq-pg-HCb" firstAttribute="top" secondItem="Etl-FS-1nq" secondAttribute="bottom" id="Oq2-05-5Ou"/>
-                                            <constraint firstAttribute="trailing" secondItem="fDp-Af-Woy" secondAttribute="trailing" constant="8" id="PLn-YN-OdP"/>
+                                            <constraint firstItem="qgw-P4-A0a" firstAttribute="top" secondItem="dj5-Sl-4zL" secondAttribute="bottom" constant="98" id="PLT-rt-bHT"/>
                                             <constraint firstAttribute="trailing" secondItem="4Bq-pg-HCb" secondAttribute="trailing" constant="8" id="PvH-gL-899"/>
+                                            <constraint firstItem="Vrv-Ne-l0v" firstAttribute="top" secondItem="dXP-E5-pf4" secondAttribute="bottom" constant="8" id="RSb-89-Qbm"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vrv-Ne-l0v" secondAttribute="trailing" constant="8" id="T8M-FU-Ch1"/>
                                             <constraint firstItem="FZw-xK-mv0" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" constant="8" id="VPb-Ye-B7z"/>
-                                            <constraint firstItem="fDp-Af-Woy" firstAttribute="top" secondItem="1eR-P0-BP5" secondAttribute="bottom" constant="20" id="Xky-TH-Lsa"/>
                                             <constraint firstItem="Etl-FS-1nq" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" constant="8" id="ZG9-xS-JZu"/>
-                                            <constraint firstAttribute="height" constant="855" id="ZJv-BC-zYK"/>
-                                            <constraint firstItem="1eR-P0-BP5" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" constant="8" id="aRy-9u-pUt"/>
-                                            <constraint firstAttribute="trailing" secondItem="1eR-P0-BP5" secondAttribute="trailing" constant="8" id="bxt-tp-Nlg"/>
-                                            <constraint firstItem="Vrv-Ne-l0v" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" constant="8" id="h9C-u1-uu0"/>
+                                            <constraint firstAttribute="trailing" secondItem="fDp-Af-Woy" secondAttribute="trailing" constant="8" id="bI4-sr-ZvP"/>
+                                            <constraint firstItem="Vrv-Ne-l0v" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" constant="8" id="eoF-07-gac"/>
                                             <constraint firstAttribute="trailing" secondItem="Etl-FS-1nq" secondAttribute="trailing" constant="8" id="hMJ-kF-I7x"/>
-                                            <constraint firstAttribute="trailing" secondItem="Vrv-Ne-l0v" secondAttribute="trailing" constant="8" id="k8i-bL-Fdx"/>
                                             <constraint firstAttribute="trailing" secondItem="FZw-xK-mv0" secondAttribute="trailing" constant="8" id="kcA-Fw-TIz"/>
                                             <constraint firstItem="FZw-xK-mv0" firstAttribute="top" secondItem="4Bq-pg-HCb" secondAttribute="bottom" constant="11" id="sU4-j0-liq"/>
                                             <constraint firstAttribute="trailing" secondItem="dj5-Sl-4zL" secondAttribute="trailing" constant="8" id="sfw-3V-JOX"/>
+                                            <constraint firstAttribute="height" constant="1055" id="x3n-z1-3N7"/>
                                             <constraint firstItem="dXP-E5-pf4" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" id="zm2-sB-BXQ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ceS-GG-Gbo" firstAttribute="leading" secondItem="Rbp-Mg-mMm" secondAttribute="leading" id="F8N-pg-RK3"/>
-                                    <constraint firstItem="Rbp-Mg-mMm" firstAttribute="bottom" secondItem="E7U-qs-ymR" secondAttribute="bottomMargin" constant="8" id="Hn3-nU-57m"/>
+                                    <constraint firstItem="Rbp-Mg-mMm" firstAttribute="bottom" secondItem="E7U-qs-ymR" secondAttribute="bottomMargin" id="Hn3-nU-57m"/>
                                     <constraint firstItem="ceS-GG-Gbo" firstAttribute="top" secondItem="E7U-qs-ymR" secondAttribute="topMargin" id="QLP-eA-eJ5"/>
                                     <constraint firstItem="Rbp-Mg-mMm" firstAttribute="top" secondItem="ceS-GG-Gbo" secondAttribute="bottom" constant="8" id="QNB-1E-NDC"/>
                                     <constraint firstItem="ceS-GG-Gbo" firstAttribute="centerX" secondItem="E7U-qs-ymR" secondAttribute="centerX" id="TBW-Rc-Esr"/>
@@ -1496,7 +1647,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wkm-vt-pCq">
-                                <rect key="frame" x="0.0" y="1150" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="1350" width="414" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See Availability" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxA-UX-Y7x">
                                         <rect key="frame" x="69" y="8" width="114" height="36"/>
@@ -1542,9 +1693,21 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                     <navigationItem key="navigationItem" title="Doctor Bio" id="WaM-VM-UHu">
                         <barButtonItem key="backBarButtonItem" title="Back" id="pCU-Nm-7x3"/>
                     </navigationItem>
-                    <size key="freeformSize" width="414" height="1200"/>
+                    <size key="freeformSize" width="414" height="1400"/>
                     <connections>
-                        <outlet property="availabilityVu" destination="wkm-vt-pCq" id="SC9-ny-aEB"/>
+                        <outlet property="availabilityVu" destination="wkm-vt-pCq" id="moR-SH-xhM"/>
+                        <outlet property="backGroundLbl" destination="Vrv-Ne-l0v" id="dS5-LE-X8d"/>
+                        <outlet property="docImg" destination="pkY-pi-WZ8" id="vZ2-6U-Mbw"/>
+                        <outlet property="docNameLbl" destination="8ZB-ac-XWT" id="wi1-Vs-shb"/>
+                        <outlet property="expVu" destination="4Bq-pg-HCb" id="OIJ-nV-1Er"/>
+                        <outlet property="langCollecVu" destination="ApV-0H-AYS" id="JAl-R6-6Wf"/>
+                        <outlet property="langVu" destination="dj5-Sl-4zL" id="910-Gt-Alc"/>
+                        <outlet property="ratingVu" destination="qgw-P4-A0a" id="c8c-8z-ZAn"/>
+                        <outlet property="reviewStar" destination="1eR-P0-BP5" id="69o-C9-grN"/>
+                        <outlet property="reviewTxtFld" destination="BN0-SH-jGU" id="4Ae-xZ-Agj"/>
+                        <outlet property="serviceLbl" destination="izk-zn-hci" id="09G-CY-xI4"/>
+                        <outlet property="serviceVu" destination="fDp-Af-Woy" id="xgX-m1-QRp"/>
+                        <outlet property="topVu" destination="ceS-GG-Gbo" id="nQc-ZQ-ed2"/>
                         <segue destination="ELX-xr-yYW" kind="push" identifier="toavailble" id="uU7-LY-JHE"/>
                     </connections>
                 </viewController>
@@ -3496,7 +3659,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                     <constraint firstItem="YOb-sQ-Api" firstAttribute="top" secondItem="hxj-nl-EW8" secondAttribute="top" constant="8" id="zMm-yj-dwt"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m40-9O-a0t">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m40-9O-a0t">
                                 <rect key="frame" x="0.0" y="192" width="414" height="544"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -3647,7 +3810,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zeeshan Ashraf" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jza-11-7PG">
-                                                <rect key="frame" x="83" y="25" width="112" height="50"/>
+                                                <rect key="frame" x="83" y="25" width="117.33333333333331" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="353-f9-W0t"/>
                                                 </constraints>
@@ -3677,7 +3840,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Child" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4b-FD-3LP">
-                                                <rect key="frame" x="82" y="25" width="67.666666666666686" height="36"/>
+                                                <rect key="frame" x="82" y="25" width="69.333333333333314" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="x3e-dr-e8c"/>
                                                 </constraints>
@@ -3710,7 +3873,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                         <rect key="frame" x="8" y="315" width="398" height="139"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Someone Else?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZk-a7-RPf">
-                                                <rect key="frame" x="8" y="8" width="119" height="26"/>
+                                                <rect key="frame" x="8.0000000000000071" y="8" width="120.66666666666669" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="26" id="mZX-js-ID0"/>
                                                 </constraints>
@@ -4247,7 +4410,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                 <rect key="frame" x="0.0" y="64" width="414" height="87"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you have any medical conditions?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdO-IG-frD">
-                                        <rect key="frame" x="48" y="32.333333333333329" width="318" height="22.333333333333329"/>
+                                        <rect key="frame" x="40" y="32.333333333333329" width="334.33333333333331" height="22.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="19"/>
                                         <color key="textColor" red="0.0052183414809999999" green="0.30667454" blue="0.46874523159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>

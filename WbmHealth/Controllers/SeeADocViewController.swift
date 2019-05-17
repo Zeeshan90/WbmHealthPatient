@@ -8,24 +8,33 @@
 
 import UIKit
 
+struct optionStruct {
+    var title: String?
+    var waitTime: String?
+    var certify: String?
+}
 class SeeADocViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var seeDocTblVu: UITableView!
      let util = Utils()
+    var optionArr = [optionStruct]()
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+      
+        optionArr.append(optionStruct(title: "See first available", waitTime: "3-5 min waiting time", certify: "Board certified doctors"))
+        optionArr.append(optionStruct(title: "Book a medical visit", waitTime: "Choose your doctor and time", certify: "Board certified doctors"))
         // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return optionArr.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = seeDocTblVu.dequeueReusableCell(withIdentifier: "seedoccell", for: indexPath) as! SeeADocTableViewCell
-        cell.title.text = "Book a mental health session"
-        cell.waitTimeLbl.text = "3-4 waiting time"
-        cell.certifyLbl.text = "Certified Doctors"
+        
+        cell.title.text = optionArr[indexPath.row].title
+        cell.waitTimeLbl.text = optionArr[indexPath.row].certify
+        cell.certifyLbl.text = optionArr[indexPath.row].waitTime
         util.cardView(view: cell.vu)
         return cell
     }

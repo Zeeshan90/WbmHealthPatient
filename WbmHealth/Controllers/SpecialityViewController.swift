@@ -9,7 +9,8 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-class SpecialityViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+import SkeletonView
+class SpecialityViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,SkeletonTableViewDelegate,SkeletonTableViewDataSource {
     
     
     var specialityArr = [Speciality]()
@@ -18,6 +19,7 @@ class SpecialityViewController: UIViewController,UITableViewDelegate,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         getSpeciality()
+        specialityTblVu.isSkeletonable = true
         // Do any additional setup after loading the view.
     }
     
@@ -28,7 +30,8 @@ class SpecialityViewController: UIViewController,UITableViewDelegate,UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = specialityTblVu.dequeueReusableCell(withIdentifier: "specialitycell", for: indexPath) as! SpecialityTableViewCell
         cell.titleLbl.text = specialityArr[indexPath.row].specialityDesc
-        
+        cell.titleLbl.isSkeletonable = true
+        cell.img.isSkeletonable = true
         cell.img.downloaded(from: "\(AppUtils.returnBaseUrl())\(specialityArr[indexPath.row].image!)")
         return cell
     }
@@ -38,6 +41,14 @@ class SpecialityViewController: UIViewController,UITableViewDelegate,UITableView
         WbmDefaults.instance.setString(key: "specialityId", value: selectedCellId!)
         performSegue(withIdentifier: "todoctors", sender: self)
         
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return specialityArr.count
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return "specialitycell"
     }
     
     func getSpeciality(){

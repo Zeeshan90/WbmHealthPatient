@@ -73,6 +73,8 @@
 		067A64E9228036FC00E51319 /* LabDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A64E8228036FC00E51319 /* LabDetail.swift */; };
 		067A64EB228037CA00E51319 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A64EA228037CA00E51319 /* Test.swift */; };
 		067A64ED2280384400E51319 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A64EC2280384400E51319 /* Photo.swift */; };
+		067A9AEA228EB6BC00242F32 /* DocBio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A9AE9228EB6BC00242F32 /* DocBio.swift */; };
+		067A9AEC228ECE5D00242F32 /* LanguageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A9AEB228ECE5D00242F32 /* LanguageCollectionViewCell.swift */; };
 		067E2D942276D10A00E313A7 /* LabortaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E2D932276D10A00E313A7 /* LabortaryTableViewCell.swift */; };
 		067E2D962276D12F00E313A7 /* LabortaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E2D952276D12F00E313A7 /* LabortaryViewController.swift */; };
 		067E2D982276E3FF00E313A7 /* LabCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E2D972276E3FF00E313A7 /* LabCategoryViewController.swift */; };
@@ -203,6 +205,8 @@
 		067A64E8228036FC00E51319 /* LabDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabDetail.swift; sourceTree = "<group>"; };
 		067A64EA228037CA00E51319 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		067A64EC2280384400E51319 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		067A9AE9228EB6BC00242F32 /* DocBio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocBio.swift; sourceTree = "<group>"; };
+		067A9AEB228ECE5D00242F32 /* LanguageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCollectionViewCell.swift; sourceTree = "<group>"; };
 		067E2D932276D10A00E313A7 /* LabortaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabortaryTableViewCell.swift; sourceTree = "<group>"; };
 		067E2D952276D12F00E313A7 /* LabortaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabortaryViewController.swift; sourceTree = "<group>"; };
 		067E2D972276E3FF00E313A7 /* LabCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabCategoryViewController.swift; sourceTree = "<group>"; };
@@ -453,6 +457,7 @@
 				067A64EC2280384400E51319 /* Photo.swift */,
 				065FFE8C22842DE0009D2AD3 /* Speciality.swift */,
 				0661BB0222895BF600D459B2 /* Doctor.swift */,
+				067A9AE9228EB6BC00242F32 /* DocBio.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -499,6 +504,7 @@
 				065FFE8A228427E5009D2AD3 /* SpecialityTableViewCell.swift */,
 				0661BB002289484800D459B2 /* DoctorTableViewCell.swift */,
 				0660ABDD228D328A001BFFD0 /* AvailabilityTableViewCell.swift */,
+				067A9AEB228ECE5D00242F32 /* LanguageCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -625,6 +631,15 @@
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -926,6 +941,7 @@
 				B3E64D632274C85B00C1A9A9 /* TestCollectionViewCell.swift in Sources */,
 				067E2DAC227741F300E313A7 /* ContactusViewController.swift in Sources */,
 				06575F052282ECEC007E95BF /* MedicalTableViewCell.swift in Sources */,
+				067A9AEC228ECE5D00242F32 /* LanguageCollectionViewCell.swift in Sources */,
 				067E2DA822772F0C00E313A7 /* DoctorsTableViewCell.swift in Sources */,
 				065AC0B7227878BC0099B7BF /* MedicalHistoryCollectionViewCell.swift in Sources */,
 				06BDB91F22733BFD007F4ED2 /* MainViewController.swift in Sources */,
@@ -957,6 +973,7 @@
 				066595EA2273096200E893F5 /* WbmHealth.xcdatamodeld in Sources */,
 				067E2D982276E3FF00E313A7 /* LabCategoryViewController.swift in Sources */,
 				06D5F95B228A9F18008E7EC4 /* VerifyCodeViewController.swift in Sources */,
+				067A9AEA228EB6BC00242F32 /* DocBio.swift in Sources */,
 				06D5F954228A8EC7008E7EC4 /* RegisterEmailViewController.swift in Sources */,
 				B350BDCF22759320000447BC /* WorkoutCollectionCell.swift in Sources */,
 				065FFE852283E9BC009D2AD3 /* AddChildViewController.swift in Sources */,
@@ -1141,6 +1158,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WbmHealth/WbmHealth.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9A7874J6KG;
 				INFOPLIST_FILE = WbmHealth/Info.plist;
@@ -1161,6 +1179,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WbmHealth/WbmHealth.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9A7874J6KG;
 				INFOPLIST_FILE = WbmHealth/Info.plist;
