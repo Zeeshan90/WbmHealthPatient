@@ -87,6 +87,11 @@
 		067E2DA822772F0C00E313A7 /* DoctorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E2DA722772F0C00E313A7 /* DoctorsTableViewCell.swift */; };
 		067E2DAA22772F2400E313A7 /* DoctorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E2DA922772F2400E313A7 /* DoctorsViewController.swift */; };
 		067E2DAC227741F300E313A7 /* ContactusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067E2DAB227741F300E313A7 /* ContactusViewController.swift */; };
+		068E776B229272F10015210C /* ExperianceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E776A229272F10015210C /* ExperianceTableViewCell.swift */; };
+		068E776D229273070015210C /* QualificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E776C229273070015210C /* QualificationTableViewCell.swift */; };
+		068E777122927EB30015210C /* Qualification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E777022927EB30015210C /* Qualification.swift */; };
+		068E7774229286050015210C /* ExperianceDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E7773229286050015210C /* ExperianceDetails.swift */; };
+		068E777822928B710015210C /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E777722928B710015210C /* TextField.swift */; };
 		06AB20782276B57500FF00C7 /* WorkoutCategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB20772276B57500FF00C7 /* WorkoutCategoriesController.swift */; };
 		06AB207A2276B59100FF00C7 /* WorkoutDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB20792276B59100FF00C7 /* WorkoutDetailViewController.swift */; };
 		06AB207C2276B6A800FF00C7 /* WorkoutCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB207B2276B6A800FF00C7 /* WorkoutCategoryCollectionCell.swift */; };
@@ -219,6 +224,11 @@
 		067E2DA722772F0C00E313A7 /* DoctorsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsTableViewCell.swift; sourceTree = "<group>"; };
 		067E2DA922772F2400E313A7 /* DoctorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsViewController.swift; sourceTree = "<group>"; };
 		067E2DAB227741F300E313A7 /* ContactusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactusViewController.swift; sourceTree = "<group>"; };
+		068E776A229272F10015210C /* ExperianceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperianceTableViewCell.swift; sourceTree = "<group>"; };
+		068E776C229273070015210C /* QualificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualificationTableViewCell.swift; sourceTree = "<group>"; };
+		068E777022927EB30015210C /* Qualification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qualification.swift; sourceTree = "<group>"; };
+		068E7773229286050015210C /* ExperianceDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperianceDetails.swift; sourceTree = "<group>"; };
+		068E777722928B710015210C /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		06AB20772276B57500FF00C7 /* WorkoutCategoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCategoriesController.swift; sourceTree = "<group>"; };
 		06AB20792276B59100FF00C7 /* WorkoutDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailViewController.swift; sourceTree = "<group>"; };
 		06AB207B2276B6A800FF00C7 /* WorkoutCategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCategoryCollectionCell.swift; sourceTree = "<group>"; };
@@ -458,6 +468,8 @@
 				065FFE8C22842DE0009D2AD3 /* Speciality.swift */,
 				0661BB0222895BF600D459B2 /* Doctor.swift */,
 				067A9AE9228EB6BC00242F32 /* DocBio.swift */,
+				068E777022927EB30015210C /* Qualification.swift */,
+				068E7773229286050015210C /* ExperianceDetails.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,6 +479,7 @@
 			children = (
 				06BDB92222734811007F4ED2 /* AppUtils.swift */,
 				066F8C6D227AF11000451E6D /* WbmDefaults.swift */,
+				068E777722928B710015210C /* TextField.swift */,
 				06575E9822829CD8007E95BF /* Utils.swift */,
 			);
 			path = Utils;
@@ -505,6 +518,8 @@
 				0661BB002289484800D459B2 /* DoctorTableViewCell.swift */,
 				0660ABDD228D328A001BFFD0 /* AvailabilityTableViewCell.swift */,
 				067A9AEB228ECE5D00242F32 /* LanguageCollectionViewCell.swift */,
+				068E776A229272F10015210C /* ExperianceTableViewCell.swift */,
+				068E776C229273070015210C /* QualificationTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -925,6 +940,7 @@
 				06AB20782276B57500FF00C7 /* WorkoutCategoriesController.swift in Sources */,
 				065AC0B322786BDA0099B7BF /* MedicalHistoryViewController.swift in Sources */,
 				06BDB9262273493E007F4ED2 /* SideMenu.swift in Sources */,
+				068E7774229286050015210C /* ExperianceDetails.swift in Sources */,
 				0661BB012289484800D459B2 /* DoctorTableViewCell.swift in Sources */,
 				065AC0B1227839540099B7BF /* DocDetailViewController.swift in Sources */,
 				064FFEE9227AD39A004ED6A1 /* AppointAprovedViewController.swift in Sources */,
@@ -938,6 +954,7 @@
 				06BDB92922734BD8007F4ED2 /* LeftMenuViewController.swift in Sources */,
 				06BDB92322734811007F4ED2 /* AppUtils.swift in Sources */,
 				06575E9922829CD8007E95BF /* Utils.swift in Sources */,
+				068E777822928B710015210C /* TextField.swift in Sources */,
 				B3E64D632274C85B00C1A9A9 /* TestCollectionViewCell.swift in Sources */,
 				067E2DAC227741F300E313A7 /* ContactusViewController.swift in Sources */,
 				06575F052282ECEC007E95BF /* MedicalTableViewCell.swift in Sources */,
@@ -950,6 +967,7 @@
 				066595E22273096200E893F5 /* AppDelegate.swift in Sources */,
 				067A64ED2280384400E51319 /* Photo.swift in Sources */,
 				0660ABE0228D32AA001BFFD0 /* AvailabilityViewController.swift in Sources */,
+				068E776B229272F10015210C /* ExperianceTableViewCell.swift in Sources */,
 				0661BB0322895BF600D459B2 /* Doctor.swift in Sources */,
 				065039872278192100F83929 /* PrivacyPolicyViewController.swift in Sources */,
 				067E2DA22277118E00E313A7 /* HospitalTableViewCell.swift in Sources */,
@@ -962,11 +980,13 @@
 				06D5F950228A8E98008E7EC4 /* LoginViewController.swift in Sources */,
 				06BDB92122734348007F4ED2 /* LeftTableViewCell.swift in Sources */,
 				06D5F95D228AA523008E7EC4 /* PasswordViewController.swift in Sources */,
+				068E776D229273070015210C /* QualificationTableViewCell.swift in Sources */,
 				B3E64D612274C84500C1A9A9 /* TopCollectionViewCell.swift in Sources */,
 				06D5F963228ACC21008E7EC4 /* AddFamilyViewController.swift in Sources */,
 				065FFE8B228427E5009D2AD3 /* SpecialityTableViewCell.swift in Sources */,
 				065FFE8922842694009D2AD3 /* SpecialityViewController.swift in Sources */,
 				067E2DA62277258E00E313A7 /* SeeDocTableViewCell.swift in Sources */,
+				068E777122927EB30015210C /* Qualification.swift in Sources */,
 				067E2D9E2277110500E313A7 /* HospitalViewController.swift in Sources */,
 				067A64EB228037CA00E51319 /* Test.swift in Sources */,
 				067E2DAA22772F2400E313A7 /* DoctorsViewController.swift in Sources */,

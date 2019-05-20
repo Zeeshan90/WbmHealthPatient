@@ -10,6 +10,8 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Cosmos
+import SkeletonView
+
 class DoctorBioViewController: UIViewController {
 
     @IBOutlet weak var serviceVu: UIView!
@@ -26,9 +28,17 @@ class DoctorBioViewController: UIViewController {
     @IBOutlet weak var reviewTxtFld: UITextField!
     @IBOutlet weak var serviceLbl: UILabel!
     @IBOutlet weak var langCollecVu: UICollectionView!
+    
+    @IBOutlet weak var qualVu: UIView!
+    @IBOutlet weak var expTblVu: UITableView!
+    @IBOutlet weak var qualTblVu: UITableView!
+    
     let util = Utils()
     var docBioArr = [DocBio]()
     var lang = [String]()
+    var qualArr = [Qualification]()
+    var expArr = [ExperienceDetail]()
+    var docId: String!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,15 +49,20 @@ class DoctorBioViewController: UIViewController {
         util.cardView(view: langVu)
         util.cardView(view: ratingVu)
         util.cardView(view: serviceVu)
+        util.cardView(view: qualVu)
         docImg.layer.cornerRadius = docImg.frame.height/2
         reviewTxtFld.layer.cornerRadius = 10
+        reviewTxtFld.layer.borderWidth = 0.6
         getDocData()
-        docImg.showSkeleton()
         // Do any additional setup after loading the view.
     }
     
     @objc func tapOnAvailable(){
         performSegue(withIdentifier: "toavailble", sender: self)
+    }
+    
+    @IBAction func subRevBtn(_ sender: Any) {
+        submitReview()
     }
     
     func getDocData(){
@@ -71,6 +86,24 @@ class DoctorBioViewController: UIViewController {
         
     }
     
+    
+    func submitReview(){
+        let params: [String:Any] = ["patient":"5c94754e0948dd2edcb4c299","reviewNo":reviewStar.rating,"comment":reviewTxtFld.text ?? "Very Good Doctor"]
+        let url = "\(AppUtils.returnBaseUrl())/patient/review/add/\(docId!)"
+        print(url)
+        Alamofire.request(url, method: .put, parameters: params).responseJSON{
+            
+            response in
+            if response.result.isSuccess{
+                print(response.result.value!)
+                print("Submitted")
+            }else{
+                print(response.error as Any)
+            }
+        }
+
+    }
+    
     func setDetails(){
         
         for doc in docBioArr{
@@ -79,8 +112,14 @@ class DoctorBioViewController: UIViewController {
             backGroundLbl.text = doc.aboutme
             serviceLbl.text = "PKR \(doc.maxfee ?? "100")"
             lang = doc.language
+            qualArr = doc.qualifications
+            expArr = doc.experianceArr
+            docId = doc.id
         }
+        WbmDefaults.instance.setString(key: "docId", value: docId)
         langCollecVu.reloadData()
+        qualTblVu.reloadData()
+        expTblVu.reloadData()
     }
 
 }
@@ -105,6 +144,36 @@ extension DoctorBioViewController: UICollectionViewDelegate,UICollectionViewData
         return cell
     }
     
+    
+    
+    
+}
+
+extension DoctorBioViewController: UITableViewDataSource,UITableViewDelegate{
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == expTblVu{
+            return expArr.count
+        }else{
+            return qualArr.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == expTblVu{
+            let cell = expTblVu.dequeueReusableCell(withIdentifier: "experiancecell", for: indexPath) as! ExperianceTableViewCell
+            cell.positionLbl.text = expArr[indexPath.row].position
+            cell.workLbl.text = expArr[indexPath.row].workPlace
+            return cell
+        }else{
+            let cell = qualTblVu.dequeueReusableCell(withIdentifier: "qualificationcell", for: indexPath) as! QualificationTableViewCell
+            cell.instituteLbl.text = qualArr[indexPath.row].institute
+            cell.qualificationLbl.text = qualArr[indexPath.row].qualificationName
+            cell.specialityLbl.text = qualArr[indexPath.row].qualificationSpeciality
+            return cell
+        }
+    }
     
     
     

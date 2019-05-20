@@ -19,7 +19,7 @@ class SpecialityViewController: UIViewController,UITableViewDelegate,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         getSpeciality()
-        specialityTblVu.isSkeletonable = true
+        //specialityTblVu.showGradientSkeleton()
         // Do any additional setup after loading the view.
     }
     
@@ -30,8 +30,6 @@ class SpecialityViewController: UIViewController,UITableViewDelegate,UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = specialityTblVu.dequeueReusableCell(withIdentifier: "specialitycell", for: indexPath) as! SpecialityTableViewCell
         cell.titleLbl.text = specialityArr[indexPath.row].specialityDesc
-        cell.titleLbl.isSkeletonable = true
-        cell.img.isSkeletonable = true
         cell.img.downloaded(from: "\(AppUtils.returnBaseUrl())\(specialityArr[indexPath.row].image!)")
         return cell
     }
@@ -69,7 +67,7 @@ class SpecialityViewController: UIViewController,UITableViewDelegate,UITableView
                         self.specialityArr.append(special)
                     }
                 }
-                
+                self.specialityTblVu.hideSkeleton()
                 DispatchQueue.main.async {
                     self.specialityTblVu.reloadData()
                 }
