@@ -38,6 +38,7 @@ class SpecialityViewController: UIViewController,UITableViewDelegate,UITableView
        let selectedCellId = specialityArr[indexPath.row].id
         WbmDefaults.instance.setString(key: "specialityId", value: selectedCellId!)
         performSegue(withIdentifier: "todoctors", sender: self)
+        specialityTblVu.deselectRow(at: indexPath, animated: true)
         
     }
     

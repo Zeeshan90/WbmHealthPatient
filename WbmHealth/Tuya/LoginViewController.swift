@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func forgetPassword(_ sender: Any) {
+        
     }
     
     @IBAction func verifyCodeLogin(_ sender: Any) {
@@ -37,8 +38,17 @@ class LoginViewController: UIViewController {
             self.performSegue(withIdentifier: "createfamily", sender: self)
         }, failure: { (error) in
             if let e = error {
+                self.getAlert(message: "Enter Valid credentials", title: "Wrong Credientials")
                 print("login failure: \(e)")
             }
         })
+    }
+    
+    func getAlert(message:String?,title:String?){
+        
+        let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
 }

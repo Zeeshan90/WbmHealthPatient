@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Cosmos
-import SkeletonView
+import ProgressHUD
 
 class DoctorBioViewController: UIViewController {
 
@@ -39,6 +39,7 @@ class DoctorBioViewController: UIViewController {
     var qualArr = [Qualification]()
     var expArr = [ExperienceDetail]()
     var docId: String!
+    var patientId: String!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,6 +55,10 @@ class DoctorBioViewController: UIViewController {
         reviewTxtFld.layer.cornerRadius = 10
         reviewTxtFld.layer.borderWidth = 0.6
         getDocData()
+        ProgressHUD.show("Loading..")
+        ProgressHUD.spinnerColor(#colorLiteral(red: 0.1215686275, green: 0.3019607843, blue: 0.4588235294, alpha: 1))
+        patientId = "5c94754e0948dd2edcb4c299"
+        AppointmentViewController.request.patientId = patientId
         // Do any additional setup after loading the view.
     }
     
@@ -73,7 +78,7 @@ class DoctorBioViewController: UIViewController {
             response in
             
             if response.result.isSuccess{
-                
+                ProgressHUD.dismiss()
                 let json = JSON(response.result.value!)
                 print(json)
                 
@@ -88,13 +93,18 @@ class DoctorBioViewController: UIViewController {
     
     
     func submitReview(){
-        let params: [String:Any] = ["patient":"5c94754e0948dd2edcb4c299","reviewNo":reviewStar.rating,"comment":reviewTxtFld.text ?? "Very Good Doctor"]
+        ProgressHUD.show()
+        let params: [String:Any] = ["patient":patientId,"reviewNo":reviewStar.rating,"comment":reviewTxtFld.text ?? "Very Good Doctor"]
         let url = "\(AppUtils.returnBaseUrl())/patient/review/add/\(docId!)"
         print(url)
         Alamofire.request(url, method: .put, parameters: params).responseJSON{
             
             response in
             if response.result.isSuccess{
+                ProgressHUD.dismiss()
+                
+                self.present(AppUtils.returnToast(string: "Review Submitted"), animated: true)
+                self.present(AppUtils.toast(string: "Review"), animated: true)
                 print(response.result.value!)
                 print("Submitted")
             }else{

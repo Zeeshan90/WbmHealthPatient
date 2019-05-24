@@ -117,6 +117,9 @@ class AppUtils{
             style: .navigationBar)
     }
     
+    static func toast(string: String) -> SwiftToast{
+        return SwiftToast(text: string, textAlignment: NSTextAlignment.center, image: nil, backgroundColor: UIColor.white, textColor: UIColor.black, font: nil, duration: 1.2, minimumHeight: CGFloat(100.0), statusBarStyle: UIStatusBarStyle.lightContent, aboveStatusBar: false, isUserInteractionEnabled: false, target: nil, style: SwiftToastStyle.statusBar)
+    }
     
     // Delete All entries in the Coredata Entry
     static  func deleteEntityAllData(entity : String) {

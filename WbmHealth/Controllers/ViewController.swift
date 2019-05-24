@@ -23,7 +23,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var nearByHospitalVu: UIView!
     
     @IBOutlet weak var bottomVu: UIView!
-    
+    var window: UIWindow?
+    @IBOutlet weak var wirelessBtn: UIBarButtonItem!
     @IBOutlet weak var testCollectionView: UICollectionView!
     @IBOutlet weak var topCollectionView: UICollectionView!
     
@@ -33,7 +34,8 @@ class ViewController: UIViewController {
     let util = Utils()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.rightBarButtonItem = nil
+        self.navigationItem.rightBarButtonItem = self.wirelessBtn
         util.cardView(view: labortaryVu)
         util.cardView(view: labortaryVu)
         util.cardView(view: medHisVu)
@@ -65,7 +67,18 @@ class ViewController: UIViewController {
         let nearHosp = UITapGestureRecognizer(target: self, action: #selector(tapOnNearHosp))
         nearByHospitalVu.addGestureRecognizer(nearHosp)
     }
+    
+    
+    @IBAction func wirelessBtn(_ sender: Any) {
+        
+        let rootController = UIStoryboard(name: "Registration", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(rootController, animated: true)
 
+        //self.present(rootController, animated: true, completion: nil)
+        //self.window?.rootViewController = rootController
+    }
+    
+    
     @objc func tapOnMedHis(){
         performSegue(withIdentifier: "medicalhistory", sender: self)
     }

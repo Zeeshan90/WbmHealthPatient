@@ -13,11 +13,12 @@ import SwiftyJSON
 class DoctorViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var doctorArr = [Doctor]()
-
     @IBOutlet weak var doctorTblVu: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getDoctors()
+        doctorTblVu.showSkeleton()
         // Do any additional setup after loading the view.
     }
     
@@ -40,6 +41,7 @@ class DoctorViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         let docId:String = doctorArr[indexPath.row].id
         WbmDefaults.instance.setString(key: "docId", value: docId)
+        AppointmentViewController.request.doctorId = docId              // Saving Doctor Id in AppointRequest variable
         performSegue(withIdentifier: "doctorbio", sender: self)
         doctorTblVu.deselectRow(at: indexPath, animated: true)
     }
@@ -51,6 +53,7 @@ class DoctorViewController: UIViewController,UITableViewDelegate,UITableViewData
             response in
             
             if response.result.isSuccess{
+                self.doctorTblVu.hideSkeleton()
                 let json = JSON(response.result.value!)
                 print(json)
                 
