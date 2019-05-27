@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = nil
-        self.navigationItem.rightBarButtonItem = self.wirelessBtn
+        //self.navigationItem.rightBarButtonItem = self.wirelessBtn
         util.cardView(view: labortaryVu)
         util.cardView(view: labortaryVu)
         util.cardView(view: medHisVu)

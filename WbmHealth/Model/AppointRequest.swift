@@ -22,13 +22,13 @@ class AppointRequest{
     
     func returnAppointReq() -> [String:Any]{
         let requestArr: [String:Any] = [
-            "apptDate":"\(apptDate)",
-            "apptTime": "\(apptTime)",
-            "patient": "\(patientId)",
-            "doctor": "\(doctorId)",
-            "resourceId": "\(resourceId)" as Any,
-            "apptReason": "\(apptReason)",
-            "email": email
+            "apptDate":"\(apptDate!)",
+            "apptTime": "\(apptTime!)",
+            "patient": "\(patientId!)",
+            "doctor": "\(doctorId!)",
+            "resourceId": "\(resourceId ?? "")" as Any,
+            "apptReason": "\(apptReason!)",
+            "email": "\(email!)"
         ]
         return requestArr
     }

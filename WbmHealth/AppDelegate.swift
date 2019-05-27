@@ -10,14 +10,49 @@ import UIKit
 import CoreData
 import IQKeyboardManager
 import TuyaSmartBaseKit
+import Firebase
+import FirebaseMessaging
+import FirebaseInstanceID
+import UserNotifications
+import Alamofire
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
 
     var window: UIWindow?
-
+    let gcmMessageIDKey = "gcm.message_id"
+    let notifiicationType = "Notification_Type"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+            
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+        } else {
+            
+            // message appears that it will send you notification
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        application.registerForRemoteNotifications()
+        FirebaseApp.configure()
+        // [START set_messaging_delegate]
+        Messaging.messaging().delegate = self
+        // [END set_messaging_delegate]
+        // Register for remote notifications. This shows a permission dialog on first run, to
+        // show the dialog at a more appropriate time move this registration accordingly.
+        // [START register_for_notifications]
+        
+        Messaging.messaging().isAutoInitEnabled = true
+        
         
         TuyaSmartSDK.sharedInstance()?.start(withAppKey: "xngta74n8ar54q3vqu5w", secretKey: "nkqqky4xdhq8d5e94uhfsqptem54j8wy")
         if ((TuyaSmartSDK.sharedInstance()?.checkVersionUpgrade) != nil) {
@@ -46,6 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+       
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
@@ -54,7 +90,99 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        // If you are receiving a notification message while your app is in the background,
+        // this callback will not be fired till the user taps on the notification launching the application.
+        // TODO: Handle data of notification
+        
+        // With swizzling disabled you must let Messaging know about the message, for Analytics
+        // Messaging.messaging().appDidReceiveMessage(userInfo)
+        
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("didReceiveRemoteNotification im here  Message ID: \(messageID)")
+        }
+        
+        // Print full message.
+        print(userInfo)
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        // If you are receiving a notification message while your app is in the background,
+        // this callback will not be fired till the user taps on the notification launching the application.
+        // TODO: Handle data of notification
+        
+        // With swizzling disabled you must let Messaging know about the message, for Analytics
+        // Messaging.messaging().appDidReceiveMessage(userInfo)
+        
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        
+        // Print full message.
+        print(userInfo)
+        
+        completionHandler(UIBackgroundFetchResult.newData)
+    }
+    
+    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+        
+        print("\(remoteMessage.appData.description)")
+        WbmDefaults.instance.setFireBaseToken(value: remoteMessage.appData.description)
+        
+    }
+    
+    // [END receive_message]
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Unable to register for remote notifications: \(error.localizedDescription)")
+    }
+    
+    // This function is added here only for debugging purposes, and can be removed if swizzling is enabled.
+    // If swizzling is disabled then this function must be implemented so that the APNs token can be paired to
+    // the FCM registration token.
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(fcmToken)")
+        
+        let dataDict:[String: String] = ["token": fcmToken]
+        
+        
+        print("\(fcmToken)")
+        WbmDefaults.instance.setFireBaseToken(value: fcmToken)
+        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+        // TODO: If necessary send token to application server.
+        // Note: This callback is fired at each app startup and whenever a new token is generated.
+    }
+    
+    func applicationReceivedRemoteMessage(_ remoteMessage: MessagingRemoteMessage) {
+        print("recieve notifications")
+        print(remoteMessage.appData)
+        print("</ recieve notifications >")
+    }
+    
+    func application(application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        Messaging.messaging().apnsToken = deviceToken as Data
+        sendDeviceToken(token: deviceToken)
+    }
 
+    func sendDeviceToken(token: NSData){
+        
+        let url = "\(AppUtils.returnBaseUrl())/patient/edit/token/5c94754e0948dd2edcb4c299"
+        Alamofire.request(url, method: .put, parameters: ["token": token]).responseJSON{
+            response in
+            
+            if response.result.isSuccess{
+                
+                print("Device Token sended successfully")
+                
+            }else{
+                print(response.error?.localizedDescription as Any)
+            }
+        }
+    }
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
@@ -194,3 +322,94 @@ extension UIImage {
     }
 
 }
+
+@available(iOS 10, *)
+extension AppDelegate : UNUserNotificationCenterDelegate {
+    
+    // Receive displayed notifications for iOS 10 devices.
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+        
+        // With swizzling disabled you must let Messaging know about the message, for Analytics
+        // Messaging.messaging().appDidReceiveMessage(userInfo)
+        
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("when notification recieved willPresent notification Message ID: \(messageID)")
+//            let rootController = UIStoryboard(name: "Ride", bundle: Bundle.main).instantiateInitialViewController()
+//            self.window?.rootViewController = rootController
+        }
+        print(notification)
+        
+        // Print full message.
+        print(userInfo)
+//        if let notification = userInfo[notifiicationType]
+//        {
+//            if "\(notification)" == WbmDefaults.RequestAccepted || "\(notification)" == "DRIVER_ARRIVED" ||   "\(notification)" == "RIDE_STARTED" ||   "\(notification)" == WbmDefaults.RideCompleted{
+//                WbmDefaults.instance.setAppState(value: "\(notification)")
+//                startRideStoryBoard()
+//
+//            }else if "\(notification)" == WbmDefaults.RideCancelled {
+//                WbmDefaults.instance.setAppState(value: WbmDefaults.RideCancelled)
+//                startMainScreen()
+//            }
+//
+//        }
+        // Change this to your preferred presentation option
+        completionHandler([.alert,.sound,.badge])
+    }
+    
+    
+//    func startRideStoryBoard()
+//    {
+//        if WbmDefaults.instance.getAppState() == WbmDefaults.RideCompleted
+//        {
+//            let rootController = UIStoryboard(name: "Ride", bundle: Bundle.main).instantiateViewController(withIdentifier: "BillViewController")
+//            self.window?.rootViewController = rootController
+//        }
+//        else{
+//            let rootController = UIStoryboard(name: "Ride", bundle: Bundle.main).instantiateInitialViewController()
+//            self.window?.rootViewController = rootController
+//        }
+//    }
+    
+//    func startMainScreen()
+//    {
+//        let rootController = UIStoryboard(name: "MainMenu", bundle: Bundle.main).instantiateInitialViewController()
+//        self.window?.rootViewController = rootController
+//    }
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        let userInfo = response.notification.request.content.userInfo
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("when notification taps didReceive response Message ID: \(messageID)")
+        }
+        
+        // Print full message.
+//        print(userInfo)
+//        if let notification = userInfo[notifiicationType]
+//        {
+//            print(notification)
+//
+//            if "\(notification)" == WbmDefaults.RequestAccepted || "\(notification)" == "DRIVER_ARRIVED" ||   "\(notification)" == "RIDE_STARTED" ||
+//                "\(notification)" == WbmDefaults.RideCompleted {
+//                WbmDefaults.instance.setAppState(value: "\(notification)")
+//                startRideStoryBoard()
+//
+//            }else if "\(notification)" == WbmDefaults.RideCancelled {
+//                WbmDefaults.instance.setAppState(value: WbmDefaults.RideCancelled)
+//                startMainScreen()
+//            }
+        
+            completionHandler()
+            
+        }
+}
+

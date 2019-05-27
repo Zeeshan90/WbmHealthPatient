@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060E4E94229BB81A005E8DB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 060E4E93229BB81A005E8DB3 /* GoogleService-Info.plist */; };
 		062D1576229563EC00346C19 /* DeviceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D1575229563EC00346C19 /* DeviceListViewController.swift */; };
 		062D1578229563FE00346C19 /* DeviceListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D1577229563FE00346C19 /* DeviceListTableViewCell.swift */; };
 		064FFEE9227AD39A004ED6A1 /* AppointAprovedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064FFEE8227AD39A004ED6A1 /* AppointAprovedViewController.swift */; };
@@ -147,6 +148,7 @@
 
 /* Begin PBXFileReference section */
 		04B7D099CEA2DF8640F21630 /* Pods_WbmHealthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WbmHealthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		060E4E93229BB81A005E8DB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		062D1575229563EC00346C19 /* DeviceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewController.swift; sourceTree = "<group>"; };
 		062D1577229563FE00346C19 /* DeviceListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListTableViewCell.swift; sourceTree = "<group>"; };
 		064FFEE8227AD39A004ED6A1 /* AppointAprovedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointAprovedViewController.swift; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				06D5F957228A9071008E7EC4 /* WbmHealth.entitlements */,
+				060E4E93229BB81A005E8DB3 /* GoogleService-Info.plist */,
 				06D5F955228A905D008E7EC4 /* t_s.bmp */,
 				066595E12273096200E893F5 /* AppDelegate.swift */,
 				06575ED12282C746007E95BF /* Fonts */,
@@ -675,6 +678,9 @@
 							com.apple.AccessWiFi = {
 								enabled = 1;
 							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.InAppPurchase = {
 								enabled = 0;
 							};
@@ -734,6 +740,7 @@
 				06575EEC2282C78C007E95BF /* Raleway-SemiBold.ttf in Resources */,
 				06575EF82282C78C007E95BF /* Raleway-BlackItalic.ttf in Resources */,
 				06575ED72282C76E007E95BF /* CinzelDecorative-Black.ttf in Resources */,
+				060E4E94229BB81A005E8DB3 /* GoogleService-Info.plist in Resources */,
 				066595EF2273096400E893F5 /* LaunchScreen.storyboard in Resources */,
 				06575EFA2282C78C007E95BF /* Raleway-Light.ttf in Resources */,
 				06D5F956228A905D008E7EC4 /* t_s.bmp in Resources */,
