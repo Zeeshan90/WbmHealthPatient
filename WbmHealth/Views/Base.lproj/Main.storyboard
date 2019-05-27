@@ -647,6 +647,7 @@
                         <segue destination="aLK-Ut-BPF" kind="show" identifier="maintotestdetail" id="d7v-nx-iG8"/>
                         <segue destination="rfa-aX-5me" kind="presentation" identifier="medicalhistory" id="gkT-db-juh"/>
                         <segue destination="T0O-sQ-AoV" kind="presentation" identifier="seeDoc" id="aQu-RE-1DY"/>
+                        <segue destination="FFz-OO-mNF" kind="presentation" identifier="toappoint" id="3GU-dK-FZP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -910,7 +911,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                         <outlet property="menuTblVu" destination="mGO-q0-39b" id="Nli-pJ-HqM"/>
                         <segue destination="Ncx-dj-CAm" kind="presentation" identifier="contactus" id="9mx-Fn-aHe"/>
                         <segue destination="nOZ-Va-N7k" kind="presentation" identifier="privacypolicy" id="XOO-Ge-exp"/>
-                        <segue destination="FFz-OO-mNF" kind="presentation" identifier="appoinments" id="LXm-RW-yjr"/>
+                        <segue destination="FFz-OO-mNF" kind="presentation" identifier="appointtab" id="mk0-01-4m0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcz-Cj-glj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2490,11 +2491,12 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                         <outlet property="paymentVu" destination="aW3-2P-fNa" id="pUo-so-ZfZ"/>
                         <outlet property="priceLbl" destination="3Ru-7u-lIP" id="RsK-ef-ACw"/>
                         <outlet property="userImg" destination="VKk-ax-3WP" id="h4l-na-Hle"/>
+                        <segue destination="H7e-EW-fkB" kind="showDetail" identifier="tomain" id="tAQ-Lf-262"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GGa-vJ-9p5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18923" y="-921"/>
+            <point key="canvasLocation" x="19059" y="-921"/>
         </scene>
         <!--Workout-->
         <scene sceneID="W9q-JK-Ey5">
@@ -2736,6 +2738,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sns-VD-WMe"/>
                     </view>
+                    <navigationItem key="navigationItem" id="LwK-6x-ZhN"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="leftViewWidth">
                             <real key="value" value="250"/>
@@ -5327,7 +5330,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="208" id="u4K-X0-15e">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="appointcell" rowHeight="208" id="u4K-X0-15e" customClass="ConfirmAppointTableViewCell" customModule="WbmHealth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="208"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u4K-X0-15e" id="4bk-Jq-tuV">
@@ -5381,6 +5384,12 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                                 <constraint firstItem="eI7-3v-a2e" firstAttribute="top" secondItem="4bk-Jq-tuV" secondAttribute="top" constant="10" id="sLd-1a-oTd"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="Vu" destination="eI7-3v-a2e" id="Tqi-mt-pW5"/>
+                                            <outlet property="callBtn" destination="0bX-d0-t7l" id="tuq-c3-9ZI"/>
+                                            <outlet property="descriptionLbl" destination="fGC-Pv-BMB" id="H7f-zM-mzX"/>
+                                            <outlet property="nameLbl" destination="RR8-Nd-I7x" id="g5e-Qy-EPz"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -5425,7 +5434,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="nvc-od-Jeq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pendingcell" id="nvc-od-Jeq" customClass="PendingTableViewCell" customModule="WbmHealth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nvc-od-Jeq" id="cd7-C1-3la">
@@ -5456,6 +5465,9 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="pendingTblVu" destination="4Oe-b8-k5h" id="8HZ-rZ-2gE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XHC-Qh-QIS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -5473,7 +5485,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KC4-v4-Ls8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="declinecell" id="KC4-v4-Ls8" customClass="DeclinedTableViewCell" customModule="WbmHealth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KC4-v4-Ls8" id="cc2-hy-12Q">
@@ -5504,6 +5516,9 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="declinedTblVu" destination="gGu-Re-4uo" id="xni-VB-84w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vb8-zM-fEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -5553,7 +5568,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2M-gO-LFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3130" y="-355"/>
+            <point key="canvasLocation" x="-3130" y="-263"/>
         </scene>
         <!--Approved-->
         <scene sceneID="drI-1G-4aW">
@@ -5739,6 +5754,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
         <image name="shoulder" width="78" height="106.80000305175781"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="3GU-dK-FZP"/>
         <segue reference="d7v-nx-iG8"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -89,7 +89,7 @@ class ViewController: UIViewController {
         
     }
     @objc func tapOnappointment(){
-        
+        performSegue(withIdentifier: "toappoint", sender: self)
     }
     @objc func tapOnseeDoc(){
         performSegue(withIdentifier: "seeDoc", sender: self)

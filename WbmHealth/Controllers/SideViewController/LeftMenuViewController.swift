@@ -36,26 +36,27 @@ class LeftMenuViewController: LGSideMenuController,UITableViewDataSource,UITable
         print(mainMenu[indexPath.row].name)
         let selectedName = mainMenu[indexPath.row].name
         if selectedName == "Home"{
-            print("Home")
+            
         }else if selectedName == "Appoinments"{
-            performSegue(withIdentifier: "appoinments", sender: self)
+            
+            performSegue(withIdentifier: "appointtab", sender: self)
         }else if selectedName == "Profile Setting"{
-            print(selectedName)
+           
         }else if selectedName == "Contact Us"{
             performSegue(withIdentifier: "contactus", sender: self)
 
         }else if selectedName == "About Us"{
-            print(selectedName)
+           
         }
         else if selectedName == "WBM Health Service"{
-            print(selectedName)
+            
         }
         else if selectedName == "Privacy Policy"{
             performSegue(withIdentifier: "privacypolicy", sender: self)
         }else if selectedName == "Logout"{
-            print(selectedName)
+           
         }else if selectedName == "Share"{
-            print(selectedName)
+            
         }
     }
 

@@ -71,6 +71,7 @@ class ConfirmAppointmentViewController: UIViewController,UITableViewDelegate,UIT
                     response in
                     if response.result.isSuccess{
                         
+                        self.performSegue(withIdentifier: "tomain", sender: self)
                     }else{
                         print(response.error as Any)
                     }
