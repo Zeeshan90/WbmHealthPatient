@@ -28,12 +28,17 @@ class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
     @objc func refresh(){
+        labArr = [Labortaries]()
         getAllLabs()
-        self.refreshController.endRefreshing()
+        //self.refreshController.endRefreshing()
     }
     override func viewWillAppear(_ animated: Bool) {
         getAllLabs()
 
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return labArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,9 +49,7 @@ class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewD
        return cell
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return labArr.count
-    }
+   
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "tolabcat", sender: self)
@@ -66,13 +69,14 @@ class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewD
         let url = "\(AppUtils.returnBaseUrl())/patient/laboratory/all"
         Alamofire.request(url, method: .get, parameters: nil).responseJSON{
             response in
-            
+            self.refreshController.endRefreshing()
             if response.result.isSuccess{
+                
                 ProgressHUD.dismiss()
                 let json = JSON(response.result.value!)
                 print(json)
-               
-                for (_,j) in json{
+                
+                for (index,j) in json{
                     do {
                         let labjson = Labortaries(fromJson: j)
                         print(labjson)
@@ -81,7 +85,7 @@ class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewD
                 }
                 
                 DispatchQueue.main.async {
-                    self.labTblVu.reloadData()
+                     self.labTblVu.reloadData()
                 }
                
             }else{

@@ -9,16 +9,18 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-
+import ProgressHUD
 class AppointAprovedViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
   
     
     var appointArr = [ConfirmAppoint]()
     @IBOutlet weak var aprrovedAppointTblVu: UITableView!
-    let card = Utils()
+    let util = Utils()
+    let dateFormatter = DateFormatter()
     override func viewDidLoad() {
         super.viewDidLoad()
         getAppointments()
+        ProgressHUD.show("Please wait")
         // Do any additional setup after loading the view.
     }
     
@@ -29,34 +31,47 @@ class AppointAprovedViewController: UIViewController,UITableViewDelegate,UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = aprrovedAppointTblVu.dequeueReusableCell(withIdentifier: "appointcell", for: indexPath) as! ConfirmAppointTableViewCell
         cell.nameLbl.text = "WBM Health"
-        cell.descriptionLbl.text = "we have booked ahsan ayub doctor for your checkup"
-        card.cardView(view: cell.Vu)
+        let docName: String = appointArr[indexPath.row].doctorName.uppercased()
+        
+        let appointDate:Date = util.convertLongString(date: appointArr[indexPath.row].apptDate)
+        let appointDateStr: String = util.convertShortDate(date: appointDate)
+        let apointTime: String = appointArr[indexPath.row].apptTime
+        let appointReason: String = appointArr[indexPath.row].apptReason
+        cell.descriptionLbl.text = "we have booked \(docName) for your checkup on \(appointDateStr) at \(apointTime) for the following reason \(appointReason)"
+        util.cardView(view: cell.Vu)
+        cell.callBtn.layer.cornerRadius = 10
         return cell
     }
 
     @IBAction func crossBtn(_ sender: Any) {
+        ProgressHUD.dismiss()
         dismiss(animated: true, completion: nil)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 210
     }
     
     func getAppointments(){
-        
-        let url = "\(AppUtils.returnBaseUrl())/patient/appoinment/status/accepted/all/5c94754e0948dd2edcb4c299"
+        appointArr = [ConfirmAppoint]()
+        let url = "\(AppUtils.returnBaseUrl())/patient/appointment/status/accepted/all/5c94754e0948dd2edcb4c299"
         Alamofire.request(url, method: .get, parameters: nil).responseJSON{
             response in
             
+            ProgressHUD.dismiss()
             if response.result.isSuccess{
                 
                 let json: JSON = JSON(response.result.value!)
-                print(json)
+                let resultJson = json["result"]
+                print(resultJson)
                 
-                for (_,j) in json{
+                for (_,j) in resultJson{
                     do {
                         let appointjson = ConfirmAppoint(fromJson: j)
                         self.appointArr.append(appointjson)
                     }
+                }
+                DispatchQueue.main.async {
+                    self.aprrovedAppointTblVu.reloadData()
                 }
                 
             }else{
@@ -64,4 +79,6 @@ class AppointAprovedViewController: UIViewController,UITableViewDelegate,UITable
             }
         }
     }
+    
+
 }

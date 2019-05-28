@@ -10,6 +10,13 @@ import UIKit
 
 class PendingTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var chargesLbl: UILabel!
+    @IBOutlet weak var doctorNameLbl: UILabel!
+    @IBOutlet weak var dateLbl: UILabel!
+    @IBOutlet weak var TimeLbl: UILabel!
+    @IBOutlet weak var vu: UIView!
+    @IBOutlet weak var cancelBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

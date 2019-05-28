@@ -18,7 +18,7 @@ class ConfirmAppoint {
     var apptReason : String!
     var apptTime : String!
     var createdAt : String!
-    //var doctor : Doctor!
+    var doctorName : String!
     var email : String!
     //var patient : Patient!
     var resourceId : String!
@@ -37,12 +37,12 @@ class ConfirmAppoint {
         apptReason = json["apptReason"].stringValue
         apptTime = json["apptTime"].stringValue
         createdAt = json["createdAt"].stringValue
-//        let doctorJson = json["doctor"]
-//        if !doctorJson.isEmpty{
-//            doctor = Doctor(fromJson: doctorJson)
-//        }
+        let doctorJson = json["doctor"]
+        let doctorNameJson = doctorJson["doctor_name"]
+        let givenArray = doctorNameJson["given"].arrayValue
+        doctorName = "\(givenArray[0]) \(givenArray[2])"
         email = json["email"].stringValue
-        let patientJson = json["patient"]
+//        let patientJson = json["patient"]
 //        if !patientJson.isEmpty{
 //            patient = Patient(fromJson: patientJson)
 //        }

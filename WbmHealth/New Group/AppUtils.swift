@@ -13,6 +13,7 @@ class AppUtils{
     
     static let context = (UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
     static let app = (UIApplication.shared.delegate as! AppDelegate )
+    
     static func returnBaseUrl() ->String{
         return "http://192.168.1.185:3031"
     }

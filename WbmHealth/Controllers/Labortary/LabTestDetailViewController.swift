@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-
+import ProgressHUD
 class LabTestDetailViewController: UIViewController {
 
     @IBOutlet weak var requirementVu: UIView!
@@ -32,6 +32,7 @@ class LabTestDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ProgressHUD.show("loading...")
         let labtest = "5c179b836c66fb2d8cdb2b55"
         let labcat = "5c99dd8c542d3240fe961967"
         //getTestDetail(testId: labtest, testCatId: labcat)
@@ -52,7 +53,7 @@ class LabTestDetailViewController: UIViewController {
         let url = "\(AppUtils.returnBaseUrl())/patient/lab/labtests/\(testId)"
         Alamofire.request(url, method: .post, parameters: ["aIndex": "0"]).responseJSON{
             response in
-            
+             ProgressHUD.dismiss()
             if response.result.isSuccess {
                 let json : JSON = JSON(response.result.value!)
                 print(json)
@@ -78,6 +79,7 @@ class LabTestDetailViewController: UIViewController {
         Alamofire.request(url, method: .get, parameters: nil).responseJSON{
             response in
             
+            ProgressHUD.dismiss()
             if response.result.isSuccess {
                 let json : JSON = JSON(response.result.value!)
                 print(json)
