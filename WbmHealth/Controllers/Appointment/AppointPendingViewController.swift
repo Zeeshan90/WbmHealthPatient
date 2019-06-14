@@ -30,6 +30,7 @@ class AppointPendingViewController: UIViewController,UITableViewDataSource,UITab
             self.pendingTblVu.setEmptyMessage("No Pending Appointments")
         }else{
             self.pendingTblVu.restore()
+            
         }
         return pendingArr.count
     }
@@ -96,7 +97,7 @@ class AppointPendingViewController: UIViewController,UITableViewDataSource,UITab
             if response.result.isSuccess{
                 self.getPendingAppoint()
             }else{
-                print(response.error?.localizedDescription as Any)
+                Utils.showAlert(view: self, message: response.error!.localizedDescription, title: "Error")
             }
         }
     }
@@ -126,7 +127,7 @@ class AppointPendingViewController: UIViewController,UITableViewDataSource,UITab
                 }
                 
             }else{
-                print(response.error?.localizedDescription)
+                Utils.showAlert(view: self, message: response.error!.localizedDescription, title: "Error")
             }
         }
         

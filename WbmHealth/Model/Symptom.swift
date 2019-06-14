@@ -1,21 +1,19 @@
 //
-//  Test.swift
+//  Symptom.swift
 //  WbmHealth
 //
-//  Created by WBM on 5/6/19.
+//  Created by WBM on 5/29/19.
 //  Copyright © 2019 WBM. All rights reserved.
 //
 
 import Foundation
 import SwiftyJSON
 
-
-class Photo{
+class Symptom{
     
     var id : String!
-    var contentType : String!
-    var url : String!
-    var data : String!
+    var text : String!
+    
     /**
      * Instantiate the instance using the passed json values to set the properties values
      */
@@ -24,11 +22,7 @@ class Photo{
             return
         }
         id = json["_id"].stringValue
-        contentType = json["contentType"].stringValue
-        url = json["url"].stringValue
-        data = json["data"].stringValue
+        text = json["text"].stringValue
     }
-    
-    
     
 }

@@ -23,6 +23,13 @@ class DoctorViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if doctorArr.count == 0{
+            self.doctorTblVu.setEmptyMessage("No Doctor available")
+        }else{
+            self.doctorTblVu.restore()
+            
+        }
+
         return doctorArr.count
     }
     

@@ -60,7 +60,7 @@ class VerifyCodeViewController: UIViewController {
             case txtFld6:
                 
                 txtFld6.resignFirstResponder()
-                code = txtFld1.text! + txtFld2.text! + txtFld3.text! + txtFld4.text! + txtFld5.text! + txtFld6.text!
+                //code = txtFld1.text! + txtFld2.text! + txtFld3.text! + txtFld4.text! + txtFld5.text! + txtFld6.text!
                 print(code)
                 WbmDefaults.instance.setString(key: "verifycode", value: code)
                 performSegue(withIdentifier: "topassword", sender: self)

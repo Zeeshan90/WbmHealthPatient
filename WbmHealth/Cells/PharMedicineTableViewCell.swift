@@ -1,17 +1,16 @@
 //
-//  LabortaryTableViewCell.swift
+//  PharMedicineTableViewCell.swift
 //  WbmHealth
 //
-//  Created by WBM on 4/29/19.
+//  Created by Zeeshan on 14/06/2019.
 //  Copyright © 2019 WBM. All rights reserved.
 //
 
 import UIKit
 
-class LabortaryTableViewCell: UITableViewCell {
+class PharMedicineTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var labortaryName: UILabel!
-    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var nameLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,10 +21,8 @@ class LabortaryTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    func setData(text: String,imag:String)  {
-        labortaryName.text = text
-        
-    }
 
+    func setData(medName: String){
+        nameLbl.text = medName
+    }
 }

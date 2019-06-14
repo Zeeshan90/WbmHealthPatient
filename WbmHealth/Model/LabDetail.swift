@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class LabDetail {
+    
     var id : String!
     var cost : Int!
     var descriptionField : String!
@@ -34,6 +35,19 @@ class LabDetail {
         let testsJson = json["tests"]
         if !testsJson.isEmpty{
             tests = Test(fromJson: testsJson)
+        }
+        let labTestsArray = json["labTests"].arrayValue
+        for labTestsJson in labTestsArray{
+            id = labTestsJson["_id"].stringValue
+            descriptionField = labTestsJson["description"].stringValue
+            discount = labTestsJson["discount"].intValue
+            price = labTestsJson["price"].intValue
+            rate = labTestsJson["rate"].intValue
+            let testsJson = labTestsJson["tests"]
+            if !testsJson.isEmpty{
+                tests = Test(fromJson: testsJson)
+            }
+            
         }
     }
 }

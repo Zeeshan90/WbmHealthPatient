@@ -120,7 +120,7 @@ class DoctorBioViewController: UIViewController {
              docImg.downloaded(from: "\(AppUtils.returnBaseUrl())\(doc.photo!)")
             docNameLbl.text = doc.doctorName
             backGroundLbl.text = doc.aboutme
-            serviceLbl.text = "PKR \(doc.maxfee ?? "100")"
+            serviceLbl.text = "PKR \(doc.maxfee ?? "1000")"
             lang = doc.language
             qualArr = doc.qualifications
             expArr = doc.experianceArr

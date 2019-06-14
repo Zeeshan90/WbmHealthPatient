@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Utils {
+class Utils: NSObject {
     
     let dateFormatter = DateFormatter()
     
@@ -21,6 +21,16 @@ class Utils {
         view.layer.shadowOffset = CGSize(width: 0, height: 1)
         view.layer.shadowRadius = 1
         view.layer.cornerRadius = 10
+    }
+    
+    // Alert
+    class func showAlert(view: UIViewController , message: String, title: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        DispatchQueue.main.async {
+            view.present(alert, animated: true, completion: nil)
+        }
     }
     
     // Converting a Short Date to string
@@ -58,4 +68,17 @@ class Utils {
         print(dateString)
         return dateString
     }
+    
+    class func setSearchBar(controller: UIViewController){
+        
+        var searchController = UISearchController()
+        searchController = UISearchController(searchResultsController: nil)
+        //searchController.searchResultsUpdater = self
+        controller.navigationItem.searchController = searchController
+        controller.navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.barStyle = .blackTranslucent
+        searchController.searchBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    }
+    
 }

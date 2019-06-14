@@ -23,6 +23,7 @@ class Test{
     var sampleRequired : String!
     var testCode : String!
     var testName : String!
+    var image: String!
     
     /**
      * Instantiate the instance using the passed json values to set the properties values
@@ -38,6 +39,7 @@ class Test{
         photo = [Photo]()
         let photoArray = json["photo"].arrayValue
         for photoJson in photoArray{
+            image = photoJson["url"].stringValue
             let value = Photo(fromJson: photoJson)
             photo.append(value)
         }

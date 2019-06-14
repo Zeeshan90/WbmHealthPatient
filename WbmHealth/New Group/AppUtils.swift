@@ -15,7 +15,14 @@ class AppUtils{
     static let app = (UIApplication.shared.delegate as! AppDelegate )
     
     static func returnBaseUrl() ->String{
-        return "http://192.168.1.185:3031"
+        
+        return "https://wbmchat.com"
+       
+    }
+    
+    static func returnLocalBaseUrl() ->String{
+        
+         return "http://192.168.1.185:3031"
     }
     
     

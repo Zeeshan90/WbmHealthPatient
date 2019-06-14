@@ -10,13 +10,15 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import ProgressHUD
-class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
 
     @IBOutlet weak var labTblVu: UITableView!
-    
+    @IBOutlet weak var srchBar: UISearchBar!
     var labArr = [Labortaries]()
-    
+    var filteredArr = [Labortaries]()
     var refreshController = UIRefreshControl()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ProgressHUD.show()
@@ -24,27 +26,58 @@ class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewD
         labTblVu.refreshControl = self.refreshController
         refreshController.addTarget(self, action:  #selector(refresh), for: .valueChanged)
         refreshController.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        srchBar.showsCancelButton = true
         // Do any additional setup after loading the view.
     }
     
     @objc func refresh(){
-        labArr = [Labortaries]()
-        getAllLabs()
+        //labArr = [Labortaries]()
+        //getAllLabs()
         //self.refreshController.endRefreshing()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         getAllLabs()
 
     }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.view.endEditing(true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            
+            filteredArr = labArr
+            //view.endEditing(true)
+            labTblVu.reloadData()
+            return
+        }
+        filteredArr = labArr.filter({lab -> Bool in
+            
+            lab.laboratoryName.lowercased().contains(searchText.lowercased())
+           // guard let text = searchBar.text else { return false }
+            //return ((lab.laboratoryName.lowercased().contains(text.lowercased())))
+        })
+        
+        labTblVu.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return labArr.count
+        
+        if labArr.count == 0{
+            self.labTblVu.setEmptyMessage("No labortary Available")
+        }else{
+            self.labTblVu.restore()
+            
+        }
+        return filteredArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = labTblVu.dequeueReusableCell(withIdentifier: "labcell", for: indexPath) as! LabortaryTableViewCell
-        cell.labortaryName.text = labArr[indexPath.row].laboratoryName
-        let imgUrl = "\(AppUtils.returnBaseUrl())\(labArr[indexPath.row].image ?? "hg")".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+        cell.labortaryName.text = filteredArr[indexPath.row].laboratoryName
+        let imgUrl = "\(AppUtils.returnBaseUrl())\(filteredArr[indexPath.row].image ?? "hg")".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
         cell.img.downloaded(from: imgUrl!)
        return cell
     }
@@ -52,7 +85,9 @@ class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewD
    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "tolabcat", sender: self)
+        let labId = labArr[indexPath.row].id
+        WbmDefaults.instance.setString(key: "labId", value: labId!)
+        performSegue(withIdentifier: "tolabdetail", sender: self)
     }
     
    
@@ -70,13 +105,14 @@ class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewD
         Alamofire.request(url, method: .get, parameters: nil).responseJSON{
             response in
             self.refreshController.endRefreshing()
+             ProgressHUD.dismiss()
             if response.result.isSuccess{
                 
-                ProgressHUD.dismiss()
+               
                 let json = JSON(response.result.value!)
                 print(json)
                 
-                for (index,j) in json{
+                for (_,j) in json{
                     do {
                         let labjson = Labortaries(fromJson: j)
                         print(labjson)
@@ -85,11 +121,13 @@ class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewD
                 }
                 
                 DispatchQueue.main.async {
+                    self.filteredArr = self.labArr
                      self.labTblVu.reloadData()
                 }
                
             }else{
-                print(response.error as Any)
+                Utils.showAlert(view: self, message: (response.error?.localizedDescription)!, title: "Error")
+                
             }
             
         }

@@ -8,7 +8,8 @@
 
 import UIKit
 import Foundation
-
+import Alamofire
+import SwiftyJSON
 class ViewController: UIViewController {
     
     // Options View Outlets
@@ -21,21 +22,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var seeADocVu: UIView!
     @IBOutlet weak var nearByPharmmancyVu: UIView!
     @IBOutlet weak var nearByHospitalVu: UIView!
-    
     @IBOutlet weak var bottomVu: UIView!
     var window: UIWindow?
-    @IBOutlet weak var wirelessBtn: UIBarButtonItem!
+    @IBOutlet weak var cartBtn: UIBarButtonItem!
     @IBOutlet weak var testCollectionView: UICollectionView!
     @IBOutlet weak var topCollectionView: UICollectionView!
     
     var topNameArr = ["My Accounts","Forums","Emergency","Health Blogs"]
     var topImgArr = ["1","2","3","4"]
-    var testArr = ["test1","test2","test3","test4"]
+    var testArr = [CommonLabTest]()
     let util = Utils()
+    var i: Int = 0
+    var btnBarBadge: MJBadgeBarButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        getCommonLabTests()
         self.navigationItem.rightBarButtonItem = nil
-        //self.navigationItem.rightBarButtonItem = self.wirelessBtn
+        self.navigationItem.rightBarButtonItem = self.cartBtn
+        setupBadge()
         util.cardView(view: labortaryVu)
         util.cardView(view: labortaryVu)
         util.cardView(view: medHisVu)
@@ -68,14 +72,27 @@ class ViewController: UIViewController {
         nearByHospitalVu.addGestureRecognizer(nearHosp)
     }
     
-    
-    @IBAction func wirelessBtn(_ sender: Any) {
+    func setupBadge(){
         
-        let rootController = UIStoryboard(name: "Registration", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.navigationController?.pushViewController(rootController, animated: true)
-
-        //self.present(rootController, animated: true, completion: nil)
-        //self.window?.rootViewController = rootController
+        let customButton = UIButton(type: UIButton.ButtonType.custom)
+        customButton.frame = CGRect(x: 0, y: 0, width: 35.0, height: 35.0)
+        customButton.addTarget(self, action: #selector(self.chartBtn), for: .touchUpInside)
+        customButton.setImage(UIImage(named: "cart"), for: .normal)
+        customButton.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.btnBarBadge = MJBadgeBarButton()
+        self.btnBarBadge.setup(customButton: customButton)
+        self.btnBarBadge.shouldAnimateBadge = true
+        self.btnBarBadge.badgeOriginX = 20.0
+        self.btnBarBadge.badgeOriginY = -4
+        self.btnBarBadge.shouldHideBadgeAtZero = true
+        self.btnBarBadge.badgeValue = "0"
+        self.navigationItem.rightBarButtonItem = self.btnBarBadge
+    }
+    
+    @objc func chartBtn() {
+        
+        //        let rootController = UIStoryboard(name: "Registration", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        //        self.navigationController?.pushViewController(rootController, animated: true)
     }
     
     
@@ -95,10 +112,10 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "seeDoc", sender: self)
     }
     @objc func tapOnNearPhar(){
-        
+        performSegue(withIdentifier: "topharmacy", sender: self)
     }
     @objc func tapOnNearHosp(){
-       // performSegue(withIdentifier: "hospital", sender: self)
+        performSegue(withIdentifier: "tohospital", sender: self)
     }
     
     @objc func tapOnWorkOut(){
@@ -129,19 +146,64 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource {
             let cell = topCollectionView.dequeueReusableCell(withReuseIdentifier: "topcell", for: indexPath) as! TopCollectionViewCell
             cell.name.text = topNameArr[indexPath.row]
             cell.image.image = UIImage(named: topImgArr[indexPath.row])
+            
             return cell
         }else{
             let cell = testCollectionView.dequeueReusableCell(withReuseIdentifier: "testcell", for: indexPath) as! TestCollectionViewCell
-            cell.name.text = testArr[indexPath.row]
+            let test = testArr[indexPath.row].tests
+            cell.name.text = test?.testName
+            cell.price.text = "PKR " + String(test!.rate)
+            cell.bkVu.layer.borderWidth = 0.7
+            cell.bkVu.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+            let imgUrl = "\(AppUtils.returnBaseUrl())/\(test?.image ?? "j")".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+            cell.img.downloaded(from: imgUrl!)
+            cell.testAddBtn.layer.cornerRadius = 15
+            cell.testAddBtn.tag = indexPath.row
+            cell.testAddBtn.addTarget(self, action: #selector(addTest(sender:)), for: .touchUpInside)
             return cell
         }
     }
     
+    @objc func addTest(sender: UIButton){
+        
+        i+=1
+        btnBarBadge.badgeValue = "\(i)"
+    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == topCollectionView{
             print(indexPath.row)
         }else if collectionView == testCollectionView{
-            performSegue(withIdentifier: "maintotestdetail", sender: self)
+            //performSegue(withIdentifier: "maintotestdetail", sender: self)
+        }
+    }
+}
+
+extension ViewController{
+    
+    func getCommonLabTests(){
+        
+        let url = "\(AppUtils.returnBaseUrl())/patient/common/labtests"
+        Alamofire.request(url, method: .get, parameters: nil).responseJSON{
+            response in
+            
+            if response.result.isSuccess{
+                let json:JSON = JSON(response.result.value!)
+                print(json)
+                
+                for (_,j) in json{
+                    do{
+                        let testJson = CommonLabTest(fromJson: j)
+                        self.testArr.append(testJson)
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.testCollectionView.reloadData()
+                }
+            }else{
+                Utils.showAlert(view: self, message: (response.error?.localizedDescription)!, title: "Error")
+                //print(response.error?.localizedDescription as Any)
+            }
+            
         }
     }
 }

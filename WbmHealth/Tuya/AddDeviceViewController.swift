@@ -33,7 +33,7 @@ class AddDeviceViewController: UIViewController {
     func getTestDevice() {
         
         request.request(withApiName: "s.m.dev.sdk.demo.list", postData: nil, version: "1.0", success: { (list) in
-            print(list)
+            
             
         }, failure: { (error) in
             if let e = error {

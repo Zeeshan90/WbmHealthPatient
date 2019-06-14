@@ -25,6 +25,12 @@ class AppointAprovedViewController: UIViewController,UITableViewDelegate,UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if appointArr.count == 0{
+            self.aprrovedAppointTblVu.setEmptyMessage("No Approved Appointments Yet")
+        }else{
+            self.aprrovedAppointTblVu.restore()
+            
+        }
         return appointArr.count
     }
 
@@ -75,7 +81,7 @@ class AppointAprovedViewController: UIViewController,UITableViewDelegate,UITable
                 }
                 
             }else{
-                print(response.error?.localizedDescription as Any)
+                Utils.showAlert(view: self, message: response.error!.localizedDescription, title: "Error")
             }
         }
     }

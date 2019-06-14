@@ -10,7 +10,9 @@ import UIKit
 
 class TestCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var testName: UILabel!
+  
+    @IBOutlet weak var bkVu: UIView!
+    @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var testAddBtn: UIButton!
