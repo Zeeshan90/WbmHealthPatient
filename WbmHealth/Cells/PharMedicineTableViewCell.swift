@@ -10,7 +10,14 @@ import UIKit
 
 class PharMedicineTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var medImg: UIImageView!
+    @IBOutlet weak var priceLbl: UILabel!
+    @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
+    
+    @IBOutlet weak var addBtn: UIButton!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,7 +29,10 @@ class PharMedicineTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func setData(medName: String){
+    func setData(medName: String,description: String, price: String,photo: String){
         nameLbl.text = medName
+        descriptionLbl.text = description
+        priceLbl.text = "Price: " + price + " RS"
+        medImg.downloaded(from: photo)
     }
 }

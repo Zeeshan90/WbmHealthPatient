@@ -21,24 +21,9 @@ class PharmacyMedViewController: UIViewController,UISearchResultsUpdating,UITabl
         super.viewDidLoad()
 
         ProgressHUD.show()
-        //setSearchBar()
-        Utils.setSearchBar(controller: self)
+        Utils.setSearchBar(controller: self, updater: self)
         getMedicine()
         
-    }
-    
-    
-    // Custom Search in the navigation bar
-    func setSearchBar(){
-        
-        var searchController = UISearchController()
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.barStyle = .blackTranslucent
-        searchController.searchBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -54,7 +39,7 @@ class PharmacyMedViewController: UIViewController,UISearchResultsUpdating,UITabl
             return
         }
         filtered = medArr.filter({ (med) -> Bool in
-            return med.id.lowercased().contains(searchText.lowercased())
+            return med.medicineName.lowercased().contains(searchText.lowercased())
         })
         medTblVu.reloadData()
     }
@@ -68,11 +53,29 @@ class PharmacyMedViewController: UIViewController,UISearchResultsUpdating,UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = medTblVu.dequeueReusableCell(withIdentifier: "medcell", for: indexPath) as! PharMedicineTableViewCell
-        cell.setData(medName: filtered[indexPath.row].type)
+        
+        
+        let imgUrl: String = "\(AppUtils.returnBaseUrl())\(filtered[indexPath.row].photo ?? "gh")"
+        cell.setData(medName: filtered[indexPath.row].medicineName, description: filtered[indexPath.row].medsDescriptionField, price: String(filtered[indexPath.row].price), photo: imgUrl)
+        
+        cell.addBtn.tag = indexPath.row
+        cell.addBtn.addTarget(self, action: #selector(addBtnPressed(_:)), for: .touchUpInside)
+        
         return cell
+    }
+    
+    @objc func addBtnPressed(_ sender: UIButton){
+        
+        let medId: String = filtered[sender.tag].id
+        WbmDefaults.instance.setString(key: "medId", value: medId)
+        performSegue(withIdentifier: "tomeddetail", sender: self)
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         self.medTblVu.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
     }
     func getMedicine(){
         
@@ -85,6 +88,7 @@ class PharmacyMedViewController: UIViewController,UISearchResultsUpdating,UITabl
             if response.result.isSuccess{
                 
                 let json: JSON = JSON(response.result.value!)
+                
                 print(json)
                 for (_,j) in json{
                     do{

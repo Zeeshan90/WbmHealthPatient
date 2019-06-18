@@ -69,11 +69,11 @@ class Utils: NSObject {
         return dateString
     }
     
-    class func setSearchBar(controller: UIViewController){
+    class func setSearchBar(controller: UIViewController,updater: UISearchResultsUpdating){
         
         var searchController = UISearchController()
         searchController = UISearchController(searchResultsController: nil)
-        //searchController.searchResultsUpdater = self
+        searchController.searchResultsUpdater = updater
         controller.navigationItem.searchController = searchController
         controller.navigationItem.hidesSearchBarWhenScrolling = false
         searchController.obscuresBackgroundDuringPresentation = false

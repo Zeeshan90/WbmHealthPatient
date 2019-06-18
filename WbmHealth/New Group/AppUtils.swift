@@ -16,13 +16,14 @@ class AppUtils{
     
     static func returnBaseUrl() ->String{
         
-        return "https://wbmchat.com"
+        //return "https://wbmchat.com"
+        return "http://192.168.1.185:3031"
        
     }
     
     static func returnLocalBaseUrl() ->String{
-        
          return "http://192.168.1.185:3031"
+        
     }
     
     

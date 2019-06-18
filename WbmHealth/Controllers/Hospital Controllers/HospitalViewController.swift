@@ -20,7 +20,8 @@ class HospitalViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Utils.setSearchBar(controller: self)
+        //Utils.setSearchBar(controller: self)
+        getAllHospitals()
         // Do any additional setup after loading the view.
     }
     
@@ -71,17 +72,22 @@ class HospitalViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func getAllHospitals(){
         
         let url = "\(AppUtils.returnBaseUrl())/patient/"
-        Alamofire.request(url, method: .get, parameters: nil).responseJSON{
+        Alamofire.request(url, method: .post, parameters: [
+            "lat":"31.4707892",
+            "lon":"74.2296598"
+        ]).responseJSON{
             
             response in
             
             if response.result.isSuccess{
                 
                 let json: JSON = JSON(response.result.value!)
-                print(json)
-                for (_,j) in json{
+                let dataJson = json["data"]
+                print(dataJson)
+                for (_,j) in dataJson{
                     do{
-                        //self.hospitalArr.append(Hospital())
+                        
+                        self.hospitalArr.append(Hospital(fromJson: j))
                     }
                 }
                 

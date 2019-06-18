@@ -100,7 +100,7 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "medicalhistory", sender: self)
     }
     @objc func tapOnBmiCal(){
-        
+        performSegue(withIdentifier: "tobmical", sender: self)
     }
     @objc func tapOnHelthTip(){
         

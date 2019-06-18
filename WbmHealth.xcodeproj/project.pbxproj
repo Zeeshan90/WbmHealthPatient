@@ -103,6 +103,9 @@
 		06D88E0222951A2F001EA7E7 /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D88E0122951A2F001EA7E7 /* AppointmentViewController.swift */; };
 		06D88E0422951A40001EA7E7 /* ConfirmAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D88E0322951A40001EA7E7 /* ConfirmAppointmentViewController.swift */; };
 		06D88E0622953B2E001EA7E7 /* AddDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D88E0522953B2E001EA7E7 /* AddDeviceViewController.swift */; };
+		B314221322B7BCDA00A30F34 /* MedicineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314221222B7BCDA00A30F34 /* MedicineDetailViewController.swift */; };
+		B314221522B7C6DC00A30F34 /* MedicineDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314221422B7C6DC00A30F34 /* MedicineDetail.swift */; };
+		B314221722B7CFC400A30F34 /* BmiCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314221622B7CFC400A30F34 /* BmiCalculatorViewController.swift */; };
 		B319B4E822B36B0200C60272 /* PharmacyMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319B4E722B36B0200C60272 /* PharmacyMedViewController.swift */; };
 		B319B4EA22B3798A00C60272 /* PharMedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319B4E922B3798A00C60272 /* PharMedicineTableViewCell.swift */; };
 		B319B4EE22B37B2700C60272 /* WorkoutCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319B4ED22B37B2700C60272 /* WorkoutCategoryCollectionCell.swift */; };
@@ -270,6 +273,9 @@
 		5B5E1DFC782D9251946CDE69 /* Pods_WbmHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WbmHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		637B0DB20D158DC8719BC3EB /* Pods-WbmHealthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WbmHealthTests.debug.xcconfig"; path = "Target Support Files/Pods-WbmHealthTests/Pods-WbmHealthTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B852DD3E4C6026F91BA58F1 /* Pods-WbmHealthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WbmHealthTests.release.xcconfig"; path = "Target Support Files/Pods-WbmHealthTests/Pods-WbmHealthTests.release.xcconfig"; sourceTree = "<group>"; };
+		B314221222B7BCDA00A30F34 /* MedicineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailViewController.swift; sourceTree = "<group>"; };
+		B314221422B7C6DC00A30F34 /* MedicineDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetail.swift; sourceTree = "<group>"; };
+		B314221622B7CFC400A30F34 /* BmiCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiCalculatorViewController.swift; sourceTree = "<group>"; };
 		B319B4E722B36B0200C60272 /* PharmacyMedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyMedViewController.swift; sourceTree = "<group>"; };
 		B319B4E922B3798A00C60272 /* PharMedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PharMedicineTableViewCell.swift; path = ../PharMedicineTableViewCell.swift; sourceTree = "<group>"; };
 		B319B4ED22B37B2700C60272 /* WorkoutCategoryCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCategoryCollectionCell.swift; sourceTree = "<group>"; };
@@ -441,6 +447,7 @@
 				067449B7229E4E07004C705A /* SeeADoc */,
 				06BDB92722734B4F007F4ED2 /* SideViewController */,
 				067E2D922276BBA700E313A7 /* Workout Controllers */,
+				B314221622B7CFC400A30F34 /* BmiCalculatorViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -479,6 +486,7 @@
 				B382E3EC22B26B2E0023446C /* Pharmacy.swift */,
 				B319B4EF22B37F1100C60272 /* Medicine.swift */,
 				B319B4FC22B3CB5C00C60272 /* Hospital.swift */,
+				B314221422B7C6DC00A30F34 /* MedicineDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -690,6 +698,7 @@
 			children = (
 				B382E3E822B2427D0023446C /* PharmancyViewController.swift */,
 				B319B4E722B36B0200C60272 /* PharmacyMedViewController.swift */,
+				B314221222B7BCDA00A30F34 /* MedicineDetailViewController.swift */,
 			);
 			name = Pharmancy;
 			path = "Hospital Controllers";
@@ -1090,9 +1099,11 @@
 				06D5F952228A8EAE008E7EC4 /* VerifyCodeLoginViewController.swift in Sources */,
 				06BDB92922734BD8007F4ED2 /* LeftMenuViewController.swift in Sources */,
 				06BDB92322734811007F4ED2 /* AppUtils.swift in Sources */,
+				B314221522B7C6DC00A30F34 /* MedicineDetail.swift in Sources */,
 				B322A03A22B13D5300D0A340 /* LabortaryDetailViewController.swift in Sources */,
 				B38ABFD522AF71F2001792E4 /* CommonLabTest.swift in Sources */,
 				B319B4E822B36B0200C60272 /* PharmacyMedViewController.swift in Sources */,
+				B314221322B7BCDA00A30F34 /* MedicineDetailViewController.swift in Sources */,
 				06575E9922829CD8007E95BF /* Utils.swift in Sources */,
 				068E777822928B710015210C /* TextField.swift in Sources */,
 				B3E64D632274C85B00C1A9A9 /* TestCollectionViewCell.swift in Sources */,
@@ -1132,6 +1143,7 @@
 				0688A60B2297BC8800CEC05A /* AppointRequest.swift in Sources */,
 				B3E64D612274C84500C1A9A9 /* TopCollectionViewCell.swift in Sources */,
 				06D5F963228ACC21008E7EC4 /* AddFamilyViewController.swift in Sources */,
+				B314221722B7CFC400A30F34 /* BmiCalculatorViewController.swift in Sources */,
 				065FFE8B228427E5009D2AD3 /* SpecialityTableViewCell.swift in Sources */,
 				B319B4FB22B3A53E00C60272 /* MJBadgeBarButton.swift in Sources */,
 				065FFE8922842694009D2AD3 /* SpecialityViewController.swift in Sources */,
