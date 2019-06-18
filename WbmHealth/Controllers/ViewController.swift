@@ -152,7 +152,8 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource {
             let cell = testCollectionView.dequeueReusableCell(withReuseIdentifier: "testcell", for: indexPath) as! TestCollectionViewCell
             let test = testArr[indexPath.row].tests
             cell.name.text = test?.testName
-            cell.price.text = "PKR " + String(test!.rate)
+            let stringRate:String  = String(test!.rate)
+            cell.price.text = "PKR \(stringRate)"
             cell.bkVu.layer.borderWidth = 0.7
             cell.bkVu.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
             let imgUrl = "\(AppUtils.returnBaseUrl())/\(test?.image ?? "j")".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)

@@ -18,7 +18,7 @@ class Test{
     var category : String!
     var performed : String!
     var photo : [Photo]!
-    var rate : Int!
+    var rate : Int = 0
     var reportingDay : String!
     var sampleRequired : String!
     var testCode : String!
