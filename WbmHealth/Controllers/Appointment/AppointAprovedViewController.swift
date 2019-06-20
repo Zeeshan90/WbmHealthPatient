@@ -17,6 +17,7 @@ class AppointAprovedViewController: UIViewController,UITableViewDelegate,UITable
     @IBOutlet weak var aprrovedAppointTblVu: UITableView!
     let util = Utils()
     let dateFormatter = DateFormatter()
+    var resourceId: String!
     override func viewDidLoad() {
         super.viewDidLoad()
         getAppointments()
@@ -45,8 +46,19 @@ class AppointAprovedViewController: UIViewController,UITableViewDelegate,UITable
         let appointReason: String = appointArr[indexPath.row].apptReason
         cell.descriptionLbl.text = "we have booked \(docName) for your checkup on \(appointDateStr) at \(apointTime) for the following reason \(appointReason)"
         util.cardView(view: cell.Vu)
-        cell.callBtn.layer.cornerRadius = 10
+        cell.callBtn.layer.cornerRadius = cell.callBtn.frame.height/2
+        cell.callBtn.tag = indexPath.row
+        cell.callBtn.addTarget(self, action: #selector(callBtnPressed(sender:)), for: .touchUpInside)
         return cell
+    }
+    
+    @objc func callBtnPressed(sender: UIButton){
+        
+        resourceId = appointArr[sender.tag].id
+        getResourceId()
+        
+        let rootController = UIStoryboard(name: "vid", bundle: nil).instantiateViewController(withIdentifier: "VidyoViewController") as! VidyoViewController
+        self.navigationController?.present(rootController, animated: true, completion: nil)
     }
 
     @IBAction func crossBtn(_ sender: Any) {
@@ -57,6 +69,25 @@ class AppointAprovedViewController: UIViewController,UITableViewDelegate,UITable
         return 210
     }
     
+    
+    func getResourceId(){
+        
+        let url = "\(AppUtils.returnBaseUrl())/patient/call/setid/" + resourceId
+        Alamofire.request(url, method: .put, parameters: ["resourceId":resourceId]).responseJSON{
+            response in
+            
+            if response.result.isSuccess{
+                
+                let json: JSON = JSON(response.result.value!)
+                print(json)
+                self.resourceId = json["resourceId"].stringValue
+            }else{
+                
+                Utils.showAlert(view: self, message: response.error!.localizedDescription, title: "Error")
+            }
+        }
+    }
+    // Get All Appointment
     func getAppointments(){
         appointArr = [ConfirmAppoint]()
         let url = "\(AppUtils.returnBaseUrl())/patient/appointment/status/accepted/all/5c94754e0948dd2edcb4c299"

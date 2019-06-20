@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
+import M13Checkbox
 class MedicalTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var checkBox: M13Checkbox!
     @IBOutlet weak var nameLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

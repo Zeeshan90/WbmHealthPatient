@@ -44,6 +44,8 @@ class VisitReasonViewController: UIViewController,UITableViewDataSource,UITableV
         return 80
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        WbmDefaults.instance.setString(key: "reason", value: filtered[indexPath.row].text)
         performSegue(withIdentifier: "tosymptoms", sender: self)
     }
     
@@ -88,7 +90,8 @@ class VisitReasonViewController: UIViewController,UITableViewDataSource,UITableV
                 }
                 
             }else{
-                print(response.error?.localizedDescription as Any)
+                
+                Utils.showAlert(view: self, message: response.error!.localizedDescription, title: "Error")
             }
         }
     }

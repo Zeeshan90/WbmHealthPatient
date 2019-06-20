@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import ProgressHUD
-
+import M13Checkbox
 class SymptomsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var symptomTblVu: UITableView!
     
@@ -31,21 +31,51 @@ class SymptomsViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = symptomTblVu.dequeueReusableCell(withIdentifier: "symptomcell", for: indexPath) as! SymptomsTableViewCell
+        
+        // let checkBoxClick = UITapGestureRecognizer(target: self, action: #selector(checkBox(_:)))
+        //cell.checkBox.addGestureRecognizer(checkBoxClick)
+        cell.checkBox.tag = indexPath.row
+        cell.checkBox.addTarget(self, action: #selector(checkBox(_:)), for: .valueChanged)
         cell.nameLbl.text = symptomArr[indexPath.row].text
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    @objc func checkBox(_ check: M13Checkbox){
+        print(check.tag)
         
-        if symptomTblVu.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
+        switch check.checkState{
+        case .checked:
+            selectedSymptomArr.append(symptomArr[check.tag].text)
+            print(selectedSymptomArr)
+            break
+        case .unchecked:
             
-            symptomTblVu.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
-            
-        }else{
-            symptomTblVu.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
-            selectedSymptomArr.append(symptomArr[indexPath.row].text)
+            if let index = selectedSymptomArr.index(of: symptomArr[check.tag].text) {
+                selectedSymptomArr.remove(at: index)
+            }
+            print(selectedSymptomArr)
+            break
+        case .mixed:
+            break
         }
+        
+        
     }
+    
+    
+
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        if symptomTblVu.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
+//
+//            symptomTblVu.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+//
+//        }else{
+//            symptomTblVu.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+//            selectedSymptomArr.append(symptomArr[indexPath.row].text)
+//        }
+//    }
     
     @IBAction func nextBtn(_ sender: Any) {
         performSegue(withIdentifier: "tomedical", sender: self)
@@ -75,7 +105,8 @@ class SymptomsViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 }
                 
             }else{
-                print(response.error?.localizedDescription as Any)
+                
+                Utils.showAlert(view: self, message: response.error!.localizedDescription, title: "Error")
             }
         }
     }

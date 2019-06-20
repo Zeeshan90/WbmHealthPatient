@@ -5003,15 +5003,16 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                 <rect key="frame" x="0.0" y="88" width="414" height="534"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="symptomcell" editingAccessoryType="checkmark" rowHeight="75" id="szQ-Z6-RtZ" customClass="SymptomsTableViewCell" customModule="WbmHealth" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="symptomcell" rowHeight="75" id="szQ-Z6-RtZ" customClass="SymptomsTableViewCell" customModule="WbmHealth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="szQ-Z6-RtZ" id="o5k-Sf-mlC">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="74.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEQ-AG-pVT">
-                                                    <rect key="frame" x="20" y="10.999999999999996" width="374" height="52.666666666666657"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEQ-AG-pVT">
+                                                    <rect key="frame" x="20" y="11" width="350" height="53"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -5019,15 +5020,22 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iEp-Nt-NRv" customClass="M13Checkbox" customModule="M13Checkbox">
+                                                    <rect key="frame" x="378" y="30" width="25" height="25"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="a03-IL-DDm"/>
+                                                        <constraint firstAttribute="width" constant="25" id="vzy-KT-vay"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="vEQ-AG-pVT" secondAttribute="bottom" constant="11" id="7Q1-gB-jPL"/>
-                                                <constraint firstItem="vEQ-AG-pVT" firstAttribute="leading" secondItem="o5k-Sf-mlC" secondAttribute="leading" constant="20" id="guk-Wp-aTS"/>
-                                                <constraint firstItem="vEQ-AG-pVT" firstAttribute="top" secondItem="o5k-Sf-mlC" secondAttribute="top" constant="11" id="kVG-kP-cxu"/>
-                                                <constraint firstAttribute="trailing" secondItem="vEQ-AG-pVT" secondAttribute="trailing" constant="20" id="y5d-KZ-ixI"/>
+                                                <constraint firstAttribute="trailing" secondItem="iEp-Nt-NRv" secondAttribute="trailing" constant="11" id="Pno-nm-BjS"/>
+                                                <constraint firstItem="iEp-Nt-NRv" firstAttribute="centerY" secondItem="o5k-Sf-mlC" secondAttribute="centerY" constant="5.1666666666666643" id="S9L-S3-G9m"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="checkBox" destination="iEp-Nt-NRv" id="8Ff-nT-bzd"/>
                                             <outlet property="nameLbl" destination="vEQ-AG-pVT" id="qBW-Lb-25t"/>
                                         </connections>
                                     </tableViewCell>
@@ -5046,7 +5054,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0hc-UW-1xV"/>
                                 </constraints>
-                                <state key="normal" title="Next">
+                                <state key="normal" title="Save&amp;Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -5106,7 +5114,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                     <constraint firstAttribute="height" constant="87" id="cpt-Mh-olU"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jrf-ug-DJn">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jrf-ug-DJn">
                                 <rect key="frame" x="0.0" y="87" width="414" height="535"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -5123,14 +5131,30 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCE-MD-Dvb" customClass="M13Checkbox" customModule="M13Checkbox">
+                                                    <rect key="frame" x="379" y="23.333333333333329" width="25" height="25"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="aSH-Jo-4Ju"/>
+                                                        <constraint firstAttribute="width" constant="25" id="sZn-tn-9kb"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="boxLineWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="WCE-MD-Dvb" secondAttribute="trailing" constant="10" id="F6w-jc-jQ9"/>
                                                 <constraint firstItem="myk-Vb-FWS" firstAttribute="leading" secondItem="Vox-WQ-J26" secondAttribute="leading" constant="20" id="HEp-c5-rHg"/>
+                                                <constraint firstItem="WCE-MD-Dvb" firstAttribute="centerY" secondItem="Vox-WQ-J26" secondAttribute="centerY" id="Xqw-Z5-U6h"/>
                                                 <constraint firstItem="myk-Vb-FWS" firstAttribute="top" secondItem="Vox-WQ-J26" secondAttribute="top" constant="11" id="bb9-0T-7JN"/>
                                                 <constraint firstAttribute="bottom" secondItem="myk-Vb-FWS" secondAttribute="bottom" constant="11" id="jDe-OL-XNN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="checkBox" destination="WCE-MD-Dvb" id="1Wt-ti-Pq6"/>
                                             <outlet property="nameLbl" destination="myk-Vb-FWS" id="C0t-lo-qLh"/>
                                         </connections>
                                     </tableViewCell>
@@ -5146,7 +5170,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="sxt-iN-cfE"/>
                                 </constraints>
-                                <state key="normal" title="Save">
+                                <state key="normal" title="Save&amp;Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -5172,26 +5196,12 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                     <navigationItem key="navigationItem" id="nzv-21-xrY"/>
                     <connections>
                         <outlet property="medicalTblVu" destination="Jrf-ug-DJn" id="MOW-cX-9Z7"/>
+                        <segue destination="iFk-kz-JXT" kind="push" identifier="todoctors" id="SHu-Gm-318"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tUO-kQ-nyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13881" y="-1568"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="olc-ro-CYH">
-            <objects>
-                <viewController id="fBC-7V-fWs" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nwg-fQ-yrn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="YVm-sQ-CSs"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5FK-8o-oZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="14850" y="-1728"/>
+            <point key="canvasLocation" x="13879.710144927538" y="-1568.4782608695652"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Aq-FO-Yns">
@@ -6311,6 +6321,116 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RC0-gn-7cR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8800" y="1821.1956521739132"/>
+        </scene>
+        <!--Doctors-->
+        <scene sceneID="omU-yy-yFm">
+            <objects>
+                <viewController id="iFk-kz-JXT" customClass="AvailDoctorViewController" customModule="WbmHealth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PBt-rS-jcU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PJC-Ae-rwf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="doctorcell" rowHeight="137" id="a4J-x1-8Xf" customClass="AvailDoctorTableViewCell" customModule="WbmHealth" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="137"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a4J-x1-8Xf" id="Ohp-ao-WoY">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="136.66666666666666"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lahore,Punjab Pakistan" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yb2-or-Cqf">
+                                                    <rect key="frame" x="103" y="82" width="251" height="17.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway Light" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Noimage" translatesAutoresizingMaskIntoConstraints="NO" id="2XU-T8-1BQ">
+                                                    <rect key="frame" x="0.0" y="17" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="EPM-6c-CNI"/>
+                                                        <constraint firstAttribute="width" constant="100" id="pdG-zm-dc1"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VlA-0Q-Jdq">
+                                                    <rect key="frame" x="356" y="43.333333333333343" width="50" height="50"/>
+                                                    <color key="backgroundColor" red="0.1460644901" green="0.40551629659999999" blue="0.54706412550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="j6U-rd-Bea"/>
+                                                        <constraint firstAttribute="height" constant="50" id="w1G-zk-cb9"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" image="phone"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIc-HV-Zw4">
+                                                    <rect key="frame" x="103" y="37" width="251" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VlA-0Q-Jdq" firstAttribute="leading" secondItem="Yb2-or-Cqf" secondAttribute="trailing" constant="2" id="7VI-R8-dh5"/>
+                                                <constraint firstItem="Yb2-or-Cqf" firstAttribute="top" secondItem="YIc-HV-Zw4" secondAttribute="bottom" constant="25" id="GgU-1U-Td3"/>
+                                                <constraint firstItem="VlA-0Q-Jdq" firstAttribute="leading" secondItem="YIc-HV-Zw4" secondAttribute="trailing" constant="2" id="Hwg-Do-R2L"/>
+                                                <constraint firstItem="YIc-HV-Zw4" firstAttribute="leading" secondItem="2XU-T8-1BQ" secondAttribute="trailing" constant="3" id="V5o-jL-Feb"/>
+                                                <constraint firstItem="VlA-0Q-Jdq" firstAttribute="centerY" secondItem="Ohp-ao-WoY" secondAttribute="centerY" id="axH-Xy-wrO"/>
+                                                <constraint firstItem="Yb2-or-Cqf" firstAttribute="leading" secondItem="2XU-T8-1BQ" secondAttribute="trailing" constant="3" id="ay9-42-eif"/>
+                                                <constraint firstItem="2XU-T8-1BQ" firstAttribute="top" secondItem="Ohp-ao-WoY" secondAttribute="top" constant="17" id="fkB-ut-Fei"/>
+                                                <constraint firstItem="2XU-T8-1BQ" firstAttribute="leading" secondItem="Ohp-ao-WoY" secondAttribute="leading" id="n4j-Rt-v1Q"/>
+                                                <constraint firstAttribute="trailing" secondItem="VlA-0Q-Jdq" secondAttribute="trailing" constant="8" id="stO-xS-A2c"/>
+                                                <constraint firstItem="YIc-HV-Zw4" firstAttribute="top" secondItem="Ohp-ao-WoY" secondAttribute="top" constant="37" id="wcE-hU-rj5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="callBtn" destination="VlA-0Q-Jdq" id="EiA-2i-tq1"/>
+                                            <outlet property="docImg" destination="2XU-T8-1BQ" id="0Kx-Ba-l8n"/>
+                                            <outlet property="docName" destination="YIc-HV-Zw4" id="uI8-4z-b9s"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iFk-kz-JXT" id="fCQ-5A-eZ3"/>
+                                    <outlet property="delegate" destination="iFk-kz-JXT" id="HT8-Cb-sJL"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TL8-o9-69P" firstAttribute="trailing" secondItem="PJC-Ae-rwf" secondAttribute="trailing" id="Y3c-cs-7RT"/>
+                            <constraint firstItem="TL8-o9-69P" firstAttribute="bottom" secondItem="PJC-Ae-rwf" secondAttribute="bottom" id="hlw-AL-bmz"/>
+                            <constraint firstItem="PJC-Ae-rwf" firstAttribute="leading" secondItem="TL8-o9-69P" secondAttribute="leading" id="krF-xe-f6g"/>
+                            <constraint firstItem="PJC-Ae-rwf" firstAttribute="top" secondItem="TL8-o9-69P" secondAttribute="top" id="qBT-fw-fjl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TL8-o9-69P"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Doctors" id="fwn-YB-TiL">
+                        <barButtonItem key="backBarButtonItem" title="  " id="8Kh-ue-BEp"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="docTblVu" destination="PJC-Ae-rwf" id="Suq-iA-TUn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGn-oW-q3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14973.913043478262" y="-1568.4782608695652"/>
         </scene>
     </scenes>
     <resources>

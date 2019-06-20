@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import ProgressHUD
-
+import M13Checkbox
 class MedicalViewController: UIViewController,UITableViewDelegate
 ,UITableViewDataSource{
     
@@ -18,6 +18,7 @@ class MedicalViewController: UIViewController,UITableViewDelegate
 
     @IBOutlet weak var medicalTblVu: UITableView!
     var medConArr = [MedicalCondition]()
+    var selectedMedConArr = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,25 +32,49 @@ class MedicalViewController: UIViewController,UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = medicalTblVu.dequeueReusableCell(withIdentifier: "medicalcell", for: indexPath) as! MedicalTableViewCell
+        cell.checkBox.tag = indexPath.row
+        cell.checkBox.addTarget(self, action: #selector(checkBox(_:)), for: .valueChanged)
         cell.nameLbl.text = medConArr[indexPath.row].text
         return cell
     }
-    @IBAction func saveBtn(_ sender: Any) {
-         self.navigationController?.popToRootViewController(animated: true)
-    }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    @objc func checkBox(_ check: M13Checkbox){
         
-        if medicalTblVu.cellForRow(at: indexPath)?.accessoryType == UITableViewCell
-            .AccessoryType.checkmark{
-            medicalTblVu.cellForRow(at: indexPath)?.accessoryType = UITableViewCell
-                .AccessoryType.none
-        }else{
-            medicalTblVu.cellForRow(at: indexPath)?.accessoryType = UITableViewCell
-                .AccessoryType.checkmark
+        switch check.checkState{
+        case .unchecked:
+            
+            if let index = selectedMedConArr.index(of: medConArr[check.tag].text) {
+                selectedMedConArr.remove(at: index)
+            }
+            print(selectedMedConArr)
+            break
+        case .checked:
+            selectedMedConArr.append(medConArr[check.tag].text)
+            print(selectedMedConArr)
+            
+            
+            break
+        case .mixed:
+            print("mixed")
+            break
         }
     }
+    @IBAction func saveBtn(_ sender: Any) {
+         performSegue(withIdentifier: "todoctors", sender: self)
+    }
     
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        if medicalTblVu.cellForRow(at: indexPath)?.accessoryType == UITableViewCell
+//            .AccessoryType.checkmark{
+//            medicalTblVu.cellForRow(at: indexPath)?.accessoryType = UITableViewCell
+//                .AccessoryType.none
+//        }else{
+//            medicalTblVu.cellForRow(at: indexPath)?.accessoryType = UITableViewCell
+//                .AccessoryType.checkmark
+//        }
+//    }
+//
     func getmedicalConditions(){
         
         let url = "\(AppUtils.returnBaseUrl())/patient/init/dodmedconditions"

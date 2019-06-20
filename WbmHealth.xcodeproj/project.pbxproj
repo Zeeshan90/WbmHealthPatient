@@ -106,6 +106,14 @@
 		B314221322B7BCDA00A30F34 /* MedicineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314221222B7BCDA00A30F34 /* MedicineDetailViewController.swift */; };
 		B314221522B7C6DC00A30F34 /* MedicineDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314221422B7C6DC00A30F34 /* MedicineDetail.swift */; };
 		B314221722B7CFC400A30F34 /* BmiCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314221622B7CFC400A30F34 /* BmiCalculatorViewController.swift */; };
+		B31464D722B8E9100011EEAD /* AvailDoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31464D622B8E90F0011EEAD /* AvailDoctorViewController.swift */; };
+		B31464D922B8E9900011EEAD /* AvailDoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31464D822B8E9900011EEAD /* AvailDoctorTableViewCell.swift */; };
+		B3148A5322B9F04200761B33 /* VidyoClientConnector+Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = B3148A5222B9F04100761B33 /* VidyoClientConnector+Bridge.m */; };
+		B3148A6422BA0E0700761B33 /* VidyoClientIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3148A6322BA0E0600761B33 /* VidyoClientIOS.framework */; };
+		B3148A6522BA0E0700761B33 /* VidyoClientIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3148A6322BA0E0600761B33 /* VidyoClientIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3148A6722BA128600761B33 /* VidyoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3148A6622BA128600761B33 /* VidyoViewController.swift */; };
+		B3148A6B22BA191800761B33 /* vid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3148A6A22BA191700761B33 /* vid.storyboard */; };
+		B3148A6D22BA5B7500761B33 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B3148A6C22BA5B7500761B33 /* Settings.bundle */; };
 		B319B4E822B36B0200C60272 /* PharmacyMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319B4E722B36B0200C60272 /* PharmacyMedViewController.swift */; };
 		B319B4EA22B3798A00C60272 /* PharMedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319B4E922B3798A00C60272 /* PharMedicineTableViewCell.swift */; };
 		B319B4EE22B37B2700C60272 /* WorkoutCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319B4ED22B37B2700C60272 /* WorkoutCategoryCollectionCell.swift */; };
@@ -123,7 +131,6 @@
 		B395B51E22AE41C100F01CCA /* HospitalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B395B51D22AE41C100F01CCA /* HospitalTableViewCell.swift */; };
 		B395B52022AE44A600F01CCA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B395B51F22AE44A600F01CCA /* GoogleService-Info.plist */; };
 		B395B52222AE46A300F01CCA /* t_s.bmp in Resources */ = {isa = PBXBuildFile; fileRef = B395B52122AE46A300F01CCA /* t_s.bmp */; };
-		B3A523BF22AE7EE50004DE48 /* vidyo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A523BE22AE7EE40004DE48 /* vidyo.storyboard */; };
 		B3E2B16C22AFB16A00D0E8EC /* LabTestCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E2B16B22AFB16A00D0E8EC /* LabTestCategoryCollectionViewCell.swift */; };
 		B3E64D612274C84500C1A9A9 /* TopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E64D602274C84500C1A9A9 /* TopCollectionViewCell.swift */; };
 		B3E64D632274C85B00C1A9A9 /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E64D622274C85B00C1A9A9 /* TestCollectionViewCell.swift */; };
@@ -156,6 +163,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B3148A6522BA0E0700761B33 /* VidyoClientIOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +284,15 @@
 		B314221222B7BCDA00A30F34 /* MedicineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailViewController.swift; sourceTree = "<group>"; };
 		B314221422B7C6DC00A30F34 /* MedicineDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetail.swift; sourceTree = "<group>"; };
 		B314221622B7CFC400A30F34 /* BmiCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiCalculatorViewController.swift; sourceTree = "<group>"; };
+		B31464D622B8E90F0011EEAD /* AvailDoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailDoctorViewController.swift; sourceTree = "<group>"; };
+		B31464D822B8E9900011EEAD /* AvailDoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailDoctorTableViewCell.swift; sourceTree = "<group>"; };
+		B3148A4F22B9F03F00761B33 /* WbmHealth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WbmHealth-Bridging-Header.h"; sourceTree = "<group>"; };
+		B3148A5022B9F04100761B33 /* VidyoClientConnector+Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VidyoClientConnector+Bridge.h"; sourceTree = "<group>"; };
+		B3148A5222B9F04100761B33 /* VidyoClientConnector+Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VidyoClientConnector+Bridge.m"; sourceTree = "<group>"; };
+		B3148A6322BA0E0600761B33 /* VidyoClientIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VidyoClientIOS.framework; path = "../../../Downloads/VidyoClient-iOSSDK 2/lib/ios/VidyoClientIOS.framework"; sourceTree = "<group>"; };
+		B3148A6622BA128600761B33 /* VidyoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VidyoViewController.swift; sourceTree = "<group>"; };
+		B3148A6A22BA191700761B33 /* vid.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = vid.storyboard; sourceTree = "<group>"; };
+		B3148A6C22BA5B7500761B33 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		B319B4E722B36B0200C60272 /* PharmacyMedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyMedViewController.swift; sourceTree = "<group>"; };
 		B319B4E922B3798A00C60272 /* PharMedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PharMedicineTableViewCell.swift; path = ../PharMedicineTableViewCell.swift; sourceTree = "<group>"; };
 		B319B4ED22B37B2700C60272 /* WorkoutCategoryCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCategoryCollectionCell.swift; sourceTree = "<group>"; };
@@ -293,7 +310,6 @@
 		B395B51D22AE41C100F01CCA /* HospitalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalTableViewCell.swift; sourceTree = "<group>"; };
 		B395B51F22AE44A600F01CCA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B395B52122AE46A300F01CCA /* t_s.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = t_s.bmp; sourceTree = "<group>"; };
-		B3A523BE22AE7EE40004DE48 /* vidyo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = vidyo.storyboard; sourceTree = "<group>"; };
 		B3E2B16B22AFB16A00D0E8EC /* LabTestCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabTestCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		B3E64D602274C84500C1A9A9 /* TopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TopCollectionViewCell.swift; path = ../TopCollectionViewCell.swift; sourceTree = "<group>"; };
 		B3E64D622274C85B00C1A9A9 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestCollectionViewCell.swift; path = ../TestCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -308,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				065F9247229FB4C400242640 /* CoreMedia.framework in Frameworks */,
+				B3148A6422BA0E0700761B33 /* VidyoClientIOS.framework in Frameworks */,
 				065F9248229FB4C400242640 /* AudioToolbox.framework in Frameworks */,
 				065F9249229FB4C400242640 /* CoreLocation.framework in Frameworks */,
 				065F924A229FB4C400242640 /* AVFoundation.framework in Frameworks */,
@@ -365,16 +382,21 @@
 			path = "Hospital Controllers";
 			sourceTree = "<group>";
 		};
-		06575ED12282C746007E95BF /* Fonts */ = {
+		06575ED12282C746007E95BF /* Vidyo */ = {
 			isa = PBXGroup;
 			children = (
+				B3148A5022B9F04100761B33 /* VidyoClientConnector+Bridge.h */,
+				B3148A5222B9F04100761B33 /* VidyoClientConnector+Bridge.m */,
+				B3148A4F22B9F03F00761B33 /* WbmHealth-Bridging-Header.h */,
+				B3148A6622BA128600761B33 /* VidyoViewController.swift */,
 			);
-			path = Fonts;
+			path = Vidyo;
 			sourceTree = "<group>";
 		};
 		066595D52273096200E893F5 = {
 			isa = PBXGroup;
 			children = (
+				B3148A6322BA0E0600761B33 /* VidyoClientIOS.framework */,
 				066595E02273096200E893F5 /* WbmHealth */,
 				066595F82273096400E893F5 /* WbmHealthTests */,
 				066596032273096400E893F5 /* WbmHealthUITests */,
@@ -397,11 +419,12 @@
 		066595E02273096200E893F5 /* WbmHealth */ = {
 			isa = PBXGroup;
 			children = (
+				B3148A6C22BA5B7500761B33 /* Settings.bundle */,
 				06D5F957228A9071008E7EC4 /* WbmHealth.entitlements */,
 				B395B51F22AE44A600F01CCA /* GoogleService-Info.plist */,
 				B395B52122AE46A300F01CCA /* t_s.bmp */,
 				066595E12273096200E893F5 /* AppDelegate.swift */,
-				06575ED12282C746007E95BF /* Fonts */,
+				06575ED12282C746007E95BF /* Vidyo */,
 				066F8C6C227AF0E300451E6D /* Utils */,
 				06BDB92422734821007F4ED2 /* Cells */,
 				06D5F95E228AC469008E7EC4 /* Tuya */,
@@ -455,8 +478,8 @@
 		066596132273228500E893F5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B3A523BE22AE7EE40004DE48 /* vidyo.storyboard */,
 				066595E52273096200E893F5 /* Main.storyboard */,
+				B3148A6A22BA191700761B33 /* vid.storyboard */,
 				06D5F94D228A8514008E7EC4 /* Registration.storyboard */,
 			);
 			path = Views;
@@ -520,6 +543,7 @@
 				0660ABDF228D32AA001BFFD0 /* AvailabilityViewController.swift */,
 				06D88E0122951A2F001EA7E7 /* AppointmentViewController.swift */,
 				06D88E0322951A40001EA7E7 /* ConfirmAppointmentViewController.swift */,
+				B31464D622B8E90F0011EEAD /* AvailDoctorViewController.swift */,
 			);
 			path = SeeADoc;
 			sourceTree = "<group>";
@@ -645,6 +669,7 @@
 				068E776A229272F10015210C /* ExperianceTableViewCell.swift */,
 				068E776C229273070015210C /* QualificationTableViewCell.swift */,
 				06D88DFF22951A0C001EA7E7 /* ConfirmAppointmentTableViewCell.swift */,
+				B31464D822B8E9900011EEAD /* AvailDoctorTableViewCell.swift */,
 			);
 			path = "See A Doc Cells";
 			sourceTree = "<group>";
@@ -795,7 +820,7 @@
 				TargetAttributes = {
 					066595DD2273096200E893F5 = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.AccessWiFi = {
 								enabled = 1;
@@ -807,7 +832,7 @@
 								enabled = 0;
 							};
 							com.apple.Keychain = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.Push = {
 								enabled = 1;
@@ -849,13 +874,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3148A6D22BA5B7500761B33 /* Settings.bundle in Resources */,
 				B395B52022AE44A600F01CCA /* GoogleService-Info.plist in Resources */,
 				B395B52222AE46A300F01CCA /* t_s.bmp in Resources */,
+				B3148A6B22BA191800761B33 /* vid.storyboard in Resources */,
 				06D5F94E228A8514008E7EC4 /* Registration.storyboard in Resources */,
 				066595EF2273096400E893F5 /* LaunchScreen.storyboard in Resources */,
 				066595EC2273096400E893F5 /* Assets.xcassets in Resources */,
 				066595E72273096200E893F5 /* Main.storyboard in Resources */,
-				B3A523BF22AE7EE50004DE48 /* vidyo.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1080,6 +1106,7 @@
 				06D66C10228AD6D700823E92 /* AddFamilyTableViewCell.swift in Sources */,
 				06AB20782276B57500FF00C7 /* WorkoutCategoriesController.swift in Sources */,
 				065AC0B322786BDA0099B7BF /* MedicalHistoryViewController.swift in Sources */,
+				B3148A5322B9F04200761B33 /* VidyoClientConnector+Bridge.m in Sources */,
 				06BDB9262273493E007F4ED2 /* SideMenu.swift in Sources */,
 				068E7774229286050015210C /* ExperianceDetails.swift in Sources */,
 				0661BB012289484800D459B2 /* DoctorTableViewCell.swift in Sources */,
@@ -1100,6 +1127,7 @@
 				06BDB92922734BD8007F4ED2 /* LeftMenuViewController.swift in Sources */,
 				06BDB92322734811007F4ED2 /* AppUtils.swift in Sources */,
 				B314221522B7C6DC00A30F34 /* MedicineDetail.swift in Sources */,
+				B3148A6722BA128600761B33 /* VidyoViewController.swift in Sources */,
 				B322A03A22B13D5300D0A340 /* LabortaryDetailViewController.swift in Sources */,
 				B38ABFD522AF71F2001792E4 /* CommonLabTest.swift in Sources */,
 				B319B4E822B36B0200C60272 /* PharmacyMedViewController.swift in Sources */,
@@ -1112,6 +1140,7 @@
 				067A9AEC228ECE5D00242F32 /* LanguageCollectionViewCell.swift in Sources */,
 				B382E3EB22B26A000023446C /* PharmacyTableViewCell.swift in Sources */,
 				060E4E96229BF8A8005E8DB3 /* ConfirmAppointTableViewCell.swift in Sources */,
+				B31464D722B8E9100011EEAD /* AvailDoctorViewController.swift in Sources */,
 				065AC0B7227878BC0099B7BF /* MedicalHistoryCollectionViewCell.swift in Sources */,
 				06BDB91F22733BFD007F4ED2 /* MainViewController.swift in Sources */,
 				065FFE872284263E009D2AD3 /* scheduleViewController.swift in Sources */,
@@ -1124,6 +1153,7 @@
 				B321FD0422B217B000748CFA /* LaboratoryDetail.swift in Sources */,
 				062D1578229563FE00346C19 /* DeviceListTableViewCell.swift in Sources */,
 				067449BB229E6001004C705A /* Symptom.swift in Sources */,
+				B31464D922B8E9900011EEAD /* AvailDoctorTableViewCell.swift in Sources */,
 				0661BB0322895BF600D459B2 /* Doctor.swift in Sources */,
 				065039872278192100F83929 /* PrivacyPolicyViewController.swift in Sources */,
 				067449B9229E5FF0004C705A /* Reason.swift in Sources */,
@@ -1392,7 +1422,7 @@
 					"\"${PODS_ROOT}/Headers/Public/TuyaSmartHomeKit\"",
 					"$(inherited)",
 					"${PODS_ROOT}/Firebase/CoreOnly/Sources",
-					"\"$(PROJECT_DIR)/VidyoClientIOS.framework/Headers\"/**",
+					"$(PROJECT_DIR)/**",
 				);
 				INFOPLIST_FILE = WbmHealth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1406,7 +1436,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Wbm.WbmHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WbmHealth/Vidyo/WbmHealth-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.2;
@@ -1472,7 +1502,7 @@
 					"\"${PODS_ROOT}/Headers/Public/TuyaSmartHomeKit\"",
 					"$(inherited)",
 					"${PODS_ROOT}/Firebase/CoreOnly/Sources",
-					"\"$(PROJECT_DIR)/VidyoClientIOS.framework/Headers\"/**",
+					"$(PROJECT_DIR)/**",
 				);
 				INFOPLIST_FILE = WbmHealth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1486,7 +1516,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Wbm.WbmHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WbmHealth/Vidyo/WbmHealth-Bridging-Header.h";
 				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
