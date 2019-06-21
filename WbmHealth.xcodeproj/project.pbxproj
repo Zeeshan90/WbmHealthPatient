@@ -114,6 +114,8 @@
 		B3148A6B22BA191800761B33 /* vid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3148A6A22BA191700761B33 /* vid.storyboard */; };
 		B3148A6D22BA5B7500761B33 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B3148A6C22BA5B7500761B33 /* Settings.bundle */; };
 		B3160E8422BCDA530016A0CD /* DirectCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3160E8322BCDA520016A0CD /* DirectCall.swift */; };
+		B3160E8722BD0AB80016A0CD /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3160E8622BD0AB80016A0CD /* CartViewController.swift */; };
+		B3160E8922BD15D10016A0CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3160E8822BD15D00016A0CD /* GoogleService-Info.plist */; };
 		B319B4E822B36B0200C60272 /* PharmacyMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319B4E722B36B0200C60272 /* PharmacyMedViewController.swift */; };
 		B319B4EA22B3798A00C60272 /* PharMedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319B4E922B3798A00C60272 /* PharMedicineTableViewCell.swift */; };
 		B319B4EE22B37B2700C60272 /* WorkoutCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319B4ED22B37B2700C60272 /* WorkoutCategoryCollectionCell.swift */; };
@@ -131,7 +133,6 @@
 		B382E3ED22B26B2E0023446C /* Pharmacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382E3EC22B26B2E0023446C /* Pharmacy.swift */; };
 		B38ABFD522AF71F2001792E4 /* CommonLabTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38ABFD422AF71F2001792E4 /* CommonLabTest.swift */; };
 		B395B51E22AE41C100F01CCA /* HospitalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B395B51D22AE41C100F01CCA /* HospitalTableViewCell.swift */; };
-		B395B52022AE44A600F01CCA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B395B51F22AE44A600F01CCA /* GoogleService-Info.plist */; };
 		B395B52222AE46A300F01CCA /* t_s.bmp in Resources */ = {isa = PBXBuildFile; fileRef = B395B52122AE46A300F01CCA /* t_s.bmp */; };
 		B3E2B16C22AFB16A00D0E8EC /* LabTestCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E2B16B22AFB16A00D0E8EC /* LabTestCategoryCollectionViewCell.swift */; };
 		B3E64D612274C84500C1A9A9 /* TopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E64D602274C84500C1A9A9 /* TopCollectionViewCell.swift */; };
@@ -295,6 +296,8 @@
 		B3148A6A22BA191700761B33 /* vid.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = vid.storyboard; sourceTree = "<group>"; };
 		B3148A6C22BA5B7500761B33 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		B3160E8322BCDA520016A0CD /* DirectCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCall.swift; sourceTree = "<group>"; };
+		B3160E8622BD0AB80016A0CD /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		B3160E8822BD15D00016A0CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B319B4E722B36B0200C60272 /* PharmacyMedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyMedViewController.swift; sourceTree = "<group>"; };
 		B319B4E922B3798A00C60272 /* PharMedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PharMedicineTableViewCell.swift; path = ../PharMedicineTableViewCell.swift; sourceTree = "<group>"; };
 		B319B4ED22B37B2700C60272 /* WorkoutCategoryCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCategoryCollectionCell.swift; sourceTree = "<group>"; };
@@ -312,7 +315,6 @@
 		B382E3EC22B26B2E0023446C /* Pharmacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pharmacy.swift; sourceTree = "<group>"; };
 		B38ABFD422AF71F2001792E4 /* CommonLabTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonLabTest.swift; sourceTree = "<group>"; };
 		B395B51D22AE41C100F01CCA /* HospitalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalTableViewCell.swift; sourceTree = "<group>"; };
-		B395B51F22AE44A600F01CCA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B395B52122AE46A300F01CCA /* t_s.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = t_s.bmp; sourceTree = "<group>"; };
 		B3E2B16B22AFB16A00D0E8EC /* LabTestCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabTestCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		B3E64D602274C84500C1A9A9 /* TopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TopCollectionViewCell.swift; path = ../TopCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -427,7 +429,7 @@
 			children = (
 				B3148A6C22BA5B7500761B33 /* Settings.bundle */,
 				06D5F957228A9071008E7EC4 /* WbmHealth.entitlements */,
-				B395B51F22AE44A600F01CCA /* GoogleService-Info.plist */,
+				B3160E8822BD15D00016A0CD /* GoogleService-Info.plist */,
 				B395B52122AE46A300F01CCA /* t_s.bmp */,
 				066595E12273096200E893F5 /* AppDelegate.swift */,
 				06575ED12282C746007E95BF /* Vidyo */,
@@ -466,6 +468,7 @@
 		066596122273227A00E893F5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B3160E8522BD0A690016A0CD /* Cart */,
 				066595E32273096200E893F5 /* ViewController.swift */,
 				064FFEEE227AD3FA004ED6A1 /* Appointment */,
 				B319B4F822B3827400C60272 /* Medical History */,
@@ -620,6 +623,14 @@
 				E160FA93AE04FC83FE109753 /* Pods-WbmHealthUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B3160E8522BD0A690016A0CD /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				B3160E8622BD0AB80016A0CD /* CartViewController.swift */,
+			);
+			path = Cart;
 			sourceTree = "<group>";
 		};
 		B319B4EB22B3799300C60272 /* PharmacyCells */ = {
@@ -881,8 +892,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3148A6D22BA5B7500761B33 /* Settings.bundle in Resources */,
-				B395B52022AE44A600F01CCA /* GoogleService-Info.plist in Resources */,
 				B321480B22BBA3FC0082747E /* ring.mp3 in Resources */,
+				B3160E8922BD15D10016A0CD /* GoogleService-Info.plist in Resources */,
 				B395B52222AE46A300F01CCA /* t_s.bmp in Resources */,
 				B3148A6B22BA191800761B33 /* vid.storyboard in Resources */,
 				06D5F94E228A8514008E7EC4 /* Registration.storyboard in Resources */,
@@ -1135,6 +1146,7 @@
 				B314221522B7C6DC00A30F34 /* MedicineDetail.swift in Sources */,
 				B3148A6722BA128600761B33 /* VidyoViewController.swift in Sources */,
 				B322A03A22B13D5300D0A340 /* LabortaryDetailViewController.swift in Sources */,
+				B3160E8722BD0AB80016A0CD /* CartViewController.swift in Sources */,
 				B38ABFD522AF71F2001792E4 /* CommonLabTest.swift in Sources */,
 				B319B4E822B36B0200C60272 /* PharmacyMedViewController.swift in Sources */,
 				B314221322B7BCDA00A30F34 /* MedicineDetailViewController.swift in Sources */,

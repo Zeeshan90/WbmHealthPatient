@@ -9,7 +9,9 @@
 import UIKit
 import PickerView
 import McPicker
-
+import SwiftyJSON
+import ProgressHUD
+import Alamofire
 class AddChildViewController: UIViewController {
    
     @IBOutlet weak var donebtn: UIButton!
@@ -55,5 +57,22 @@ class AddChildViewController: UIViewController {
     
     @IBAction func crossBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func addChild(){
+        
+        let url = "\(AppUtils.returnBaseUrl())/patient/family/add/5c94754e0948dd2edcb4c299"
+        Alamofire.request(url, method: .put, parameters: nil).responseJSON{
+            
+            response in
+            ProgressHUD.dismiss()
+            if response.result.isSuccess{
+                let json: JSON = JSON(response.result.value!)
+            }else{
+                
+                Utils.showAlert(view: self, message: response.error!.localizedDescription, title: "Error")
+            }
+        }
     }
 }

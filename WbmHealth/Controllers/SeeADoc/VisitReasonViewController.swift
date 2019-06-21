@@ -46,6 +46,7 @@ class VisitReasonViewController: UIViewController,UITableViewDataSource,UITableV
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         WbmDefaults.instance.setString(key: "reason", value: filtered[indexPath.row].text)
+        self.view.endEditing(true)
         performSegue(withIdentifier: "tosymptoms", sender: self)
     }
     
