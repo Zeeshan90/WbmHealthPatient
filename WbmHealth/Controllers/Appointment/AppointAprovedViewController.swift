@@ -18,6 +18,7 @@ class AppointAprovedViewController: UIViewController,UITableViewDelegate,UITable
     let util = Utils()
     let dateFormatter = DateFormatter()
     var resourceId: String!
+    var vidyoToken: String!
     override func viewDidLoad() {
         super.viewDidLoad()
         getAppointments()
@@ -56,9 +57,7 @@ class AppointAprovedViewController: UIViewController,UITableViewDelegate,UITable
         
         resourceId = appointArr[sender.tag].id
         getResourceId()
-        
-        let rootController = UIStoryboard(name: "vid", bundle: nil).instantiateViewController(withIdentifier: "VidyoViewController") as! VidyoViewController
-        self.navigationController?.present(rootController, animated: true, completion: nil)
+      
     }
 
     @IBAction func crossBtn(_ sender: Any) {
@@ -70,23 +69,10 @@ class AppointAprovedViewController: UIViewController,UITableViewDelegate,UITable
     }
     
     
-    func getResourceId(){
-        
-        let url = "\(AppUtils.returnBaseUrl())/patient/call/setid/" + resourceId
-        Alamofire.request(url, method: .put, parameters: ["resourceId":resourceId]).responseJSON{
-            response in
-            
-            if response.result.isSuccess{
-                
-                let json: JSON = JSON(response.result.value!)
-                print(json)
-                self.resourceId = json["resourceId"].stringValue
-            }else{
-                
-                Utils.showAlert(view: self, message: response.error!.localizedDescription, title: "Error")
-            }
-        }
-    }
+ 
+    
+
+    
     // Get All Appointment
     func getAppointments(){
         appointArr = [ConfirmAppoint]()
@@ -117,5 +103,58 @@ class AppointAprovedViewController: UIViewController,UITableViewDelegate,UITable
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "VidyoViewController"{
+            
+        }
+    }
+    
 
+}
+
+
+// Mark -> Getting the variables for the vidyo.io
+extension AppointAprovedViewController{
+    
+    // Getting the token
+    func getVidyoToken(){
+        
+        let url = "\(AppUtils.returnBaseUrl())/vidyo/token"
+        Alamofire.request(url, method: .post, parameters: ["name":"test"]).responseJSON{
+            response in
+            
+            if response.result.isSuccess{
+                print(response.result.value!)
+                self.vidyoToken = response.result.value! as? String
+                
+                // Mark -> Vidyo View controller Loading
+                let rootController = UIStoryboard(name: "vid", bundle: nil).instantiateViewController(withIdentifier: "VidyoViewController") as! VidyoViewController
+                rootController.VIDYO_TOKEN = self.vidyoToken
+                rootController.resourceID = self.resourceId
+                self.navigationController?.present(rootController, animated: true, completion: nil)
+            }else{
+                Utils.showAlert(view: self, message: response.error!.localizedDescription, title: "Error")
+            }
+        }
+    }
+    
+    // Getting the resource Id
+    func getResourceId(){
+        
+        let url = "\(AppUtils.returnBaseUrl())/patient/call/setid/" + resourceId
+        Alamofire.request(url, method: .put, parameters: ["resourceId":resourceId]).responseJSON{
+            response in
+            
+            if response.result.isSuccess{
+                
+                let json: JSON = JSON(response.result.value!)
+                print(json)
+                self.resourceId = json["resourceId"].stringValue
+                self.getVidyoToken()
+            }else{
+                
+                Utils.showAlert(view: self, message: response.error!.localizedDescription, title: "Error")
+            }
+        }
+    }
 }

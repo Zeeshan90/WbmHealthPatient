@@ -45,7 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
         application.registerForRemoteNotifications()
         FirebaseApp.configure()
         // [START set_messaging_delegate]
+        
         Messaging.messaging().delegate = self
+        
         // [END set_messaging_delegate]
         // Register for remote notifications. This shows a permission dialog on first run, to
         // show the dialog at a more appropriate time move this registration accordingly.
@@ -54,6 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
         Messaging.messaging().isAutoInitEnabled = true
         
         
+        // Mark -> Tuya IOT
         TuyaSmartSDK.sharedInstance()?.start(withAppKey: "xngta74n8ar54q3vqu5w", secretKey: "nkqqky4xdhq8d5e94uhfsqptem54j8wy")
         if ((TuyaSmartSDK.sharedInstance()?.checkVersionUpgrade) != nil) {
             TuyaSmartSDK.sharedInstance()?.upgradeVersion({
@@ -147,16 +150,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
         print("Firebase registration token: \(fcmToken)")
         
         let dataDict:[String: String] = ["token": fcmToken]
-        
-        
-        print("\(fcmToken)")
+
         WbmDefaults.instance.setFireBaseToken(value: fcmToken)
+        sendDeviceToken(token: fcmToken)
         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
         // TODO: If necessary send token to application server.
         // Note: This callback is fired at each app startup and whenever a new token is generated.
     }
     
     func applicationReceivedRemoteMessage(_ remoteMessage: MessagingRemoteMessage) {
+        
         print("recieve notifications")
         print(remoteMessage.appData)
         print("</ recieve notifications >")
@@ -165,10 +168,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
     func application(application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         Messaging.messaging().apnsToken = deviceToken as Data
-        sendDeviceToken(token: deviceToken)
+        
     }
 
-    func sendDeviceToken(token: NSData){
+    func sendDeviceToken(token: String){
         
         let url = "\(AppUtils.returnBaseUrl())/patient/edit/token/5c94754e0948dd2edcb4c299"
         Alamofire.request(url, method: .put, parameters: ["token": token]).responseJSON{
@@ -176,15 +179,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
             
             if response.result.isSuccess{
                 
-                print("Device Token sended successfully")
+                print("FireBase Token sended successfully")
                 
             }else{
                 print(response.error?.localizedDescription as Any)
             }
         }
     }
+    
+    func startVidyoStoryBoard(){
+        
+        
+            
+            let navController = UIStoryboard(name: "vid", bundle: nil).instantiateInitialViewController()
+            self.window?.rootViewController = navController
+       
+    }
+    
+    func startMainStoryBoard(){
+        
+        let navController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        self.window?.rootViewController = navController
+    }
+    
     // MARK: - Core Data stack
-
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -229,6 +247,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
     }
 
 }
+
 extension UITableView {
     
     func setEmptyMessage(_ message: String) {
@@ -319,10 +338,6 @@ extension UIImage {
 
 
 
-
-
-
-
     enum JPEGQuality: CGFloat {
         case lowest  = 0
         case low     = 0.25
@@ -367,6 +382,8 @@ extension UIImage {
 extension AppDelegate : UNUserNotificationCenterDelegate {
     
     // Receive displayed notifications for iOS 10 devices.
+    
+    // Notifications Receives
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
@@ -378,22 +395,23 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
             print("when notification recieved willPresent notification Message ID: \(messageID)")
-//            let rootController = UIStoryboard(name: "Ride", bundle: Bundle.main).instantiateInitialViewController()
-//            self.window?.rootViewController = rootController
+            startVidyoStoryBoard()
         }
-        print(notification)
-        
-        // Print full message.
-        print(userInfo)
+//        print(notification)
+//
+//        // Print full message.
+//        print(userInfo)
 //        if let notification = userInfo[notifiicationType]
 //        {
-//            if "\(notification)" == WbmDefaults.RequestAccepted || "\(notification)" == "DRIVER_ARRIVED" ||   "\(notification)" == "RIDE_STARTED" ||   "\(notification)" == WbmDefaults.RideCompleted{
+//            if "\(notification)" == WbmDefaults.start{
 //                WbmDefaults.instance.setAppState(value: "\(notification)")
-//                startRideStoryBoard()
+//                startVidyoStoryBoard()
 //
-//            }else if "\(notification)" == WbmDefaults.RideCancelled {
-//                WbmDefaults.instance.setAppState(value: WbmDefaults.RideCancelled)
-//                startMainScreen()
+//            }
+//            else if "\(notification)" == WbmDefaults.CallDeclined
+//            {
+//                WbmDefaults.instance.setAppState(value: WbmDefaults.CallDeclined)
+//                startMainStoryBoard()
 //            }
 //
 //        }
@@ -415,13 +433,8 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
 //        }
 //    }
     
-//    func startMainScreen()
-//    {
-//        let rootController = UIStoryboard(name: "MainMenu", bundle: Bundle.main).instantiateInitialViewController()
-//        self.window?.rootViewController = rootController
-//    }
     
-    
+    // When Notification Clicked
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -432,24 +445,31 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
             print("when notification taps didReceive response Message ID: \(messageID)")
         }
         
-        // Print full message.
+        if WbmDefaults.AppState == WbmDefaults.CallDeclined{
+            startMainStoryBoard()
+        }else{
+            startVidyoStoryBoard()
+        }
 //        print(userInfo)
 //        if let notification = userInfo[notifiicationType]
 //        {
 //            print(notification)
 //
-//            if "\(notification)" == WbmDefaults.RequestAccepted || "\(notification)" == "DRIVER_ARRIVED" ||   "\(notification)" == "RIDE_STARTED" ||
-//                "\(notification)" == WbmDefaults.RideCompleted {
+//            if "\(notification)" == WbmDefaults.CallDeclined || "\(notification)" == WbmDefaults.CallCompleted {
 //                WbmDefaults.instance.setAppState(value: "\(notification)")
-//                startRideStoryBoard()
+//                startMainStoryBoard()
 //
-//            }else if "\(notification)" == WbmDefaults.RideCancelled {
-//                WbmDefaults.instance.setAppState(value: WbmDefaults.RideCancelled)
-//                startMainScreen()
+//            }else if "\(notification)" == WbmDefaults.CallDeclined {
+//                WbmDefaults.instance.setAppState(value: WbmDefaults.CallDeclined)
+//                startMainStoryBoard()
 //            }
-        
-            completionHandler()
-            
-        }
+//
+//            completionHandler()
+//
+//        }
+    }
+    
+    
+    
 }
 

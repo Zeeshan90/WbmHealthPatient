@@ -15,6 +15,11 @@ class WbmDefaults{
     static let instance = WbmDefaults()
     static let defaults = UserDefaults.standard
     static let AppState = "AppState"
+    static let start = "START"
+    static let CallDeclined = "Call_Declined"
+    static let CallAccepted = "Call_Accepted"
+    static let CallCompleted = "Call_Completed"
+    static let VidyoStarted = "VidyoStarted"
     
     func setAppState( value : String )
     {

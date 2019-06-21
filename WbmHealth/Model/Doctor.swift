@@ -35,16 +35,18 @@ class Doctor{
     var ssn : String!
     var sts : String!
     var telecom : [String]!
-    
+    var docToken : String!
     /**
      * Instantiate the instance using the passed json values to set the properties values
      */
+    
     init(fromJson json: JSON!){
         if json.isEmpty{
             return
         }
         v = json["__v"].intValue
         id = json["_id"].stringValue
+        docToken = json["docToken"].stringValue
         aboutme = json["aboutme"].stringValue
         
         // getting Address from the json
