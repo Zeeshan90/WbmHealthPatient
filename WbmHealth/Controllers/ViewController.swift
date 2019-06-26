@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var cartBtn: UIBarButtonItem!
     @IBOutlet weak var testCollectionView: UICollectionView!
     @IBOutlet weak var topCollectionView: UICollectionView!
-    
+    @IBOutlet weak var fitBitVu: UIView!
     var topNameArr = ["My Accounts","Forums","Emergency","Health Blogs"]
     var topImgArr = ["1","2","3","4"]
     var testArr = [CommonLabTest]()
@@ -70,8 +70,14 @@ class ViewController: UIViewController {
         nearByPharmmancyVu.addGestureRecognizer(nearPhar)
         let nearHosp = UITapGestureRecognizer(target: self, action: #selector(tapOnNearHosp))
         nearByHospitalVu.addGestureRecognizer(nearHosp)
+        let fitbitVu = UITapGestureRecognizer(target: self, action: #selector(topOnFitbit))
+        fitBitVu.addGestureRecognizer(fitbitVu)
     }
     
+    
+    @objc func topOnFitbit(){
+        performSegue(withIdentifier: "tofitbit", sender: self)
+    }
     func setupBadge(){
         
         let customButton = UIButton(type: UIButton.ButtonType.custom)
@@ -91,6 +97,7 @@ class ViewController: UIViewController {
     
     @objc func chartBtn() {
         
+        performSegue(withIdentifier: "tocart", sender: self)
         //        let rootController = UIStoryboard(name: "Registration", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         //        self.navigationController?.pushViewController(rootController, animated: true)
     }
@@ -166,6 +173,17 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource {
     }
     
     @objc func addTest(sender: UIButton){
+        
+        var testDic = [[String:Any]]()
+        testDic = [[
+        "id":testArr[sender.tag].id,
+        "testName":testArr[sender.tag].tests.testName,
+        "price":testArr[sender.tag].price,
+        "imgUrl":testArr[sender.tag].tests.image,
+        "discount":testArr[sender.tag].discount
+            ]]
+        print(testDic)
+        print(testArr[sender.tag].tests)
         
         i+=1
         btnBarBadge.badgeValue = "\(i)"
