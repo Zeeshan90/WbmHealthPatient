@@ -48,7 +48,7 @@ class AppointPendingViewController: UIViewController,UITableViewDataSource,UITab
         let time = timeStr.replacingOccurrences(of: ".", with: ":")
         cell.TimeLbl.text = "Time: \(time)"
         cell.chargesLbl.text = "Charges: $$$"
-        util.cardView(view: cell.vu)
+        Utils.cardView(view: cell.vu)
         cell.cancelBtn.tag = indexPath.row
         cell.cancelBtn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
         cell.cancelBtn.layer.cornerRadius = 5

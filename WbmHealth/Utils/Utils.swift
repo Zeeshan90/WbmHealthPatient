@@ -14,7 +14,7 @@ class Utils: NSObject {
     let dateFormatter = DateFormatter()
     
     /// CardView
-    func cardView(view:UIView){
+    class func cardView(view:UIView){
         view.layer.masksToBounds = false
         view.layer.shadowColor = UIColor.gray.cgColor
         view.layer.shadowOpacity = 0.5
@@ -69,6 +69,7 @@ class Utils: NSObject {
         return dateString
     }
     
+    // Set Search Bar in the Navigation Bar
     class func setSearchBar(controller: UIViewController,updater: UISearchResultsUpdating){
         
         var searchController = UISearchController()
@@ -80,6 +81,14 @@ class Utils: NSObject {
         searchController.searchBar.barStyle = .blackTranslucent
         searchController.searchBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
+    
+    // Check Email is Valid or not
+    class func isValidEmail(emailID:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: emailID)
+    }
+    
     
     
 }

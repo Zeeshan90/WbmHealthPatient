@@ -13,6 +13,7 @@ class AppUtils{
     
     static let context = (UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
     static let app = (UIApplication.shared.delegate as! AppDelegate )
+    static var sharedInstance = AppUtils()
     
     static func returnBaseUrl() ->String{
         
@@ -141,7 +142,7 @@ class AppUtils{
         catch{
             print(error)
         }
-        
+         
         
     }
     
@@ -155,4 +156,47 @@ class AppUtils{
             print("some error to save this")
         }
     }
+    
+    
+    func savetoCart(object: [String:Any]){
+        
+        let cart = NSEntityDescription.insertNewObject(forEntityName: "LabTests", into: AppUtils.context) as! LabTests
+        cart.id = object["id"] as? String
+        cart.discount = object["discount"] as? String
+        cart.testName = object["testName"] as? String
+        cart.imgUrl = object["imgUrl"] as? String
+        cart.price = object["price"] as? String
+        cart.testCode = object["testCode"] as? String
+        
+        do {
+            try AppUtils.context.save()
+        } catch  {
+            print("Data not Saved")
+        }
+    }
+    
+    func getAllCartProducts() -> [LabTests]{
+        var cart = [LabTests]()
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LabTests")
+        do{
+            cart = try AppUtils.context.fetch(fetchRequest) as! [LabTests]
+        }catch{
+            print("Error to fetch")
+        }
+        return cart
+    }
+    
+    func deleteCartProduct(index: Int) -> [LabTests]{
+        var cart = getAllCartProducts()
+        AppUtils.context.delete(cart[index])
+        cart.remove(at: index)
+        do {
+            try AppUtils.saveChanges()
+        } catch  {
+            print(error.localizedDescription)
+        }
+        return cart
+    }
 }
+
+

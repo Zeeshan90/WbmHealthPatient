@@ -102,6 +102,8 @@
 		06D88E0222951A2F001EA7E7 /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D88E0122951A2F001EA7E7 /* AppointmentViewController.swift */; };
 		06D88E0422951A40001EA7E7 /* ConfirmAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D88E0322951A40001EA7E7 /* ConfirmAppointmentViewController.swift */; };
 		06D88E0622953B2E001EA7E7 /* AddDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D88E0522953B2E001EA7E7 /* AddDeviceViewController.swift */; };
+		B302B57F22C48E3D0067C193 /* LabTests+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B302B57E22C48E3C0067C193 /* LabTests+CoreDataProperties.swift */; };
+		B302B58022C48E3D0067C193 /* LabTests+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B302B57D22C48E3C0067C193 /* LabTests+CoreDataClass.swift */; };
 		B314221322B7BCDA00A30F34 /* MedicineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314221222B7BCDA00A30F34 /* MedicineDetailViewController.swift */; };
 		B314221522B7C6DC00A30F34 /* MedicineDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314221422B7C6DC00A30F34 /* MedicineDetail.swift */; };
 		B314221722B7CFC400A30F34 /* BmiCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314221622B7CFC400A30F34 /* BmiCalculatorViewController.swift */; };
@@ -113,9 +115,11 @@
 		B3148A6722BA128600761B33 /* VidyoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3148A6622BA128600761B33 /* VidyoViewController.swift */; };
 		B3148A6B22BA191800761B33 /* vid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3148A6A22BA191700761B33 /* vid.storyboard */; };
 		B3148A6D22BA5B7500761B33 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B3148A6C22BA5B7500761B33 /* Settings.bundle */; };
+		B314BB5E22C4F6B300B906BA /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314BB5D22C4F6B300B906BA /* AccountViewController.swift */; };
+		B314BB6122C4F6E700B906BA /* ForumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314BB6022C4F6E700B906BA /* ForumsViewController.swift */; };
+		B314BB6422C4F70600B906BA /* HealthBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314BB6322C4F70600B906BA /* HealthBlogViewController.swift */; };
 		B3160E8422BCDA530016A0CD /* DirectCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3160E8322BCDA520016A0CD /* DirectCall.swift */; };
 		B3160E8722BD0AB80016A0CD /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3160E8622BD0AB80016A0CD /* CartViewController.swift */; };
-		B3160E8922BD15D10016A0CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3160E8822BD15D00016A0CD /* GoogleService-Info.plist */; };
 		B319B4E822B36B0200C60272 /* PharmacyMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319B4E722B36B0200C60272 /* PharmacyMedViewController.swift */; };
 		B319B4EA22B3798A00C60272 /* PharMedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319B4E922B3798A00C60272 /* PharMedicineTableViewCell.swift */; };
 		B319B4EE22B37B2700C60272 /* WorkoutCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319B4ED22B37B2700C60272 /* WorkoutCategoryCollectionCell.swift */; };
@@ -137,6 +141,7 @@
 		B38ABFD522AF71F2001792E4 /* CommonLabTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38ABFD422AF71F2001792E4 /* CommonLabTest.swift */; };
 		B395B51E22AE41C100F01CCA /* HospitalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B395B51D22AE41C100F01CCA /* HospitalTableViewCell.swift */; };
 		B395B52222AE46A300F01CCA /* t_s.bmp in Resources */ = {isa = PBXBuildFile; fileRef = B395B52122AE46A300F01CCA /* t_s.bmp */; };
+		B3BC227722C4E30900E3BB06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3BC227622C4E30900E3BB06 /* GoogleService-Info.plist */; };
 		B3E2B16C22AFB16A00D0E8EC /* LabTestCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E2B16B22AFB16A00D0E8EC /* LabTestCategoryCollectionViewCell.swift */; };
 		B3E64D612274C84500C1A9A9 /* TopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E64D602274C84500C1A9A9 /* TopCollectionViewCell.swift */; };
 		B3E64D632274C85B00C1A9A9 /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E64D622274C85B00C1A9A9 /* TestCollectionViewCell.swift */; };
@@ -286,6 +291,8 @@
 		5B5E1DFC782D9251946CDE69 /* Pods_WbmHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WbmHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		637B0DB20D158DC8719BC3EB /* Pods-WbmHealthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WbmHealthTests.debug.xcconfig"; path = "Target Support Files/Pods-WbmHealthTests/Pods-WbmHealthTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B852DD3E4C6026F91BA58F1 /* Pods-WbmHealthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WbmHealthTests.release.xcconfig"; path = "Target Support Files/Pods-WbmHealthTests/Pods-WbmHealthTests.release.xcconfig"; sourceTree = "<group>"; };
+		B302B57D22C48E3C0067C193 /* LabTests+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LabTests+CoreDataClass.swift"; path = "/Users/zeeshan/Desktop/Health 2/WbmHealth/WbmHealth/LabTests+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		B302B57E22C48E3C0067C193 /* LabTests+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LabTests+CoreDataProperties.swift"; path = "/Users/zeeshan/Desktop/Health 2/WbmHealth/WbmHealth/LabTests+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		B314221222B7BCDA00A30F34 /* MedicineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailViewController.swift; sourceTree = "<group>"; };
 		B314221422B7C6DC00A30F34 /* MedicineDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetail.swift; sourceTree = "<group>"; };
 		B314221622B7CFC400A30F34 /* BmiCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiCalculatorViewController.swift; sourceTree = "<group>"; };
@@ -298,9 +305,11 @@
 		B3148A6622BA128600761B33 /* VidyoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VidyoViewController.swift; sourceTree = "<group>"; };
 		B3148A6A22BA191700761B33 /* vid.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = vid.storyboard; sourceTree = "<group>"; };
 		B3148A6C22BA5B7500761B33 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		B314BB5D22C4F6B300B906BA /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		B314BB6022C4F6E700B906BA /* ForumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumsViewController.swift; sourceTree = "<group>"; };
+		B314BB6322C4F70600B906BA /* HealthBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthBlogViewController.swift; sourceTree = "<group>"; };
 		B3160E8322BCDA520016A0CD /* DirectCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCall.swift; sourceTree = "<group>"; };
 		B3160E8622BD0AB80016A0CD /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
-		B3160E8822BD15D00016A0CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B319B4E722B36B0200C60272 /* PharmacyMedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyMedViewController.swift; sourceTree = "<group>"; };
 		B319B4E922B3798A00C60272 /* PharMedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PharMedicineTableViewCell.swift; path = ../PharMedicineTableViewCell.swift; sourceTree = "<group>"; };
 		B319B4ED22B37B2700C60272 /* WorkoutCategoryCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCategoryCollectionCell.swift; sourceTree = "<group>"; };
@@ -322,6 +331,7 @@
 		B38ABFD422AF71F2001792E4 /* CommonLabTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonLabTest.swift; sourceTree = "<group>"; };
 		B395B51D22AE41C100F01CCA /* HospitalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalTableViewCell.swift; sourceTree = "<group>"; };
 		B395B52122AE46A300F01CCA /* t_s.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = t_s.bmp; sourceTree = "<group>"; };
+		B3BC227622C4E30900E3BB06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3E2B16B22AFB16A00D0E8EC /* LabTestCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabTestCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		B3E64D602274C84500C1A9A9 /* TopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TopCollectionViewCell.swift; path = ../TopCollectionViewCell.swift; sourceTree = "<group>"; };
 		B3E64D622274C85B00C1A9A9 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestCollectionViewCell.swift; path = ../TestCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -433,11 +443,13 @@
 		066595E02273096200E893F5 /* WbmHealth */ = {
 			isa = PBXGroup;
 			children = (
+				B302B57D22C48E3C0067C193 /* LabTests+CoreDataClass.swift */,
+				B302B57E22C48E3C0067C193 /* LabTests+CoreDataProperties.swift */,
 				B3148A6C22BA5B7500761B33 /* Settings.bundle */,
 				06D5F957228A9071008E7EC4 /* WbmHealth.entitlements */,
-				B3160E8822BD15D00016A0CD /* GoogleService-Info.plist */,
 				B395B52122AE46A300F01CCA /* t_s.bmp */,
 				066595E12273096200E893F5 /* AppDelegate.swift */,
+				B3BC227622C4E30900E3BB06 /* GoogleService-Info.plist */,
 				06575ED12282C746007E95BF /* Vidyo */,
 				066F8C6C227AF0E300451E6D /* Utils */,
 				06BDB92422734821007F4ED2 /* Cells */,
@@ -474,6 +486,9 @@
 		066596122273227A00E893F5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B314BB6222C4F6EE00B906BA /* Health Blogs */,
+				B314BB5F22C4F6CF00B906BA /* Forums */,
+				B314BB5C22C4F64500B906BA /* Account */,
 				B3160E8522BD0A690016A0CD /* Cart */,
 				066595E32273096200E893F5 /* ViewController.swift */,
 				064FFEEE227AD3FA004ED6A1 /* Appointment */,
@@ -631,6 +646,31 @@
 				E160FA93AE04FC83FE109753 /* Pods-WbmHealthUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B314BB5C22C4F64500B906BA /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				B314BB5D22C4F6B300B906BA /* AccountViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		B314BB5F22C4F6CF00B906BA /* Forums */ = {
+			isa = PBXGroup;
+			children = (
+				B314BB6022C4F6E700B906BA /* ForumsViewController.swift */,
+			);
+			path = Forums;
+			sourceTree = "<group>";
+		};
+		B314BB6222C4F6EE00B906BA /* Health Blogs */ = {
+			isa = PBXGroup;
+			children = (
+				B314BB6322C4F70600B906BA /* HealthBlogViewController.swift */,
+			);
+			name = "Health Blogs";
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		B3160E8522BD0A690016A0CD /* Cart */ = {
@@ -910,7 +950,7 @@
 			files = (
 				B3148A6D22BA5B7500761B33 /* Settings.bundle in Resources */,
 				B321480B22BBA3FC0082747E /* ring.mp3 in Resources */,
-				B3160E8922BD15D10016A0CD /* GoogleService-Info.plist in Resources */,
+				B3BC227722C4E30900E3BB06 /* GoogleService-Info.plist in Resources */,
 				B395B52222AE46A300F01CCA /* t_s.bmp in Resources */,
 				B3148A6B22BA191800761B33 /* vid.storyboard in Resources */,
 				06D5F94E228A8514008E7EC4 /* Registration.storyboard in Resources */,
@@ -1120,6 +1160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B314BB6122C4F6E700B906BA /* ForumsViewController.swift in Sources */,
 				067E2D962276D12F00E313A7 /* LabortaryViewController.swift in Sources */,
 				066595E42273096200E893F5 /* ViewController.swift in Sources */,
 				06D88E0022951A0C001EA7E7 /* ConfirmAppointmentTableViewCell.swift in Sources */,
@@ -1155,6 +1196,7 @@
 				065B036522816058006EBA5A /* CarePlanViewController.swift in Sources */,
 				064FFEED227AD3C5004ED6A1 /* AppointPendingViewController.swift in Sources */,
 				B395B51E22AE41C100F01CCA /* HospitalTableViewCell.swift in Sources */,
+				B302B57F22C48E3D0067C193 /* LabTests+CoreDataProperties.swift in Sources */,
 				06AB207A2276B59100FF00C7 /* WorkoutDetailViewController.swift in Sources */,
 				067E2D9C2276F28E00E313A7 /* LabTestDetailViewController.swift in Sources */,
 				06D5F952228A8EAE008E7EC4 /* VerifyCodeLoginViewController.swift in Sources */,
@@ -1168,6 +1210,7 @@
 				B319B4E822B36B0200C60272 /* PharmacyMedViewController.swift in Sources */,
 				B314221322B7BCDA00A30F34 /* MedicineDetailViewController.swift in Sources */,
 				06575E9922829CD8007E95BF /* Utils.swift in Sources */,
+				B302B58022C48E3D0067C193 /* LabTests+CoreDataClass.swift in Sources */,
 				068E777822928B710015210C /* TextField.swift in Sources */,
 				B3E64D632274C85B00C1A9A9 /* TestCollectionViewCell.swift in Sources */,
 				067E2DAC227741F300E313A7 /* ContactusViewController.swift in Sources */,
@@ -1184,6 +1227,7 @@
 				067A64ED2280384400E51319 /* Photo.swift in Sources */,
 				0660ABE0228D32AA001BFFD0 /* AvailabilityViewController.swift in Sources */,
 				B377F8EB22C0BEA50097961B /* CartTableViewCell.swift in Sources */,
+				B314BB6422C4F70600B906BA /* HealthBlogViewController.swift in Sources */,
 				068E776B229272F10015210C /* ExperianceTableViewCell.swift in Sources */,
 				06D88E0622953B2E001EA7E7 /* AddDeviceViewController.swift in Sources */,
 				B3160E8422BCDA530016A0CD /* DirectCall.swift in Sources */,
@@ -1198,6 +1242,7 @@
 				067449BD229E640A004C705A /* MedicalCondition.swift in Sources */,
 				065FFE8D22842DE0009D2AD3 /* Speciality.swift in Sources */,
 				B3E2B16C22AFB16A00D0E8EC /* LabTestCategoryCollectionViewCell.swift in Sources */,
+				B314BB5E22C4F6B300B906BA /* AccountViewController.swift in Sources */,
 				0661BAFD2289441B00D459B2 /* DoctorViewController.swift in Sources */,
 				06575E9522829A98007E95BF /* SeeADocViewController.swift in Sources */,
 				067E2D942276D10A00E313A7 /* LabortaryTableViewCell.swift in Sources */,

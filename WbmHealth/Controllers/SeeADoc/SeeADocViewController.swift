@@ -16,7 +16,6 @@ struct optionStruct {
 class SeeADocViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var seeDocTblVu: UITableView!
-     let util = Utils()
     var optionArr = [optionStruct]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +34,7 @@ class SeeADocViewController: UIViewController,UITableViewDelegate,UITableViewDat
         cell.title.text = optionArr[indexPath.row].title
         cell.waitTimeLbl.text = optionArr[indexPath.row].certify
         cell.certifyLbl.text = optionArr[indexPath.row].waitTime
-        util.cardView(view: cell.vu)
+      Utils.cardView(view: cell.vu)
         return cell
     }
     

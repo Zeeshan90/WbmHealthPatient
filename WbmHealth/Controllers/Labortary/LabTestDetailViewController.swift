@@ -36,9 +36,9 @@ class LabTestDetailViewController: UIViewController {
 
         ProgressHUD.show("loading...")
         getTestDetails()
-        util.cardView(view: detailVu)
-        util.cardView(view: bgrVu)
-        util.cardView(view: requirementVu)
+        Utils.cardView(view: detailVu)
+        Utils.cardView(view: bgrVu)
+        Utils.cardView(view: requirementVu)
         testNameVu.layer.cornerRadius = 5
         // Do any additional setup after loading the view.
     }

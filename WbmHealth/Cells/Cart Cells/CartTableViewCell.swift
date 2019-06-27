@@ -10,6 +10,10 @@ import UIKit
 
 class CartTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var productImg: UIImageView!
+    @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var productPrice: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +25,11 @@ class CartTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func setData(name: String,imgUrl: String,price: String){
+        
+        productName.text = name
+        productPrice.text = price
+        productImg.downloaded(from: imgUrl)
+        
+    }
 }

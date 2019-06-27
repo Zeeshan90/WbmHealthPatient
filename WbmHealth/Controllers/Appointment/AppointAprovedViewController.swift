@@ -46,7 +46,8 @@ class AppointAprovedViewController: UIViewController,UITableViewDelegate,UITable
         let apointTime: String = appointArr[indexPath.row].apptTime
         let appointReason: String = appointArr[indexPath.row].apptReason
         cell.descriptionLbl.text = "we have booked \(docName) for your checkup on \(appointDateStr) at \(apointTime) for the following reason \(appointReason)"
-        util.cardView(view: cell.Vu)
+        Utils.cardView(view: cell.Vu)
+       // Utils.cardView(view: cell.Vu)
         cell.callBtn.layer.cornerRadius = cell.callBtn.frame.height/2
         cell.callBtn.tag = indexPath.row
         cell.callBtn.addTarget(self, action: #selector(callBtnPressed(sender:)), for: .touchUpInside)

@@ -61,7 +61,7 @@ class MedicalHistoryViewController: UIViewController,UICollectionViewDelegate,UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = optionCollectionVu.dequeueReusableCell(withReuseIdentifier: "medhistcell", for: indexPath) as! MedicalHistoryCollectionViewCell
         cell.setdata(name: nameArr[indexPath.row], imag: imgArr[indexPath.row])
-        util.cardView(view: cell.vu)
+        Utils.cardView(view: cell.vu)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

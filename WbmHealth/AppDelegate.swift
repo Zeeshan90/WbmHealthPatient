@@ -147,6 +147,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
     // If swizzling is disabled then this function must be implemented so that the APNs token can be paired to
     // the FCM registration token.
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        
         print("Firebase registration token: \(fcmToken)")
         
         let dataDict:[String: String] = ["token": fcmToken]
@@ -179,7 +180,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
             
             if response.result.isSuccess{
                 
-                print("FireBase Token sended successfully")
+                print("FireBase Token sended successfully: \(token)")
                 
             }else{
                 print(response.error?.localizedDescription as Any)
@@ -188,10 +189,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
     }
     
     func startVidyoStoryBoard(){
+
         
-        
-            
-            let navController = UIStoryboard(name: "vid", bundle: nil).instantiateInitialViewController()
+        let navController = UIStoryboard(name: "vid", bundle: nil).instantiateInitialViewController()
             self.window?.rootViewController = navController
        
     }

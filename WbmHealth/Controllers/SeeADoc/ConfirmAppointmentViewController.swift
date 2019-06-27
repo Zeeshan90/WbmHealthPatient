@@ -25,8 +25,8 @@ class ConfirmAppointmentViewController: UIViewController,UITableViewDelegate,UIT
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        util.cardView(view: costVu)
-        util.cardView(view: paymentVu)
+        Utils.cardView(view: paymentVu)
+        Utils.cardView(view: costVu)
         setValues()
         
         // Do any additional setup after loading the view.

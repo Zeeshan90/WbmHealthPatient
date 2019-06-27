@@ -45,12 +45,12 @@ class DoctorBioViewController: UIViewController {
 
         let availableClick = UITapGestureRecognizer(target: self, action: #selector(tapOnAvailable))
         availabilityVu.addGestureRecognizer(availableClick)
-        util.cardView(view: topVu)
-        util.cardView(view: expVu)
-        util.cardView(view: langVu)
-        util.cardView(view: ratingVu)
-        util.cardView(view: serviceVu)
-        util.cardView(view: qualVu)
+        Utils.cardView(view: topVu)
+        Utils.cardView(view: expVu)
+        Utils.cardView(view: langVu)
+        Utils.cardView(view: ratingVu)
+        Utils.cardView(view: serviceVu)
+        Utils.cardView(view: qualVu)
         docImg.layer.cornerRadius = docImg.frame.height/2
         reviewTxtFld.layer.cornerRadius = 10
         reviewTxtFld.layer.borderWidth = 0.6

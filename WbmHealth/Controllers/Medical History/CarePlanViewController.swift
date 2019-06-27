@@ -11,7 +11,6 @@ import UIKit
 class CarePlanViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var carePlanTblVu: UITableView!
-    let util = Utils()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +23,7 @@ class CarePlanViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = carePlanTblVu.dequeueReusableCell(withIdentifier: "careplancell", for: indexPath) as! CarePlanTableViewCell
-        util.cardView(view: cell.vu)
+        Utils.cardView(view: cell.vu)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

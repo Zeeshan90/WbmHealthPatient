@@ -646,11 +646,32 @@
                         <segue destination="wkO-Bf-ssH" kind="presentation" identifier="tobmical" id="hiw-OL-q5i"/>
                         <segue destination="isQ-80-IV6" kind="presentation" identifier="tocart" id="N1R-HD-hgW"/>
                         <segue destination="8tB-bV-16k" kind="presentation" identifier="tofitbit" id="tEN-vd-0qu"/>
+                        <segue destination="5ud-Ju-Nr8" kind="presentation" identifier="toaccount" id="ecw-sb-Tvq"/>
+                        <segue destination="t5b-1L-CmH" kind="presentation" identifier="toforums" id="Rbv-cM-hqd"/>
+                        <segue destination="ZQg-gG-RUz" kind="presentation" identifier="tohealthblogs" id="bM8-oN-hRZ"/>
+                        <segue destination="NEr-0o-UMK" kind="presentation" id="euN-K2-hRh"/>
+                        <segue destination="0xg-Gv-PIj" kind="presentation" identifier="tohealthtips" id="SI8-E4-Msx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8327.536231884058" y="132.88043478260872"/>
+        </scene>
+        <!--Health Tips-->
+        <scene sceneID="rdu-n4-as1">
+            <objects>
+                <viewController id="hds-tm-jsh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nbF-r6-wZa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jm6-9P-Zj5"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Health Tips" id="7F0-Nk-FIL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XWV-s2-fCO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11500" y="335.86956521739131"/>
         </scene>
         <!--Pharmacies-->
         <scene sceneID="oBg-9K-U7G">
@@ -3636,40 +3657,58 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
             </objects>
             <point key="canvasLocation" x="7913.04347826087" y="-2535.326086956522"/>
         </scene>
+        <!--Health Blogs-->
+        <scene sceneID="qOz-nh-AXz">
+            <objects>
+                <viewController id="yx3-Qq-cqh" customClass="HealthBlogViewController" customModule="WbmHealth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZiJ-GA-1u9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6zU-fZ-5Kd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Health Blogs" id="phh-DX-a6Q">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="roQ-Ox-BVE"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YX6-h6-aW7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8267" y="-5831"/>
+        </scene>
         <!--Cart Detail View Controller-->
         <scene sceneID="O3o-de-fvm">
             <objects>
                 <viewController id="Slx-LC-ZTG" customClass="CartDetailViewController" customModule="WbmHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NbG-Ml-ZGT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH0-YD-dsO">
-                                <rect key="frame" x="20" y="92" width="374" height="20.333333333333329"/>
+                                <rect key="frame" x="20" y="28" width="374" height="19.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Leq-e3-q6Z">
-                                <rect key="frame" x="20" y="172.33333333333334" width="374" height="19.333333333333343"/>
+                                <rect key="frame" x="20" y="107.33333333333334" width="374" height="19.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMK-RJ-UTo">
-                                <rect key="frame" x="20" y="257.66666666666669" width="374" height="19.333333333333314"/>
+                                <rect key="frame" x="20" y="192.66666666666669" width="374" height="19.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fj-xe-cPf">
-                                <rect key="frame" x="20" y="343" width="374" height="20.333333333333314"/>
+                                <rect key="frame" x="20" y="278" width="374" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eC1-AW-gDW">
-                                <rect key="frame" x="20" y="132.33333333333334" width="374" height="32"/>
+                                <rect key="frame" x="20" y="67.333333333333343" width="374" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -3677,7 +3716,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPl-Af-DuN">
-                                <rect key="frame" x="0.0" y="686" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="622" width="414" height="50"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="iMF-34-lan"/>
@@ -3686,9 +3725,12 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="doneBtn:" destination="Slx-LC-ZTG" eventType="touchUpInside" id="p3X-qF-Dke"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z3P-q1-8xn" customClass="TextField" customModule="WbmHealth" customModuleProvider="target">
-                                <rect key="frame" x="20" y="201.66666666666666" width="374" height="46"/>
+                                <rect key="frame" x="20" y="136.66666666666666" width="374" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="zfK-1j-hME"/>
                                 </constraints>
@@ -3697,7 +3739,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="03xxxxxxxxx" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yeb-74-OBy" customClass="TextField" customModule="WbmHealth" customModuleProvider="target">
-                                <rect key="frame" x="20" y="287" width="374" height="46"/>
+                                <rect key="frame" x="20" y="222" width="374" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="Vcw-fR-nUx"/>
                                 </constraints>
@@ -3706,7 +3748,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LdO-m3-yt8" customClass="TextField" customModule="WbmHealth" customModuleProvider="target">
-                                <rect key="frame" x="20" y="373.33333333333331" width="374" height="46"/>
+                                <rect key="frame" x="20" y="308.33333333333331" width="374" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="oDk-mq-yzW"/>
                                 </constraints>
@@ -3715,22 +3757,22 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOj-95-Gcg">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Jee-ZW-xpM">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Oh-n7-eus">
+                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Oh-n7-eus">
                                             <rect key="frame" x="47" y="228" width="320" height="216"/>
                                             <date key="date" timeIntervalSinceReferenceDate="583073674.41047704">
                                                 <!--2019-06-24 12:54:34 +0000-->
                                             </date>
                                         </datePicker>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65g-QV-9eY">
-                                            <rect key="frame" x="165" y="484" width="84" height="84"/>
+                                            <rect key="frame" x="182" y="494" width="60" height="60"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="84" id="SKi-he-sFb"/>
-                                                <constraint firstAttribute="height" constant="84" id="vmv-2u-ATG"/>
+                                                <constraint firstAttribute="width" constant="60" id="SKi-he-sFb"/>
+                                                <constraint firstAttribute="height" constant="60" id="vmv-2u-ATG"/>
                                             </constraints>
                                             <state key="normal" image="icon"/>
                                             <connections>
@@ -3739,13 +3781,13 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="65g-QV-9eY" firstAttribute="top" secondItem="8Oh-n7-eus" secondAttribute="bottom" constant="40" id="b7O-2S-pBA"/>
-                                        <constraint firstItem="65g-QV-9eY" firstAttribute="centerX" secondItem="Jee-ZW-xpM" secondAttribute="centerX" id="coL-Hw-2PU"/>
+                                        <constraint firstItem="65g-QV-9eY" firstAttribute="top" secondItem="8Oh-n7-eus" secondAttribute="bottom" constant="50" id="b7O-2S-pBA"/>
+                                        <constraint firstItem="65g-QV-9eY" firstAttribute="centerX" secondItem="Jee-ZW-xpM" secondAttribute="centerX" constant="5" id="coL-Hw-2PU"/>
                                         <constraint firstItem="8Oh-n7-eus" firstAttribute="centerX" secondItem="Jee-ZW-xpM" secondAttribute="centerX" id="jGw-3N-KDK"/>
                                         <constraint firstItem="8Oh-n7-eus" firstAttribute="centerY" secondItem="Jee-ZW-xpM" secondAttribute="centerY" id="ulg-5V-OeO"/>
                                     </constraints>
                                 </view>
-                                <blurEffect style="light"/>
+                                <blurEffect style="prominent"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5951,16 +5993,16 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
             </objects>
             <point key="canvasLocation" x="5869.5652173913049" y="-2235.326086956522"/>
         </scene>
-        <!--Cart View Controller-->
+        <!--Test-->
         <scene sceneID="aLE-Ij-mPb">
             <objects>
                 <viewController id="mhu-Yp-dzl" customClass="CartViewController" customModule="WbmHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bEp-CK-lqG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hNW-m6-2lV">
-                                <rect key="frame" x="0.0" y="64" width="414" height="449"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="449"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="productcell" rowHeight="82" id="y8h-ka-lAM" customClass="CartTableViewCell" customModule="WbmHealth" customModuleProvider="target">
@@ -6001,6 +6043,11 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                                 <constraint firstItem="mXk-EL-6hQ" firstAttribute="leading" secondItem="ALl-1E-jwi" secondAttribute="trailing" constant="8" id="uOK-MM-bqg"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="productImg" destination="ALl-1E-jwi" id="TUh-g7-079"/>
+                                            <outlet property="productName" destination="mXk-EL-6hQ" id="XDD-fe-bVx"/>
+                                            <outlet property="productPrice" destination="pFV-UU-Rpr" id="q96-xH-2lf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -6009,7 +6056,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSa-VQ-pB3">
-                                <rect key="frame" x="0.0" y="513" width="414" height="223"/>
+                                <rect key="frame" x="0.0" y="449" width="414" height="223"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGa-wC-9yc">
                                         <rect key="frame" x="0.0" y="173" width="414" height="50"/>
@@ -6027,8 +6074,8 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGb-H1-mom">
                                         <rect key="frame" x="8" y="8" width="398" height="157"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Products" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyJ-be-GWz">
-                                                <rect key="frame" x="8" y="8" width="155" height="29"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Tests" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyJ-be-GWz">
+                                                <rect key="frame" x="8.0000000000000071" y="8" width="126.66666666666669" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="29" id="rsa-N5-4lE"/>
                                                 </constraints>
@@ -6064,38 +6111,38 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04g-xp-78F">
-                                                <rect key="frame" x="349.66666666666669" y="9" width="34.333333333333314" height="29"/>
+                                                <rect key="frame" x="347.33333333333331" y="9" width="36.666666666666686" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="29" id="z3E-MD-7sG"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlw-nO-rn8">
-                                                <rect key="frame" x="349.66666666666669" y="45" width="34.333333333333314" height="29"/>
+                                                <rect key="frame" x="347.33333333333331" y="45" width="36.666666666666686" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="29" id="a8R-Tq-JEU"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wda-xk-22s">
-                                                <rect key="frame" x="349.66666666666669" y="82" width="34.333333333333314" height="29"/>
+                                                <rect key="frame" x="347.33333333333331" y="82" width="36.666666666666686" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="29" id="99d-pw-rjQ"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwQ-9N-MhX">
-                                                <rect key="frame" x="349.66666666666669" y="119" width="34.333333333333314" height="29"/>
+                                                <rect key="frame" x="347.33333333333331" y="119" width="36.666666666666686" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="29" id="eyL-ls-uY6"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -6150,7 +6197,8 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ctr-K3-zXF"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cXK-8C-VIs">
+                    <navigationItem key="navigationItem" title="Test" id="cXK-8C-VIs">
+                        <barButtonItem key="backBarButtonItem" title="  " id="GdT-4I-wlV"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="zea-BI-w3a">
                             <connections>
                                 <action selector="crossBtn:" destination="mhu-Yp-dzl" id="ZYs-vO-WPh"/>
@@ -6159,13 +6207,17 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                     </navigationItem>
                     <connections>
                         <outlet property="billVu" destination="lGb-H1-mom" id="znD-Zo-q8a"/>
+                        <outlet property="noOfProducts" destination="04g-xp-78F" id="suS-T3-pof"/>
                         <outlet property="productTblVu" destination="hNW-m6-2lV" id="aC8-NU-pKs"/>
+                        <outlet property="tobepaid" destination="pwQ-9N-MhX" id="puJ-yO-sHO"/>
+                        <outlet property="totalAmount" destination="Nlw-nO-rn8" id="flS-g9-WWK"/>
+                        <outlet property="totalDiscount" destination="wda-xk-22s" id="WkX-QS-sis"/>
                         <segue destination="Slx-LC-ZTG" kind="push" identifier="tocartdetail" id="Sbp-DS-hI9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g40-f7-S5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9226" y="-2296"/>
+            <point key="canvasLocation" x="9224.6376811594218" y="-2296.467391304348"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fWa-F2-2LP">
@@ -6858,7 +6910,7 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="isQ-80-IV6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wnk-v8-8in">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="wnk-v8-8in">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -6898,6 +6950,178 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilF-ve-dkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7469.5652173913049" y="1790.217391304348"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="FP2-70-ddT">
+            <objects>
+                <viewController id="eWp-F3-2ga" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QQV-AL-wTx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mRO-p6-OTc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jDZ-Tc-WoP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I6f-Vb-SAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8267" y="-6633"/>
+        </scene>
+        <!--Forums-->
+        <scene sceneID="bXu-EA-dyM">
+            <objects>
+                <viewController id="0Up-JW-qmM" customClass="ForumsViewController" customModule="WbmHealth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DLS-BN-tYH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yW7-kC-ncS"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Forums" id="deE-wV-Ldw">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="0h8-3D-4tz"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ffv-MZ-Dbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8328" y="-5115"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="CXg-Br-wQ2">
+            <objects>
+                <viewController id="7Bw-Zh-lPZ" customClass="AccountViewController" customModule="WbmHealth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uGX-HG-oQ4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wxF-wb-cVS"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Account" id="Fgq-eC-SKE">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="wwC-py-MUd">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zpA-jo-ZWu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8267" y="-4277"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Fdq-3T-7Hw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5ud-Ju-Nr8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="RaF-WG-RAK">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.16862745100000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7Bw-Zh-lPZ" kind="relationship" relationship="rootViewController" id="JRK-oN-SNZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ykp-ee-3Q3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6936" y="-4277"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ORJ-5j-s2T">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t5b-1L-CmH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="BPI-1O-V6X">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.16862745100000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0Up-JW-qmM" kind="relationship" relationship="rootViewController" id="qrc-8b-leq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KE3-SG-syp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6935" y="-5115"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="P7b-15-bKg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZQg-gG-RUz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="6qG-xp-OrT">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.16862745100000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yx3-Qq-cqh" kind="relationship" relationship="rootViewController" id="pZY-Kr-dIU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yC-a9-YCh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6935" y="-5831"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mnI-Ge-mbp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NEr-0o-UMK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tcA-uY-dfJ">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.16862745100000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eWp-F3-2ga" kind="relationship" relationship="rootViewController" id="8Tf-6r-XOg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aTq-sl-c23" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6935" y="-6633"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DIA-Mt-9dI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0xg-Gv-PIj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="c1K-zv-VPD">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.16862745100000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hds-tm-jsh" kind="relationship" relationship="rootViewController" id="gbW-oK-XHe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KTG-VJ-q8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10592.753623188406" y="335.86956521739131"/>
         </scene>
     </scenes>
     <resources>

@@ -14,10 +14,7 @@ import ProgressHUD
 import Alamofire
 class AddChildViewController: UIViewController {
    
-    @IBOutlet weak var donebtn: UIButton!
     @IBOutlet weak var datepicker: UIDatePicker!
-    @IBOutlet weak var pickerHideVu: UIView!
-    @IBOutlet weak var pickerVu: PickerView!
     @IBOutlet weak var fNameTxtFld: UITextField!
     @IBOutlet weak var lNameTxtFld: UITextField!
     @IBOutlet weak var genderBtn: UIButton!

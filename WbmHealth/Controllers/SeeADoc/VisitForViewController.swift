@@ -17,13 +17,12 @@ class VisitForViewController: UIViewController {
     @IBOutlet weak var vu1: UIView!
     @IBOutlet weak var vu2: UIView!
     @IBOutlet weak var vu3: UIView!
-    
-    let util = Utils()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        util.cardView(view: vu1)
-        util.cardView(view: vu2)
-        util.cardView(view: vu3)
+        Utils.cardView(view: vu1)
+        Utils.cardView(view: vu2)
+        Utils.cardView(view: vu3)
         let profileClick = UITapGestureRecognizer(target: self, action: #selector(tapOnProfile))
         vu1.addGestureRecognizer(profileClick)
         let childClick = UITapGestureRecognizer(target: self, action: #selector(tapOnChild))

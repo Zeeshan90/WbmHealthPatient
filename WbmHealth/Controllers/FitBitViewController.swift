@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ProgressHUD
 
 class FitBitViewController: UIViewController,UIWebViewDelegate {
 
@@ -27,7 +26,6 @@ class FitBitViewController: UIViewController,UIWebViewDelegate {
 
     
     @IBAction func crossBtn(_ sender: Any) {
-        ProgressHUD.dismiss()
         dismiss(animated: true, completion: nil)
     }
     
@@ -39,16 +37,35 @@ class FitBitViewController: UIViewController,UIWebViewDelegate {
     
         accessString = webVu.stringByEvaluatingJavaScript(from: "document.body.textContent")!
         print(accessString)
-//
-//        let array = accessString.characters.split(separator: "/").map(String.init)
-        
-       // let accessToken: String = array[0]
-//        let userId: String = array[2]
-//        let refreshToken : String = array[1]
-        //dismiss(animated: true, completion: nil)
+
+        let access = accessString.contains("access_token")
+        if access{
+            
+            var arr = accessString.components(separatedBy: "/")
+            print(arr[0])
+            print(arr[1])
+            print(arr[2])
+            print(arr[3])
+            
+            if let accessTokenrange = arr[0].range(of: "access_token=") {
+                let accessToken = arr[0][accessTokenrange.upperBound...]
+                print("Aceess Token = " + accessToken)
+            }
+            
+            if let refreshTokenrange = arr[1].range(of: "refresh_token=") {
+                let refreshToken = arr[1][refreshTokenrange.upperBound...]
+                print("Refresh Token = " + refreshToken)
+            }
+            if let userIdrange = arr[2].range(of: "user_id=") {
+                let userId = arr[2][userIdrange.upperBound...]
+                print("User Id  = " + userId)
+            }
+            dismiss(animated: true, completion: nil)
+        }
     }
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        ProgressHUD.dismiss()
+        
+        dismiss(animated: true, completion: nil)
     }
     
   
