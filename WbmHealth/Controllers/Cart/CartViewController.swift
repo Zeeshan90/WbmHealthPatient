@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CartViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class CartViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
  
     
 
@@ -79,13 +79,48 @@ class CartViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            cart = AppUtils.sharedInstance.deleteCartProduct(index: indexPath.row)
-            self.productTblVu.deleteRows(at: [indexPath], with: .automatic)
-             noOfProducts.text = "\(cart.count)"
-            setAmount()
+            
+            //Create the alert controller and actions
+            let alert = UIAlertController(title: "Are you Sure?", message: "", preferredStyle: .actionSheet)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+                DispatchQueue.main.async {
+                    self.cart = AppUtils.sharedInstance.deleteCartProduct(index: indexPath.row)
+                    self.productTblVu.deleteRows(at: [indexPath], with: .automatic)
+                    self.self.noOfProducts.text = "\(self.cart.count)"
+                    self.setAmount()
+                }
+            }
+            
+            //Add the actions to the alert controller
+            alert.addAction(cancelAction)
+            alert.addAction(deleteAction)
+            
+            //Present the alert controller
+            present(alert, animated: true, completion: nil)
+            
         }
     }
+    
+//    
+//    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool
+//    {
+//        var strText: String? = textField.text
+//        if strText == nil {
+//            strText = ""
+//        }
+//        strText = strText?.stringByReplacingOccurrencesOfString("-", withString:"")
+//        if strText!.characters.count > 1 && strText!.characters.count % 4 == 0 && string != "" {
+//            textField.text = "\(textField.text!)-\(string)"
+//            return false
+//        }
+//        
+//        return true
+//    }
 
+  
 
 }
     

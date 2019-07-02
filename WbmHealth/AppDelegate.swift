@@ -375,7 +375,6 @@ extension UIImage {
         }
         return nil
     }
-
 }
 
 @available(iOS 10, *)

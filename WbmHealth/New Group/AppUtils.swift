@@ -9,6 +9,8 @@
 import Foundation
 import SwiftToast
 import CoreData
+import SwiftyJSON
+
 class AppUtils{
     
     static let context = (UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
@@ -145,7 +147,28 @@ class AppUtils{
          
         
     }
-    
+
+//    static func parseUser(json : JSON) -> User{
+//        var user = User(context: AppUtils.context)
+//        if json != nil{
+//            user.token = json["token"].string!
+//            
+//            user.name = json["user"]["name"].string!
+//            user.email = json["user"]["email"].string!
+//            user.mobile = json["user"]["mobile"].string!
+//            user.password = json["user"]["password"].string!
+//            user.id = json["user"]["_id"].string!
+//            //WbmDefaults.instance.setString(key: "token", value: user.token!)
+//            do{
+//                //user.image = json["user"]["image"].string!
+//                //WbmDefaults.instance.setString(key: "img", value: json["user"]["image"].string!)
+//            }catch{
+//                
+//            }
+//            
+//        }
+//        return user;
+//    }
     
     // Save Changes in the core data
     static func saveChanges()  {

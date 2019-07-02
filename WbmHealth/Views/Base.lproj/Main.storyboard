@@ -3668,7 +3668,11 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                         <viewLayoutGuide key="safeArea" id="6zU-fZ-5Kd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Health Blogs" id="phh-DX-a6Q">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="roQ-Ox-BVE"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="roQ-Ox-BVE">
+                            <connections>
+                                <action selector="crossBtn:" destination="yx3-Qq-cqh" id="Rcf-Um-KB1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YX6-h6-aW7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3683,6 +3687,39 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOj-95-Gcg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Jee-ZW-xpM">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Oh-n7-eus">
+                                            <rect key="frame" x="47" y="228" width="320" height="216"/>
+                                            <date key="date" timeIntervalSinceReferenceDate="583073674.41047704">
+                                                <!--2019-06-24 12:54:34 +0000-->
+                                            </date>
+                                        </datePicker>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65g-QV-9eY">
+                                            <rect key="frame" x="182" y="494" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="SKi-he-sFb"/>
+                                                <constraint firstAttribute="height" constant="60" id="vmv-2u-ATG"/>
+                                            </constraints>
+                                            <state key="normal" image="icon"/>
+                                            <connections>
+                                                <action selector="crossBtn:" destination="Slx-LC-ZTG" eventType="touchUpInside" id="Xdb-hy-B6b"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="65g-QV-9eY" firstAttribute="top" secondItem="8Oh-n7-eus" secondAttribute="bottom" constant="50" id="b7O-2S-pBA"/>
+                                        <constraint firstItem="65g-QV-9eY" firstAttribute="centerX" secondItem="Jee-ZW-xpM" secondAttribute="centerX" constant="5" id="coL-Hw-2PU"/>
+                                        <constraint firstItem="8Oh-n7-eus" firstAttribute="centerX" secondItem="Jee-ZW-xpM" secondAttribute="centerX" id="jGw-3N-KDK"/>
+                                        <constraint firstItem="8Oh-n7-eus" firstAttribute="centerY" secondItem="Jee-ZW-xpM" secondAttribute="centerY" id="ulg-5V-OeO"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="prominent"/>
+                            </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH0-YD-dsO">
                                 <rect key="frame" x="20" y="28" width="374" height="19.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
@@ -3709,8 +3746,13 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eC1-AW-gDW">
                                 <rect key="frame" x="20" y="67.333333333333343" width="374" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Button"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="ebf-ye-aw7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.16862745100000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="dateBtn:" destination="Slx-LC-ZTG" eventType="touchUpInside" id="MsC-Gz-qaW"/>
                                 </connections>
@@ -3756,39 +3798,6 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOj-95-Gcg">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Jee-ZW-xpM">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Oh-n7-eus">
-                                            <rect key="frame" x="47" y="228" width="320" height="216"/>
-                                            <date key="date" timeIntervalSinceReferenceDate="583073674.41047704">
-                                                <!--2019-06-24 12:54:34 +0000-->
-                                            </date>
-                                        </datePicker>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65g-QV-9eY">
-                                            <rect key="frame" x="182" y="494" width="60" height="60"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="SKi-he-sFb"/>
-                                                <constraint firstAttribute="height" constant="60" id="vmv-2u-ATG"/>
-                                            </constraints>
-                                            <state key="normal" image="icon"/>
-                                            <connections>
-                                                <action selector="crossBtn:" destination="Slx-LC-ZTG" eventType="touchUpInside" id="Xdb-hy-B6b"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="65g-QV-9eY" firstAttribute="top" secondItem="8Oh-n7-eus" secondAttribute="bottom" constant="50" id="b7O-2S-pBA"/>
-                                        <constraint firstItem="65g-QV-9eY" firstAttribute="centerX" secondItem="Jee-ZW-xpM" secondAttribute="centerX" constant="5" id="coL-Hw-2PU"/>
-                                        <constraint firstItem="8Oh-n7-eus" firstAttribute="centerX" secondItem="Jee-ZW-xpM" secondAttribute="centerX" id="jGw-3N-KDK"/>
-                                        <constraint firstItem="8Oh-n7-eus" firstAttribute="centerY" secondItem="Jee-ZW-xpM" secondAttribute="centerY" id="ulg-5V-OeO"/>
-                                    </constraints>
-                                </view>
-                                <blurEffect style="prominent"/>
-                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -6001,11 +6010,11 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hNW-m6-2lV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hNW-m6-2lV">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="449"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="productcell" rowHeight="82" id="y8h-ka-lAM" customClass="CartTableViewCell" customModule="WbmHealth" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="productcell" rowHeight="82" id="y8h-ka-lAM" customClass="CartTableViewCell" customModule="WbmHealth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y8h-ka-lAM" id="bUp-0w-SNU">
@@ -6978,7 +6987,11 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                         <viewLayoutGuide key="safeArea" id="yW7-kC-ncS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Forums" id="deE-wV-Ldw">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="0h8-3D-4tz"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="0h8-3D-4tz">
+                            <connections>
+                                <action selector="crossBtn:" destination="0Up-JW-qmM" id="HXt-2Q-IW6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffv-MZ-Dbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -6998,6 +7011,9 @@ While our Link360 platform is fully HIPAA-compliant, we encourage clients to eva
                     <navigationItem key="navigationItem" title="Account" id="Fgq-eC-SKE">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="wwC-py-MUd">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="crossBtn:" destination="7Bw-Zh-lPZ" id="QYB-6c-qNe"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>

@@ -1,14 +1,14 @@
 //
-//  HealthBlogViewController.swift
+//  LoginViewController.swift
 //  WbmHealth
 //
-//  Created by Zeeshan on 27/06/2019.
+//  Created by Zeeshan on 01/07/2019.
 //  Copyright © 2019 WBM. All rights reserved.
 //
 
 import UIKit
 
-class HealthBlogViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +17,6 @@ class HealthBlogViewController: UIViewController {
     }
     
 
-    @IBAction func crossBtn(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
+
 
 }

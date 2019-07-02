@@ -8,9 +8,14 @@
         <attribute name="testCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="testName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Users" representedClassName="Users" syncable="YES"/>
+    <entity name="Users" representedClassName="Users" syncable="YES">
+        <attribute name="firebaseToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ssId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Users" positionX="-33.6484375" positionY="-117.89453125" width="128" height="45"/>
         <element name="LabTests" positionX="-36" positionY="-117" width="128" height="135"/>
+        <element name="Users" positionX="-33.6484375" positionY="-117.89453125" width="128" height="105"/>
     </elements>
 </model>

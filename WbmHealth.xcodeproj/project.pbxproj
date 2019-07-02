@@ -118,6 +118,8 @@
 		B314BB5E22C4F6B300B906BA /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314BB5D22C4F6B300B906BA /* AccountViewController.swift */; };
 		B314BB6122C4F6E700B906BA /* ForumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314BB6022C4F6E700B906BA /* ForumsViewController.swift */; };
 		B314BB6422C4F70600B906BA /* HealthBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314BB6322C4F70600B906BA /* HealthBlogViewController.swift */; };
+		B31549EC22C9F45800AAFDED /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B31549EB22C9F45800AAFDED /* Account.storyboard */; };
+		B31549F122CA2A1400AAFDED /* AccountLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31549F022CA2A1400AAFDED /* AccountLoginViewController.swift */; };
 		B3160E8422BCDA530016A0CD /* DirectCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3160E8322BCDA520016A0CD /* DirectCall.swift */; };
 		B3160E8722BD0AB80016A0CD /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3160E8622BD0AB80016A0CD /* CartViewController.swift */; };
 		B319B4E822B36B0200C60272 /* PharmacyMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319B4E722B36B0200C60272 /* PharmacyMedViewController.swift */; };
@@ -308,6 +310,8 @@
 		B314BB5D22C4F6B300B906BA /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		B314BB6022C4F6E700B906BA /* ForumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumsViewController.swift; sourceTree = "<group>"; };
 		B314BB6322C4F70600B906BA /* HealthBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthBlogViewController.swift; sourceTree = "<group>"; };
+		B31549EB22C9F45800AAFDED /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		B31549F022CA2A1400AAFDED /* AccountLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountLoginViewController.swift; sourceTree = "<group>"; };
 		B3160E8322BCDA520016A0CD /* DirectCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCall.swift; sourceTree = "<group>"; };
 		B3160E8622BD0AB80016A0CD /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		B319B4E722B36B0200C60272 /* PharmacyMedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyMedViewController.swift; sourceTree = "<group>"; };
@@ -456,6 +460,7 @@
 				06D5F95E228AC469008E7EC4 /* Tuya */,
 				066596142273229200E893F5 /* Model */,
 				066596132273228500E893F5 /* Views */,
+				B31549ED22CA214500AAFDED /* Account Controller */,
 				066596122273227A00E893F5 /* Controllers */,
 				066595EB2273096400E893F5 /* Assets.xcassets */,
 				066595ED2273096400E893F5 /* LaunchScreen.storyboard */,
@@ -486,11 +491,12 @@
 		066596122273227A00E893F5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				066595E32273096200E893F5 /* ViewController.swift */,
+				065039862278192100F83929 /* PrivacyPolicyViewController.swift */,
 				B314BB6222C4F6EE00B906BA /* Health Blogs */,
 				B314BB5F22C4F6CF00B906BA /* Forums */,
 				B314BB5C22C4F64500B906BA /* Account */,
 				B3160E8522BD0A690016A0CD /* Cart */,
-				066595E32273096200E893F5 /* ViewController.swift */,
 				064FFEEE227AD3FA004ED6A1 /* Appointment */,
 				B319B4F822B3827400C60272 /* Medical History */,
 				064FFEF0227AD476004ED6A1 /* Hospital Controllers */,
@@ -512,6 +518,7 @@
 				066595E52273096200E893F5 /* Main.storyboard */,
 				B3148A6A22BA191700761B33 /* vid.storyboard */,
 				06D5F94D228A8514008E7EC4 /* Registration.storyboard */,
+				B31549EB22C9F45800AAFDED /* Account.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -673,6 +680,14 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		B31549ED22CA214500AAFDED /* Account Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B31549F022CA2A1400AAFDED /* AccountLoginViewController.swift */,
+			);
+			path = "Account Controller";
+			sourceTree = "<group>";
+		};
 		B3160E8522BD0A690016A0CD /* Cart */ = {
 			isa = PBXGroup;
 			children = (
@@ -779,7 +794,6 @@
 		B319B4F922B382B200C60272 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				065039862278192100F83929 /* PrivacyPolicyViewController.swift */,
 			);
 			name = SideMenu;
 			sourceTree = "<group>";
@@ -950,6 +964,7 @@
 			files = (
 				B3148A6D22BA5B7500761B33 /* Settings.bundle in Resources */,
 				B321480B22BBA3FC0082747E /* ring.mp3 in Resources */,
+				B31549EC22C9F45800AAFDED /* Account.storyboard in Resources */,
 				B3BC227722C4E30900E3BB06 /* GoogleService-Info.plist in Resources */,
 				B395B52222AE46A300F01CCA /* t_s.bmp in Resources */,
 				B3148A6B22BA191800761B33 /* vid.storyboard in Resources */,
@@ -1232,6 +1247,7 @@
 				06D88E0622953B2E001EA7E7 /* AddDeviceViewController.swift in Sources */,
 				B3160E8422BCDA530016A0CD /* DirectCall.swift in Sources */,
 				B321FD0422B217B000748CFA /* LaboratoryDetail.swift in Sources */,
+				B31549F122CA2A1400AAFDED /* AccountLoginViewController.swift in Sources */,
 				B321480922BB7FCC0082747E /* CallViewController.swift in Sources */,
 				062D1578229563FE00346C19 /* DeviceListTableViewCell.swift in Sources */,
 				067449BB229E6001004C705A /* Symptom.swift in Sources */,

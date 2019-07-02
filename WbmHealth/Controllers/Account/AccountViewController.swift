@@ -17,6 +17,9 @@ class AccountViewController: UIViewController {
     }
     
 
+    @IBAction func crossBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
