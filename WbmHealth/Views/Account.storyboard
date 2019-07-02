@@ -10,20 +10,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="klj-Di-E7U">
             <objects>
-                <viewController id="p0Z-rI-WOw" sceneMemberID="viewController">
+                <viewController id="p0Z-rI-WOw" customClass="SignupViewController" customModule="WbmHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ljq-OS-n7d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tNO-Vg-af2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hCH-kL-l4D">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="hO0-ig-Fa9">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="dismissBtn:" destination="p0Z-rI-WOw" id="bt3-OB-i1t"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPr-vz-evU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="552" y="-48"/>
+            <point key="canvasLocation" x="1460.8695652173915" y="-48.214285714285715"/>
         </scene>
         <!--Account Login View Controller-->
         <scene sceneID="UNM-72-q2H">
@@ -51,7 +59,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="eHT-qp-LKX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wbm-health" translatesAutoresizingMaskIntoConstraints="NO" id="eHT-qp-LKX">
                                 <rect key="frame" x="120.5" y="62" width="173" height="157"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="157" id="ISv-L5-Uve"/>
@@ -65,7 +73,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" smartDashesType="yes"/>
+                                <textInputTraits key="textInputTraits" smartDashesType="yes"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bbs-pb-cZt" customClass="TextField" customModule="WbmHealth" customModuleProvider="target">
                                 <rect key="frame" x="20" y="377" width="374" height="45"/>
@@ -96,7 +104,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="A5u-gw-mQd"/>
                                 </constraints>
-                                <state key="normal" title="Signup">
+                                <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -132,14 +140,34 @@
                     <connections>
                         <outlet property="passwordTxtFld" destination="Bbs-pb-cZt" id="QBe-4G-hGm"/>
                         <outlet property="ssIdTxtFld" destination="ZTP-CK-DW3" id="KMI-oc-uBL"/>
+                        <segue destination="2TA-wO-ueb" kind="presentation" identifier="tosignup" id="wcW-Ac-lCG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcN-yh-LVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-317.39130434782612" y="-48.214285714285715"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WS9-Qn-Uf3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2TA-wO-ueb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bib-x2-GKU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="p0Z-rI-WOw" kind="relationship" relationship="rootViewController" id="1nQ-Fh-DyG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e9y-SM-b5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="550.72463768115949" y="-48.214285714285715"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="avatar" width="256" height="256"/>
+        <image name="back" width="24" height="24"/>
+        <image name="wbm-health" width="500" height="100"/>
     </resources>
 </document>

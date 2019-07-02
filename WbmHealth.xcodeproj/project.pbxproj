@@ -135,6 +135,8 @@
 		B3459FA422C2201200E3B953 /* FitBitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3459FA322C2201200E3B953 /* FitBitViewController.swift */; };
 		B350BDCD227592E2000447BC /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350BDCC227592E2000447BC /* WorkoutViewController.swift */; };
 		B350BDCF22759320000447BC /* WorkoutCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350BDCE22759320000447BC /* WorkoutCollectionCell.swift */; };
+		B351F28222CB215D009F58FC /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B351F28122CB215D009F58FC /* SignupViewController.swift */; };
+		B36DF17422CB55500047D208 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36DF17322CB55500047D208 /* User.swift */; };
 		B377F8EB22C0BEA50097961B /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377F8EA22C0BEA50097961B /* CartTableViewCell.swift */; };
 		B377F8ED22C0EBAB0097961B /* CartDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377F8EC22C0EBAB0097961B /* CartDetailViewController.swift */; };
 		B382E3E922B2427D0023446C /* PharmancyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382E3E822B2427D0023446C /* PharmancyViewController.swift */; };
@@ -327,6 +329,8 @@
 		B3459FA322C2201200E3B953 /* FitBitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitBitViewController.swift; sourceTree = "<group>"; };
 		B350BDCC227592E2000447BC /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		B350BDCE22759320000447BC /* WorkoutCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCollectionCell.swift; sourceTree = "<group>"; };
+		B351F28122CB215D009F58FC /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		B36DF17322CB55500047D208 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B377F8EA22C0BEA50097961B /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		B377F8EC22C0EBAB0097961B /* CartDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetailViewController.swift; sourceTree = "<group>"; };
 		B382E3E822B2427D0023446C /* PharmancyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmancyViewController.swift; sourceTree = "<group>"; };
@@ -549,6 +553,7 @@
 				B319B4FC22B3CB5C00C60272 /* Hospital.swift */,
 				B314221422B7C6DC00A30F34 /* MedicineDetail.swift */,
 				B3160E8322BCDA520016A0CD /* DirectCall.swift */,
+				B36DF17322CB55500047D208 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -684,6 +689,7 @@
 			isa = PBXGroup;
 			children = (
 				B31549F022CA2A1400AAFDED /* AccountLoginViewController.swift */,
+				B351F28122CB215D009F58FC /* SignupViewController.swift */,
 			);
 			path = "Account Controller";
 			sourceTree = "<group>";
@@ -1188,6 +1194,7 @@
 				06D88E0222951A2F001EA7E7 /* AppointmentViewController.swift in Sources */,
 				06575E9722829AAF007E95BF /* SeeADocTableViewCell.swift in Sources */,
 				B319B4FD22B3CB5C00C60272 /* Hospital.swift in Sources */,
+				B351F28222CB215D009F58FC /* SignupViewController.swift in Sources */,
 				0664E4352296822900F5E87A /* SerachViewController.swift in Sources */,
 				060E4E9A229BFCFC005E8DB3 /* PendingTableViewCell.swift in Sources */,
 				064FFEEB227AD3B1004ED6A1 /* AppointDeclinedViewController.swift in Sources */,
@@ -1282,6 +1289,7 @@
 				067A64EB228037CA00E51319 /* Test.swift in Sources */,
 				066595EA2273096200E893F5 /* WbmHealth.xcdatamodeld in Sources */,
 				067E2D982276E3FF00E313A7 /* LabCategoryViewController.swift in Sources */,
+				B36DF17422CB55500047D208 /* User.swift in Sources */,
 				06D5F95B228A9F18008E7EC4 /* VerifyCodeViewController.swift in Sources */,
 				067A9AEA228EB6BC00242F32 /* DocBio.swift in Sources */,
 				B382E3ED22B26B2E0023446C /* Pharmacy.swift in Sources */,

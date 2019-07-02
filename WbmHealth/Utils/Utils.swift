@@ -89,6 +89,20 @@ class Utils: NSObject {
         return emailTest.evaluate(with: emailID)
     }
     
+    // Check Email is Valid or not
+    class func isValidSsnId(ssnId:String) -> Bool {
+        let ssnid = "(^[0-9/+]{5}-[0-9/+]{7}-[0-9]{1}$)|(^\\-{3}-\\-{2}-\\-{4}$)"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", ssnid)
+        return emailTest.evaluate(with: ssnId)
+    }
     
+//    func phoneNumberValidation(value: String) -> Bool {
+//        var charcter  = NSCharacterSet(charactersIn: "01234567890").inverted
+//        var filtered:NSString!
+//        var inputString:NSArray = value.components(separatedBy: charcter) as NSArray
+//        filtered = inputString.componentsJoined(by: "") as NSString
+//        return  value == filtered
+//    }
+//
     
 }
