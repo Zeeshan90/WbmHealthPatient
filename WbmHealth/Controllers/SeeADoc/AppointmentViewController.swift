@@ -26,6 +26,7 @@ class AppointmentViewController: UIViewController {
     
 
     func setDateTime(){
+        
         let selectedDate = AppointmentViewController.request.apptDate
         let date = convertdate(date: selectedDate!)
         let day = calender.component(.weekday, from: date)

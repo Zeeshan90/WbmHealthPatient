@@ -39,7 +39,7 @@ class DoctorBioViewController: UIViewController {
     var qualArr = [Qualification]()
     var expArr = [ExperienceDetail]()
     var docId: String!
-    var patientId: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,8 +57,7 @@ class DoctorBioViewController: UIViewController {
         getDocData()
         ProgressHUD.show("Loading..")
         ProgressHUD.spinnerColor(#colorLiteral(red: 0.1215686275, green: 0.3019607843, blue: 0.4588235294, alpha: 1))
-        patientId = "5c94754e0948dd2edcb4c299"
-        AppointmentViewController.request.patientId = patientId
+        AppointmentViewController.request.patientId = Utils.userId
         // Do any additional setup after loading the view.
     }
     
@@ -94,7 +93,7 @@ class DoctorBioViewController: UIViewController {
     
     func submitReview(){
         ProgressHUD.show()
-        let params: [String:Any] = ["patient":patientId,"reviewNo":reviewStar.rating,"comment":reviewTxtFld.text ?? "Very Good Doctor"]
+        let params: [String:Any] = ["patient":Utils.userId,"reviewNo":reviewStar.rating,"comment":reviewTxtFld.text ?? "Very Good Doctor"]
         let url = "\(AppUtils.returnBaseUrl())/patient/review/add/\(docId!)"
         print(url)
         Alamofire.request(url, method: .put, parameters: params).responseJSON{

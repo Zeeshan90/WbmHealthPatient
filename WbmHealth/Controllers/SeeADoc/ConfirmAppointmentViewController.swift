@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+import M13Checkbox
+
 class ConfirmAppointmentViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
  
     
@@ -20,8 +22,9 @@ class ConfirmAppointmentViewController: UIViewController,UITableViewDelegate,UIT
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var emailTxtFld: TextField!
     @IBOutlet weak var confirmBtn: UIButton!
-    let util = Utils()
-    var docSeeArr = ["Share CarePlan","Vaccination","Share Medication","Share Observation"]
+    
+    var docSeeArr = ["Share Careplan","Share Vaccination","Share Medication"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,13 +48,45 @@ class ConfirmAppointmentViewController: UIViewController,UITableViewDelegate,UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = docSeeTblVu.dequeueReusableCell(withIdentifier: "appoinmentcell", for: indexPath) as! ConfirmAppointmentTableViewCell
         cell.titleLbl.text = docSeeArr[indexPath.row]
-        //cell.checkBox.addTarget(self, action: #selector(checkBox()), for: .valueChanged)
+        cell.checkBox.tag = indexPath.row
+        cell.checkBox.addTarget(self, action: #selector(checkBox(_:)), for: .valueChanged)
         return cell
     }
     
-//    @objc func checkBox(){
-//
-//    }
+    @objc func checkBox(_ check: M13Checkbox){
+        
+        print(check.tag)
+        
+        switch check.checkState{
+        case .checked:
+           
+            if check.tag == 0{
+                WbmDefaults.instance.setString(key: "checkValue", value: "careplan")
+            }else if check.tag == 1{
+                WbmDefaults.instance.setString(key: "checkValue", value: "vaccination")
+            }else if check.tag == 2{
+                WbmDefaults.instance.setString(key: "checkValue", value: "medication")
+            }
+            
+            performSegue(withIdentifier: "shareplan", sender: self)
+            break
+        case .unchecked:
+            if check.tag == 0{
+                AppointmentViewController.request.carePlan = []
+            }else if check.tag == 1{
+                 AppointmentViewController.request.vaccination = []
+            }else if check.tag == 2{
+                 AppointmentViewController.request.medication = []
+            }
+            break
+        case .mixed:
+            break
+        }
+        
+        
+    }
+    
+    
     @IBAction func confirmBtn(_ sender: Any) {
         confirmAppointment()
     }
@@ -71,7 +106,12 @@ class ConfirmAppointmentViewController: UIViewController,UITableViewDelegate,UIT
                     response in
                     if response.result.isSuccess{
                         
-                        self.performSegue(withIdentifier: "tomain", sender: self)
+                        print(response.result.value!)
+                        self.present(AppUtils.returnToast(string: "Appointment Successfully Booked"), animated: true) 
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                          self.performSegue(withIdentifier: "tomain", sender: self)
+                        }
+                        
                     }else{
                         print(response.error as Any)
                     }
@@ -83,7 +123,7 @@ class ConfirmAppointmentViewController: UIViewController,UITableViewDelegate,UIT
             
         }else{
             
-            getAlert(message: "Enter email so we can send you the email to remind your appoinment", title: "Email")
+            getAlert(message: "Enter email so we can send you the email to remind your appoinment", title: "Incomplete")
         }
         
     }

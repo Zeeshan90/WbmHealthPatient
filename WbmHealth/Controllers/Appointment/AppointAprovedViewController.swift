@@ -77,7 +77,7 @@ class AppointAprovedViewController: UIViewController,UITableViewDelegate,UITable
     // Get All Appointment
     func getAppointments(){
         appointArr = [ConfirmAppoint]()
-        let url = "\(AppUtils.returnBaseUrl())/patient/appointment/status/accepted/all/5c94754e0948dd2edcb4c299"
+        let url = "\(AppUtils.returnBaseUrl())/patient/appointment/status/accepted/all/" + Utils.userId
         Alamofire.request(url, method: .get, parameters: nil).responseJSON{
             response in
             

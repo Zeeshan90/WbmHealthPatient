@@ -54,7 +54,10 @@ class LeftMenuViewController: LGSideMenuController,UITableViewDataSource,UITable
         else if selectedName == "Privacy Policy"{
             performSegue(withIdentifier: "privacypolicy", sender: self)
         }else if selectedName == "Logout"{
-           
+           WbmDefaults.instance.setString(key: "token", value: "")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainViewController = storyboard.instantiateViewController(withIdentifier: "AccountLoginViewController") as! AccountLoginViewController
+            self.present(mainViewController, animated: true, completion: nil)
         }else if selectedName == "Share"{
             
         }

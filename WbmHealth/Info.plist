@@ -46,6 +46,10 @@
 	<string>Application Access your camera</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Application uses your mobiles microphone</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Application uses your location to find nearby hospitals,pharmacy and laboratories</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Application uses your location to find nearby hospitals,pharmacy and laboratories</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
@@ -56,7 +60,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Account</string>
+	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

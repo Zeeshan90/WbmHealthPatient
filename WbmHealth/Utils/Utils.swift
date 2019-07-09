@@ -11,6 +11,7 @@ import UIKit
 
 class Utils: NSObject {
     
+    static let userId: String = WbmDefaults.instance.getString(key: "userId")
     let dateFormatter = DateFormatter()
     
     /// CardView

@@ -23,7 +23,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var nearByPharmmancyVu: UIView!
     @IBOutlet weak var nearByHospitalVu: UIView!
     @IBOutlet weak var bottomVu: UIView!
-    var window: UIWindow?
     @IBOutlet weak var cartBtn: UIBarButtonItem!
     @IBOutlet weak var testCollectionView: UICollectionView!
     @IBOutlet weak var topCollectionView: UICollectionView!
@@ -41,7 +40,7 @@ class ViewController: UIViewController {
         cart = AppUtils.sharedInstance.getAllCartProducts()
         i = cart.count
         self.navigationItem.rightBarButtonItem = nil
-        self.navigationItem.rightBarButtonItem = self.cartBtn
+//        self.navigationItem.rightBarButtonItem = self.cartBtn
         setupBadge()
         Utils.cardView(view: labortaryVu)
         Utils.cardView(view: labortaryVu)

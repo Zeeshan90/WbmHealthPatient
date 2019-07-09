@@ -97,15 +97,23 @@ extension AvailDoctorViewController{
         
         let url = "\(AppUtils.returnBaseUrl())/patient/my/appot/make"
         let params = [
+            "appointment":[
             "apptDate": date,
             "apptTime": "8:10",
-            "patient": "5c94754e0948dd2edcb4c299",
+            "patient": Utils.userId,
             "doctor": docId,
+            "apptReason": "Emergency Call",
             "status": "Complete",
             "directCall": "directCall",
             "email": "random@gmail.com",
             "resourceId": ""
-            ] as [String : Any]
+                ],
+            "notification": [
+                "intervals": "",
+                "date": "",
+                "doctorId": ""
+            ]
+        ] as [String : Any]
         Alamofire.request(url, method: .post, parameters: params).responseJSON{
             
             response in
@@ -141,7 +149,7 @@ extension AvailDoctorViewController{
     // Getting the newly Generated Appointment Id
     // Send PatientId with the url
     func directCall(){
-        let url = "\(AppUtils.returnBaseUrl())/patient/call/direct/5c94754e0948dd2edcb4c299"
+        let url = "\(AppUtils.returnBaseUrl())/patient/call/direct/" + Utils.userId
         Alamofire.request(url, method: .get, parameters: nil).responseJSON{
             
             response in
@@ -150,18 +158,22 @@ extension AvailDoctorViewController{
                 
                 let json:JSON = JSON(response.result.value!)
                 print(json)
-                for (_,j) in json{
-                    do{
-                        self.directCallArr.append(DirectCall(fromJson: j))
-                    }
-                }
+                self.appointId = json["_id"].stringValue
+//
+//                    for (_,j) in json{
+//                        do{
+//                            self.directCallArr.append(DirectCall(fromJson: j))
+//                        }
+//                    }
+                
+//
+//                    let count = self.directCallArr.count
+//                    let lastIndex = count - 1
+//                    print(self.directCallArr[lastIndex].id)
+//                    self.appointId = self.directCallArr[lastIndex].id
+                    self.updateDirectCall()
                 
                 
-                let count = self.directCallArr.count
-                let lastIndex = count - 1
-                print(self.directCallArr[lastIndex].id)
-                self.appointId = self.directCallArr[lastIndex].id
-                self.updateDirectCall()
             }else{
                 ProgressHUD.dismiss()
                 Utils.showAlert(view: self, message: response.error!.localizedDescription, title: "Error")

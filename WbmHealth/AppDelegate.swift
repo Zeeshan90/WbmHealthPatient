@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        
+        
         // Override point for customization after application launch.
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
@@ -174,7 +176,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
 
     func sendDeviceToken(token: String){
         
-        let url = "\(AppUtils.returnBaseUrl())/patient/edit/token/5c94754e0948dd2edcb4c299"
+        let url = "\(AppUtils.returnBaseUrl())/patient/edit/token/" + Utils.userId
         Alamofire.request(url, method: .put, parameters: ["token": token]).responseJSON{
             response in
             

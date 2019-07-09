@@ -9,10 +9,12 @@
 import Foundation
 import SwiftyJSON
 class User{
+    
+    
     var v : Int!
     var id : String!
     var account : [AnyObject]!
-    var address : [AnyObject]!
+//    var address : [AnyObject]!
     var appointment : [AnyObject]!
     var birthDate : String!
     var bloodGroup : String!
@@ -52,7 +54,7 @@ class User{
     var vitalSigns : [AnyObject]!
     var weight : Int!
     
-    
+    var address: Address!
     var given : [AnyObject]!
     var suffix : [AnyObject]!
     var name : String!
@@ -65,16 +67,14 @@ class User{
         }
         v = json["__v"].intValue
         id = json["_id"].stringValue
+        
+        address = Address(addressjson: json["address"])
         account = [AnyObject]()
         let accountArray = json["account"].arrayValue
         for accountJson in accountArray{
             
         }
-        address = [AnyObject]()
-        let addressArray = json["address"].arrayValue
-        for addressJson in addressArray{
-            
-        }
+        
         appointment = [AnyObject]()
         let appointmentArray = json["appointment"].arrayValue
         for appointmentJson in appointmentArray{
@@ -139,5 +139,12 @@ class User{
         token = json["token"].stringValue
         vacStatus = json["vacStatus"].boolValue
         weight = json["weight"].intValue
+    }
+}
+
+class Address{
+    
+    init(addressjson: JSON!){
+        
     }
 }

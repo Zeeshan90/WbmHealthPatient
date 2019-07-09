@@ -19,6 +19,7 @@ class AppUtils{
     
     static func returnBaseUrl() ->String{
         
+        //return "http://192.168.1.16:3031"
         return "https://wbmchat.com"
         //return "http://192.168.1.185:3031"
          //return "http://192.168.1.53:3031"
@@ -32,6 +33,7 @@ class AppUtils{
     
     
     static func returnSideMenu () -> [SideMenu]{
+        
         var mainMenu = [SideMenu]()
         
         let menu1 = SideMenu()
@@ -131,7 +133,7 @@ class AppUtils{
     }
     
     static func toast(string: String) -> SwiftToast{
-        return SwiftToast(text: string, textAlignment: NSTextAlignment.center, image: nil, backgroundColor: UIColor.white, textColor: UIColor.black, font: nil, duration: 1.2, minimumHeight: CGFloat(100.0), statusBarStyle: UIStatusBarStyle.lightContent, aboveStatusBar: false, isUserInteractionEnabled: false, target: nil, style: SwiftToastStyle.statusBar)
+        return SwiftToast(text: string, textAlignment: NSTextAlignment.center, image: nil, backgroundColor: UIColor.white, textColor: UIColor.black, font: nil, duration: 1.2, minimumHeight: CGFloat(100.0), statusBarStyle: UIStatusBarStyle.lightContent, aboveStatusBar: false, isUserInteractionEnabled: false, target: nil, style: SwiftToastStyle.bottomToTop)
     }
     
     // Delete All entries in the Coredata Entry
@@ -219,6 +221,18 @@ class AppUtils{
             print(error.localizedDescription)
         }
         return cart
+    }
+    
+    func saveUser(object: [String:Any]){
+        
+        let user = NSEntityDescription.insertNewObject(forEntityName: "Users", into: AppUtils.context) as! Users
+      
+        
+        do {
+            try AppUtils.context.save()
+        } catch  {
+            print("Data not Saved")
+        }
     }
 }
 

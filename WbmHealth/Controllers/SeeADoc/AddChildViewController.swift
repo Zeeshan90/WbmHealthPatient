@@ -59,7 +59,7 @@ class AddChildViewController: UIViewController {
     
     func addChild(){
         
-        let url = "\(AppUtils.returnBaseUrl())/patient/family/add/5c94754e0948dd2edcb4c299"
+        let url = "\(AppUtils.returnBaseUrl())/patient/family/add/" + Utils.userId
         Alamofire.request(url, method: .put, parameters: nil).responseJSON{
             
             response in

@@ -66,7 +66,6 @@ class AvailabilityViewController: UIViewController,GCCalendarViewDelegate {
             if i >= currentTime{
                 print(i)
                 doubleArr.append(i)
-                
             }
         }
         DispatchQueue.main.async {

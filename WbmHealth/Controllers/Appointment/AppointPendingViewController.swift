@@ -105,7 +105,7 @@ class AppointPendingViewController: UIViewController,UITableViewDataSource,UITab
     // Getting Pending Appointments from the server
     func getPendingAppoint(){
         pendingArr = [ConfirmAppoint]()
-        let url = "\(AppUtils.returnBaseUrl())/patient/appointment/status/pending/all/5c94754e0948dd2edcb4c299"
+        let url = "\(AppUtils.returnBaseUrl())/patient/appointment/status/pending/all/" + Utils.userId
         Alamofire.request(url, method: .get, parameters: nil).responseJSON{
             
             response in

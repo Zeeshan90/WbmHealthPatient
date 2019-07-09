@@ -17,18 +17,31 @@ class AppointRequest{
     var resourceId: String?
     var apptReason: String!
     var email: String!
-    
-    
+    var interval: String!
+    var date: String!
+    var carePlan = [String]()
+    var vaccination = [String]()
+    var medication = [String]()
     
     func returnAppointReq() -> [String:Any]{
         let requestArr: [String:Any] = [
+            "appointment":[
             "apptDate":"\(apptDate!)",
             "apptTime": "\(apptTime!)",
             "patient": "\(patientId!)",
             "doctor": "\(doctorId!)",
             "resourceId": "\(resourceId ?? "")" as Any,
             "apptReason": "\(apptReason!)",
-            "email": "\(email!)"
+            "email": "\(email!)",
+            "carePlan": carePlan,
+            "vaccination": vaccination,
+            "medication": medication,
+            ],
+            "notification": [
+                "intervals": "\(apptTime ?? "")",
+                "date": "\(apptDate ?? "")",
+                "doctorId": "\(doctorId ?? "")"
+            ]
         ]
         return requestArr
     }
