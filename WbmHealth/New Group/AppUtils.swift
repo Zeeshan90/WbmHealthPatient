@@ -19,8 +19,9 @@ class AppUtils{
     
     static func returnBaseUrl() ->String{
         
+        return "http://192.168.1.11:3031"
         //return "http://192.168.1.16:3031"
-        return "https://wbmchat.com"
+        //return "https://wbmchat.com"
         //return "http://192.168.1.185:3031"
          //return "http://192.168.1.53:3031"
        

@@ -10,7 +10,9 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import ProgressHUD
-class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
+import CoreLocation
+
+class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,CLLocationManagerDelegate {
 
     @IBOutlet weak var labTblVu: UITableView!
     @IBOutlet weak var srchBar: UISearchBar!
@@ -18,7 +20,11 @@ class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewD
     var filteredArr = [Labortaries]()
     var refreshController = UIRefreshControl()
     
+    let locationManager = CLLocationManager()
+    var currentLocation: CLLocation!
     
+    var lat: String = ""
+    var lon: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         ProgressHUD.show()
@@ -27,7 +33,25 @@ class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewD
         refreshController.addTarget(self, action:  #selector(refresh), for: .valueChanged)
         refreshController.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         srchBar.showsCancelButton = true
-        // Do any additional setup after loading the view.
+        
+        locationManager.delegate =  self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() ==  .authorizedAlways){
+            
+            currentLocation = locationManager.location
+            print("Latitude",currentLocation.coordinate.latitude)
+            print("Longitude",currentLocation.coordinate.longitude)
+            lat = "\(currentLocation.coordinate.latitude)"
+            lon = "\(currentLocation.coordinate.longitude)"
+           
+        }else{
+            locationManager.requestWhenInUseAuthorization()
+        }
+      
     }
     
     @objc func refresh(){
@@ -37,6 +61,18 @@ class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() ==  .authorizedAlways){
+            
+            currentLocation = locationManager.location
+            print("Latitude",currentLocation.coordinate.latitude)
+            print("Longitude",currentLocation.coordinate.longitude)
+            lat = "\(currentLocation.coordinate.latitude)"
+            lon = "\(currentLocation.coordinate.longitude)"
+            
+        }else{
+            locationManager.requestWhenInUseAuthorization()
+        }
         getAllLabs()
 
     }
@@ -77,7 +113,7 @@ class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = labTblVu.dequeueReusableCell(withIdentifier: "labcell", for: indexPath) as! LabortaryTableViewCell
         cell.labortaryName.text = filteredArr[indexPath.row].laboratoryName
-        let imgUrl = "\(AppUtils.returnBaseUrl())\(filteredArr[indexPath.row].image ?? "hg")".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+        let imgUrl = "\(AppUtils.returnBaseUrl())/\(filteredArr[indexPath.row].image ?? "hg")".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
         cell.img.downloaded(from: imgUrl!)
        return cell
     }
@@ -101,8 +137,12 @@ class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewD
     func getAllLabs(){
         
         labArr = [Labortaries]()
-        let url = "\(AppUtils.returnBaseUrl())/patient/laboratory/all"
-        Alamofire.request(url, method: .get, parameters: nil).responseJSON{
+        //let url = "\(AppUtils.returnBaseUrl())/patient/laboratory/all"
+        let url = "\(AppUtils.returnBaseUrl())/patient/nearbylaboratories"
+        Alamofire.request(url, method: .post, parameters: [
+            "lon":lon,
+            "lat":lat
+            ]).responseJSON{
             response in
             self.refreshController.endRefreshing()
              ProgressHUD.dismiss()
