@@ -27,8 +27,12 @@ class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewD
     var lon: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        labTblVu.tableFooterView = UIView()
+        navigationController!.view.backgroundColor = UIColor.white
+        
         ProgressHUD.show()
         ProgressHUD.spinnerColor(#colorLiteral(red: 0.005218341481, green: 0.30667454, blue: 0.4687452316, alpha: 1))
+        
         labTblVu.refreshControl = self.refreshController
         refreshController.addTarget(self, action:  #selector(refresh), for: .valueChanged)
         refreshController.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -121,9 +125,13 @@ class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewD
    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let labId = labArr[indexPath.row].id
-        WbmDefaults.instance.setString(key: "labId", value: labId!)
-        performSegue(withIdentifier: "tolabdetail", sender: self)
+        
+        let labId:String = labArr[indexPath.row].id
+        WbmDefaults.instance.setString(key: "labId", value: labId)
+        WbmDefaults.instance.setString(key: "id", value: labId)
+        WbmDefaults.instance.setString(key: "controller", value: "laboratory")
+        performSegue(withIdentifier: "tomap", sender: self)
+        //performSegue(withIdentifier: "tolabdetail", sender: self)
     }
     
    
@@ -137,7 +145,6 @@ class LabortaryViewController: UIViewController,UITableViewDelegate,UITableViewD
     func getAllLabs(){
         
         labArr = [Labortaries]()
-        //let url = "\(AppUtils.returnBaseUrl())/patient/laboratory/all"
         let url = "\(AppUtils.returnBaseUrl())/patient/nearbylaboratories"
         Alamofire.request(url, method: .post, parameters: [
             "lon":lon,

@@ -10,13 +10,16 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 import CoreLocation
+import NVActivityIndicatorView
 
-class HospitalViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchResultsUpdating,CLLocationManagerDelegate{
+class HospitalViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchResultsUpdating,CLLocationManagerDelegate,NVActivityIndicatorViewable{
     
     
     @IBOutlet weak var hospTblVu: UITableView!
     var filter = [Hospital]()
     var hospitalArr = [Hospital]()
+    
+    var sendId: String = ""
     
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation!
@@ -25,8 +28,10 @@ class HospitalViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var lon: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Utils.setSearchBar(controller: self)
         
+        Utils.instance.startIndicator(type: 2)
+        Utils.setSearchBar(controller: self, updater: self)
+        hospTblVu.tableFooterView = UIView()
         locationManager.delegate =  self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -40,17 +45,12 @@ class HospitalViewController: UIViewController,UITableViewDelegate,UITableViewDa
             print("Longitude",currentLocation.coordinate.longitude)
             lat = "\(currentLocation.coordinate.latitude)"
             lon = "\(currentLocation.coordinate.longitude)"
-            getAllHospitals()
+            getAllHospitals(lon: currentLocation.coordinate.longitude, lat: currentLocation.coordinate.latitude)
         }else{
             locationManager.requestWhenInUseAuthorization()
         }
         
     }
-    
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        let location = locations[0]
-//        print(location.coordinate.latitude)
-//    }
     @IBAction func crossBtn(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)
@@ -61,44 +61,41 @@ class HospitalViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }
-    
+
     func filterContentForSearchText(_ searchText: String) {
-        
-//        guard !searchText.isEmpty else {
-//            
-//            filtered = medArr
-//            medTblVu.reloadData()
-//            return
-//        }
-//        filtered = medArr.filter({ (med) -> Bool in
-//            return med.id.lowercased().contains(searchText.lowercased())
-//        })
-//        medTblVu.reloadData()
+
+        guard !searchText.isEmpty else {
+
+            filter = hospitalArr
+            hospTblVu.reloadData()
+            return
+        }
+        filter = hospitalArr.filter({ (hospital) -> Bool in
+            return hospital.hospitalName.lowercased().contains(searchText.lowercased())
+        })
+        hospTblVu.reloadData()
     }
-    
-    func setSearchBar(){
-        
-        var searchController = UISearchController()
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.barStyle = .blackTranslucent
-        searchController.searchBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-    }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hospitalArr.count
+        return filter.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = hospTblVu.dequeueReusableCell(withIdentifier: "hospitalcell", for: indexPath) as! HospitalTableViewCell
-        cell.hospName.text = hospitalArr[indexPath.row].hospitalId.hospitalName
+        cell.hospName.text = filter[indexPath.row].hospitalName
+        cell.addressLbl.text = filter[indexPath.row].hospitalAddress
         return cell
     }
     
-    func getAllHospitals(){
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        WbmDefaults.instance.setString(key: "id", value: filter[indexPath.row].id)
+        WbmDefaults.instance.setString(key: "controller", value: "hospital")
+        performSegue(withIdentifier: "tomap", sender: self)
+        self.hospTblVu.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func getAllHospitals(lon:Double,lat:Double){
         
         let url = "\(AppUtils.returnBaseUrl())/patient/nearbyhospitals"
         Alamofire.request(url, method: .post, parameters: [
@@ -108,12 +105,13 @@ class HospitalViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
             response in
             
+            self.stopAnimating()
             if response.result.isSuccess{
                 
                 let json: JSON = JSON(response.result.value!)
-                let dataJson = json["data"]
-                print(dataJson)
-                for (_,j) in dataJson{
+                
+                print(json)
+                for (_,j) in json{
                     do{
                         
                         self.hospitalArr.append(Hospital(fromJson: j))

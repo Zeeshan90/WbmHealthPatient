@@ -17,8 +17,9 @@ class DoctorViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        doctorTblVu.tableFooterView = UIView()
         getDoctors()
-        doctorTblVu.showSkeleton()
+        
         // Do any additional setup after loading the view.
     }
     

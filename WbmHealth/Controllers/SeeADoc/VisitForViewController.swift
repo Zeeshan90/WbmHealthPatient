@@ -27,7 +27,7 @@ class VisitForViewController: UIViewController {
         vu1.addGestureRecognizer(profileClick)
         let childClick = UITapGestureRecognizer(target: self, action: #selector(tapOnChild))
         vu2.addGestureRecognizer(childClick)
-        
+        userNameLbl.text = WbmDefaults.instance.getString(key: "userName")
         // Do any additional setup after loading the view.
     }
     

@@ -35,7 +35,7 @@ class AppointmentViewController: UIViewController {
         let pm = calender.pmSymbol
         
         let time = WbmDefaults.instance.getString(key: "time")
-        let strArr = time.components(separatedBy: ".")
+        let strArr = time.components(separatedBy: ":")
        
         let intMin = Int(strArr[1])
         var intHour = Int(strArr[0])
@@ -46,7 +46,7 @@ class AppointmentViewController: UIViewController {
             intHour = intHour! + 1
         }
         
-        let endTime = "\(intHour!).\(addMin)"
+        let endTime = "\(intHour!):\(addMin)"
         if time >= "12:00"{
             timeLbl.text = "Time \(time) to \(endTime) \(pm) On \(currentday)"
         }else{

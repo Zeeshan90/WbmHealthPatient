@@ -18,6 +18,7 @@ class SymptomsViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var selectedSymptomArr = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        symptomTblVu.tableFooterView = UIView()
         ProgressHUD.show("Please wait")
         getSymptoms()
         // Do any additional setup after loading the view.

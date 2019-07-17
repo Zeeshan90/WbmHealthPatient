@@ -19,7 +19,7 @@ class PharmacyMedViewController: UIViewController,UISearchResultsUpdating,UITabl
     @IBOutlet weak var medTblVu: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationController!.view.backgroundColor = UIColor.white
         ProgressHUD.show()
         Utils.setSearchBar(controller: self, updater: self)
         getMedicine()

@@ -16,22 +16,14 @@ class AppUtils{
     static let context = (UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
     static let app = (UIApplication.shared.delegate as! AppDelegate )
     static var sharedInstance = AppUtils()
-    
     static func returnBaseUrl() ->String{
         
-        return "http://192.168.1.11:3031"
+        return "http://192.168.1.165:3031"
         //return "http://192.168.1.16:3031"
         //return "https://wbmchat.com"
-        //return "http://192.168.1.185:3031"
-         //return "http://192.168.1.53:3031"
+        
        
     }
-    
-    static func returnLocalBaseUrl() ->String{
-         return "http://192.168.1.185:3031"
-        
-    }
-    
     
     static func returnSideMenu () -> [SideMenu]{
         
@@ -230,6 +222,7 @@ class AppUtils{
       
         
         do {
+            
             try AppUtils.context.save()
         } catch  {
             print("Data not Saved")

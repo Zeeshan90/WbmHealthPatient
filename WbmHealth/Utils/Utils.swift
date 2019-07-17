@@ -8,12 +8,13 @@
 
 import Foundation
 import UIKit
-
-class Utils: NSObject {
+import NVActivityIndicatorView
+class Utils: UIViewController,NVActivityIndicatorViewable {
     
     static let userId: String = WbmDefaults.instance.getString(key: "userId")
+    static let userName: String = WbmDefaults.instance.getString(key: "userName")
     let dateFormatter = DateFormatter()
-    
+    static var instance = Utils()
     /// CardView
     class func cardView(view:UIView){
         view.layer.masksToBounds = false
@@ -81,6 +82,7 @@ class Utils: NSObject {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.barStyle = .blackTranslucent
         searchController.searchBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        searchController.isActive = true
     }
     
     // Check Email is Valid or not
@@ -105,5 +107,16 @@ class Utils: NSObject {
 //        return  value == filtered
 //    }
 //
+    
+    
+     func indicatorsTypes(i:Int) -> NVActivityIndicatorType {
+        return NVActivityIndicatorType.allCases[i]
+    }
+    
+     func startIndicator(type:Int) {
+        let indicatorType = indicatorsTypes(i: type)
+        let size = CGSize(width: 50, height: 50)
+        self.startAnimating(size, message: "Please wait...", type: indicatorType, fadeInAnimation: nil)
+    }
     
 }

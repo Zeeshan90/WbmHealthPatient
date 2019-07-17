@@ -104,6 +104,9 @@
 		06D88E0622953B2E001EA7E7 /* AddDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D88E0522953B2E001EA7E7 /* AddDeviceViewController.swift */; };
 		B302B57F22C48E3D0067C193 /* LabTests+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B302B57E22C48E3C0067C193 /* LabTests+CoreDataProperties.swift */; };
 		B302B58022C48E3D0067C193 /* LabTests+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B302B57D22C48E3C0067C193 /* LabTests+CoreDataClass.swift */; };
+		B30A45D522DDEB4800AFD339 /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A45D422DDEB4800AFD339 /* CardButton.swift */; };
+		B30A45D722DDECB800AFD339 /* MapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A45D622DDECB800AFD339 /* MapDetailViewController.swift */; };
+		B311115722D7691400BE5E0E /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311115622D7691400BE5E0E /* Map.swift */; };
 		B314221322B7BCDA00A30F34 /* MedicineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314221222B7BCDA00A30F34 /* MedicineDetailViewController.swift */; };
 		B314221522B7C6DC00A30F34 /* MedicineDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314221422B7C6DC00A30F34 /* MedicineDetail.swift */; };
 		B314221722B7CFC400A30F34 /* BmiCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314221622B7CFC400A30F34 /* BmiCalculatorViewController.swift */; };
@@ -137,6 +140,8 @@
 		B350BDCD227592E2000447BC /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350BDCC227592E2000447BC /* WorkoutViewController.swift */; };
 		B350BDCF22759320000447BC /* WorkoutCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350BDCE22759320000447BC /* WorkoutCollectionCell.swift */; };
 		B351F28222CB215D009F58FC /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B351F28122CB215D009F58FC /* SignupViewController.swift */; };
+		B365F7AE22D6F9C600AEA876 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B365F7AD22D6F9C600AEA876 /* MapKit.framework */; };
+		B365F7B222D6FBB000AEA876 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365F7B122D6FBB000AEA876 /* MapViewController.swift */; };
 		B36DF17422CB55500047D208 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36DF17322CB55500047D208 /* User.swift */; };
 		B377F8EB22C0BEA50097961B /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377F8EA22C0BEA50097961B /* CartTableViewCell.swift */; };
 		B377F8ED22C0EBAB0097961B /* CartDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377F8EC22C0EBAB0097961B /* CartDetailViewController.swift */; };
@@ -146,6 +151,9 @@
 		B38ABFD522AF71F2001792E4 /* CommonLabTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38ABFD422AF71F2001792E4 /* CommonLabTest.swift */; };
 		B395B51E22AE41C100F01CCA /* HospitalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B395B51D22AE41C100F01CCA /* HospitalTableViewCell.swift */; };
 		B395B52222AE46A300F01CCA /* t_s.bmp in Resources */ = {isa = PBXBuildFile; fileRef = B395B52122AE46A300F01CCA /* t_s.bmp */; };
+		B39E639F22DC533900A1AFDD /* MapListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39E639E22DC533900A1AFDD /* MapListViewController.swift */; };
+		B39E63A122DC541000A1AFDD /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39E63A022DC541000A1AFDD /* CardView.swift */; };
+		B39E63A322DC822E00A1AFDD /* MapListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39E63A222DC822E00A1AFDD /* MapListTableViewCell.swift */; };
 		B3B6585D22D304680050FA8C /* SharePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B6585C22D304680050FA8C /* SharePlanViewController.swift */; };
 		B3B6585F22D3335F0050FA8C /* SharePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B6585E22D3335F0050FA8C /* SharePlan.swift */; };
 		B3B6586122D338BD0050FA8C /* ShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B6586022D338BD0050FA8C /* ShareTableViewCell.swift */; };
@@ -301,6 +309,9 @@
 		9B852DD3E4C6026F91BA58F1 /* Pods-WbmHealthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WbmHealthTests.release.xcconfig"; path = "Target Support Files/Pods-WbmHealthTests/Pods-WbmHealthTests.release.xcconfig"; sourceTree = "<group>"; };
 		B302B57D22C48E3C0067C193 /* LabTests+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LabTests+CoreDataClass.swift"; path = "/Users/zeeshan/Desktop/Health 2/WbmHealth/WbmHealth/LabTests+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		B302B57E22C48E3C0067C193 /* LabTests+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LabTests+CoreDataProperties.swift"; path = "/Users/zeeshan/Desktop/Health 2/WbmHealth/WbmHealth/LabTests+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		B30A45D422DDEB4800AFD339 /* CardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
+		B30A45D622DDECB800AFD339 /* MapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailViewController.swift; sourceTree = "<group>"; };
+		B311115622D7691400BE5E0E /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		B314221222B7BCDA00A30F34 /* MedicineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailViewController.swift; sourceTree = "<group>"; };
 		B314221422B7C6DC00A30F34 /* MedicineDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetail.swift; sourceTree = "<group>"; };
 		B314221622B7CFC400A30F34 /* BmiCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiCalculatorViewController.swift; sourceTree = "<group>"; };
@@ -335,6 +346,8 @@
 		B350BDCC227592E2000447BC /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		B350BDCE22759320000447BC /* WorkoutCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCollectionCell.swift; sourceTree = "<group>"; };
 		B351F28122CB215D009F58FC /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		B365F7AD22D6F9C600AEA876 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B365F7B122D6FBB000AEA876 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B36DF17322CB55500047D208 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B377F8EA22C0BEA50097961B /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		B377F8EC22C0EBAB0097961B /* CartDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetailViewController.swift; sourceTree = "<group>"; };
@@ -344,6 +357,9 @@
 		B38ABFD422AF71F2001792E4 /* CommonLabTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonLabTest.swift; sourceTree = "<group>"; };
 		B395B51D22AE41C100F01CCA /* HospitalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalTableViewCell.swift; sourceTree = "<group>"; };
 		B395B52122AE46A300F01CCA /* t_s.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = t_s.bmp; sourceTree = "<group>"; };
+		B39E639E22DC533900A1AFDD /* MapListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListViewController.swift; sourceTree = "<group>"; };
+		B39E63A022DC541000A1AFDD /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		B39E63A222DC822E00A1AFDD /* MapListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListTableViewCell.swift; sourceTree = "<group>"; };
 		B3B6585C22D304680050FA8C /* SharePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePlanViewController.swift; sourceTree = "<group>"; };
 		B3B6585E22D3335F0050FA8C /* SharePlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePlan.swift; sourceTree = "<group>"; };
 		B3B6586022D338BD0050FA8C /* ShareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTableViewCell.swift; sourceTree = "<group>"; };
@@ -365,6 +381,7 @@
 				B3148A6422BA0E0700761B33 /* VidyoClientIOS.framework in Frameworks */,
 				065F9248229FB4C400242640 /* AudioToolbox.framework in Frameworks */,
 				065F9249229FB4C400242640 /* CoreLocation.framework in Frameworks */,
+				B365F7AE22D6F9C600AEA876 /* MapKit.framework in Frameworks */,
 				065F924A229FB4C400242640 /* AVFoundation.framework in Frameworks */,
 				065F924B229FB4C400242640 /* UIKit.framework in Frameworks */,
 				065F924C229FB4C400242640 /* SystemConfiguration.framework in Frameworks */,
@@ -474,7 +491,6 @@
 				06D5F95E228AC469008E7EC4 /* Tuya */,
 				066596142273229200E893F5 /* Model */,
 				066596132273228500E893F5 /* Views */,
-				B31549ED22CA214500AAFDED /* Account Controller */,
 				066596122273227A00E893F5 /* Controllers */,
 				066595EB2273096400E893F5 /* Assets.xcassets */,
 				066595ED2273096400E893F5 /* LaunchScreen.storyboard */,
@@ -505,6 +521,7 @@
 		066596122273227A00E893F5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B31549ED22CA214500AAFDED /* Account Controller */,
 				066595E32273096200E893F5 /* ViewController.swift */,
 				065039862278192100F83929 /* PrivacyPolicyViewController.swift */,
 				B314BB6222C4F6EE00B906BA /* Health Blogs */,
@@ -522,6 +539,9 @@
 				067E2D922276BBA700E313A7 /* Workout Controllers */,
 				B314221622B7CFC400A30F34 /* BmiCalculatorViewController.swift */,
 				B3459FA322C2201200E3B953 /* FitBitViewController.swift */,
+				B365F7B122D6FBB000AEA876 /* MapViewController.swift */,
+				B39E639E22DC533900A1AFDD /* MapListViewController.swift */,
+				B30A45D622DDECB800AFD339 /* MapDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -564,6 +584,7 @@
 				B3160E8322BCDA520016A0CD /* DirectCall.swift */,
 				B36DF17322CB55500047D208 /* User.swift */,
 				B3B6585E22D3335F0050FA8C /* SharePlan.swift */,
+				B311115622D7691400BE5E0E /* Map.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -575,7 +596,9 @@
 				06BDB92222734811007F4ED2 /* AppUtils.swift */,
 				066F8C6D227AF11000451E6D /* WbmDefaults.swift */,
 				068E777722928B710015210C /* TextField.swift */,
+				B30A45D422DDEB4800AFD339 /* CardButton.swift */,
 				06575E9822829CD8007E95BF /* Utils.swift */,
+				B39E63A022DC541000A1AFDD /* CardView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -625,6 +648,7 @@
 				B319B4F322B380F200C60272 /* AppointmentCells */,
 				B319B4EB22B3799300C60272 /* PharmacyCells */,
 				B3B6586022D338BD0050FA8C /* ShareTableViewCell.swift */,
+				B39E63A222DC822E00A1AFDD /* MapListTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -703,7 +727,8 @@
 				B31549F022CA2A1400AAFDED /* AccountLoginViewController.swift */,
 				B351F28122CB215D009F58FC /* SignupViewController.swift */,
 			);
-			path = "Account Controller";
+			name = "Account Controller";
+			path = "../Account Controller";
 			sourceTree = "<group>";
 		};
 		B3160E8522BD0A690016A0CD /* Cart */ = {
@@ -838,6 +863,7 @@
 		EDBDFBE8FDEFB6D76A3C9980 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B365F7AD22D6F9C600AEA876 /* MapKit.framework */,
 				06F989F0229FD305001D3CCD /* VPX.framework */,
 				065F9241229FB4C400242640 /* AudioToolbox.framework */,
 				065F9243229FB4C400242640 /* AVFoundation.framework */,
@@ -938,6 +964,9 @@
 								enabled = 0;
 							};
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
 							com.apple.Push = {
@@ -1192,11 +1221,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B30A45D722DDECB800AFD339 /* MapDetailViewController.swift in Sources */,
 				B314BB6122C4F6E700B906BA /* ForumsViewController.swift in Sources */,
 				067E2D962276D12F00E313A7 /* LabortaryViewController.swift in Sources */,
 				066595E42273096200E893F5 /* ViewController.swift in Sources */,
 				06D88E0022951A0C001EA7E7 /* ConfirmAppointmentTableViewCell.swift in Sources */,
 				06575E9D2282B413007E95BF /* VisitForViewController.swift in Sources */,
+				B39E639F22DC533900A1AFDD /* MapListViewController.swift in Sources */,
 				06575EA32282B47F007E95BF /* VisitReasonTableViewCell.swift in Sources */,
 				067A64E9228036FC00E51319 /* LabDetail.swift in Sources */,
 				B350BDCD227592E2000447BC /* WorkoutViewController.swift in Sources */,
@@ -1209,6 +1240,7 @@
 				B351F28222CB215D009F58FC /* SignupViewController.swift in Sources */,
 				0664E4352296822900F5E87A /* SerachViewController.swift in Sources */,
 				060E4E9A229BFCFC005E8DB3 /* PendingTableViewCell.swift in Sources */,
+				B39E63A322DC822E00A1AFDD /* MapListTableViewCell.swift in Sources */,
 				064FFEEB227AD3B1004ED6A1 /* AppointDeclinedViewController.swift in Sources */,
 				066F8C72227B19DD00451E6D /* Labortaries.swift in Sources */,
 				06D5F960228ACBF7008E7EC4 /* CreateFamilyViewController.swift in Sources */,
@@ -1269,8 +1301,11 @@
 				06D88E0622953B2E001EA7E7 /* AddDeviceViewController.swift in Sources */,
 				B3160E8422BCDA530016A0CD /* DirectCall.swift in Sources */,
 				B321FD0422B217B000748CFA /* LaboratoryDetail.swift in Sources */,
+				B30A45D522DDEB4800AFD339 /* CardButton.swift in Sources */,
+				B39E63A122DC541000A1AFDD /* CardView.swift in Sources */,
 				B31549F122CA2A1400AAFDED /* AccountLoginViewController.swift in Sources */,
 				B321480922BB7FCC0082747E /* CallViewController.swift in Sources */,
+				B365F7B222D6FBB000AEA876 /* MapViewController.swift in Sources */,
 				062D1578229563FE00346C19 /* DeviceListTableViewCell.swift in Sources */,
 				067449BB229E6001004C705A /* Symptom.swift in Sources */,
 				B31464D922B8E9900011EEAD /* AvailDoctorTableViewCell.swift in Sources */,
@@ -1297,6 +1332,7 @@
 				06D5F963228ACC21008E7EC4 /* AddFamilyViewController.swift in Sources */,
 				B314221722B7CFC400A30F34 /* BmiCalculatorViewController.swift in Sources */,
 				065FFE8B228427E5009D2AD3 /* SpecialityTableViewCell.swift in Sources */,
+				B311115722D7691400BE5E0E /* Map.swift in Sources */,
 				B377F8ED22C0EBAB0097961B /* CartDetailViewController.swift in Sources */,
 				B319B4FB22B3A53E00C60272 /* MJBadgeBarButton.swift in Sources */,
 				065FFE8922842694009D2AD3 /* SpecialityViewController.swift in Sources */,

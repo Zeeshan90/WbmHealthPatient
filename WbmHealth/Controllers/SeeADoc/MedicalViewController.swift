@@ -22,6 +22,7 @@ class MedicalViewController: UIViewController,UITableViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        medicalTblVu.tableFooterView = UIView()
         ProgressHUD.show("Please wait")
         getmedicalConditions()
         // Do any additional setup after loading the view.

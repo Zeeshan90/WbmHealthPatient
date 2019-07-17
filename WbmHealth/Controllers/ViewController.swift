@@ -195,7 +195,9 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource {
         i+=1
         btnBarBadge.badgeValue = "\(i)"
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         if collectionView == topCollectionView{
             if indexPath.row == 0{
                 performSegue(withIdentifier: "toaccount", sender: self)
@@ -210,9 +212,6 @@ extension ViewController: UICollectionViewDelegate,UICollectionViewDataSource {
             //performSegue(withIdentifier: "maintotestdetail", sender: self)
         }
     }
-}
-
-extension ViewController{
     
     func getCommonLabTests(){
         
@@ -242,16 +241,6 @@ extension ViewController{
     }
 }
 
-extension ViewController{
-    
-    // AlertController
-    func getAlert(message:String?,title:String?){
-        
-        let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
-    }
-}
+
 
 

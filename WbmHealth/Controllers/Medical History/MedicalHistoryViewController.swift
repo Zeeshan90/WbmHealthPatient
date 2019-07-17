@@ -16,6 +16,7 @@ class MedicalHistoryViewController: UIViewController,UICollectionViewDelegate,UI
     @IBOutlet weak var chart2: Chart!
     let util = Utils()
     var nameArr = ["Care Plan","Vaccination","Medication","Observation Labortary","Blood Pressure","Blood Glucose","NIR Readings","BMI Reading","Medical Condition"]
+    var selected: String = ""
     var imgArr = ["1","2","3","4","5","6","7","8","9"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,12 +70,38 @@ class MedicalHistoryViewController: UIViewController,UICollectionViewDelegate,UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let currentItem = optionCollectionVu.cellForItem(at: indexPath) as! MedicalHistoryCollectionViewCell
-        let selectedItem = currentItem.nameLbl.text
-        if selectedItem == "Care Plan"{
-            performSegue(withIdentifier: "tocareplan", sender: self)
-        }
         
+        let index = indexPath.row
+        if index == 0{
+            selected = "careplan"
+             performSegue(withIdentifier: "tocareplan", sender: self)
+        }else if index == 1{
+            selected = "vaccination"
+             performSegue(withIdentifier: "tocareplan", sender: self)
+        }else if index == 2{
+            selected = "medication"
+             performSegue(withIdentifier: "tocareplan", sender: self)
+        }
+//        let currentItem = optionCollectionVu.cellForItem(at: indexPath) as! MedicalHistoryCollectionViewCell
+//        let selectedItem = currentItem.nameLbl.text
+//        if selectedItem == "Care Plan"{
+//            performSegue(withIdentifier: "tocareplan", sender: self)
+//        }else if selectedItem == "Vaccination"{
+//            performSegue(withIdentifier: "tocareplan", sender: self)
+//        }else if selectedItem == "Medication"{
+//            performSegue(withIdentifier: "tocareplan", sender: self)
+//        }else{
+//
+//        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+        if segue.identifier == "tocareplan"{
+            let vc = segue.destination as! CarePlanViewController
+            vc.share = selected
+        }
     }
     @IBAction func crossBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)

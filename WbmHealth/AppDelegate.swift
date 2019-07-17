@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        
+           print("document directory:",FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found")
         
         // Override point for customization after application launch.
         if #available(iOS 10.0, *) {
@@ -293,7 +293,7 @@ extension UICollectionView{
 
 extension UIImageView {
 
-    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
+    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFill) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
         contentMode = mode
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard

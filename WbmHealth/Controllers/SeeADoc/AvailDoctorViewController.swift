@@ -22,6 +22,7 @@ class AvailDoctorViewController: UIViewController,UITableViewDelegate,UITableVie
     var vidyoToken: String  = ""
     var resourceId: String  = ""
     let date = Date()
+    let calender = Calendar.current
     @IBOutlet weak var docTblVu: UITableView!
     
     override func viewDidLoad() {
@@ -86,34 +87,31 @@ class AvailDoctorViewController: UIViewController,UITableViewDelegate,UITableVie
             }
         }
     }
-
-}
-
-// Mark -> Getting data for direct Call
-extension AvailDoctorViewController{
-    
     // Making Appointment
     func makeAppointment(docId: String){
         
         let url = "\(AppUtils.returnBaseUrl())/patient/my/appot/make"
+        let hour = calender.component(.hour, from: date)
+        let min = calender.component(.minute, from: date)
+        print("\(hour):\(min)")
         let params = [
             "appointment":[
-            "apptDate": date,
-            "apptTime": "8:10",
-            "patient": Utils.userId,
-            "doctor": docId,
-            "apptReason": "Emergency Call",
-            "status": "Complete",
-            "directCall": "directCall",
-            "email": "random@gmail.com",
-            "resourceId": ""
-                ],
+                "apptDate": date,
+                "apptTime": "\(hour):\(min)",
+                "patient": Utils.userId,
+                "doctor": docId,
+                "apptReason": "Emergency Call",
+                "status": "Complete",
+                "directCall": "directCall",
+                "email": "random@gmail.com",
+                "resourceId": ""
+            ],
             "notification": [
                 "intervals": "",
                 "date": "",
                 "doctorId": ""
             ]
-        ] as [String : Any]
+            ] as [String : Any]
         Alamofire.request(url, method: .post, parameters: params).responseJSON{
             
             response in
@@ -127,25 +125,7 @@ extension AvailDoctorViewController{
             }
         }
     }
-    
-//    // Getting Doc Data // Send Doc Id
-//    func getDocData(){
-//        let url = "\(AppUtils.returnBaseUrl())/patient/doctor"
-//        Alamofire.request(url, method: .post, parameters: nil).responseJSON{
-//            
-//            response in
-//            
-//            if response.result.isSuccess{
-//                
-//                let json:JSON = JSON(response.result.value)
-//                print(response.result.value!)
-//            }else{
-//                ProgressHUD.dismiss()
-//                Utils.showAlert(view: self, message: response.error!.localizedDescription, title: "Error")
-//            }
-//        }
-//    }
-    
+
     // Getting the newly Generated Appointment Id
     // Send PatientId with the url
     func directCall(){
@@ -159,19 +139,19 @@ extension AvailDoctorViewController{
                 let json:JSON = JSON(response.result.value!)
                 print(json)
                 self.appointId = json["_id"].stringValue
-//
-//                    for (_,j) in json{
-//                        do{
-//                            self.directCallArr.append(DirectCall(fromJson: j))
-//                        }
-//                    }
+                //
+                //                    for (_,j) in json{
+                //                        do{
+                //                            self.directCallArr.append(DirectCall(fromJson: j))
+                //                        }
+                //                    }
                 
-//
-//                    let count = self.directCallArr.count
-//                    let lastIndex = count - 1
-//                    print(self.directCallArr[lastIndex].id)
-//                    self.appointId = self.directCallArr[lastIndex].id
-                    self.updateDirectCall()
+                //
+                //                    let count = self.directCallArr.count
+                //                    let lastIndex = count - 1
+                //                    print(self.directCallArr[lastIndex].id)
+                //                    self.appointId = self.directCallArr[lastIndex].id
+                self.updateDirectCall()
                 
                 
             }else{
@@ -200,10 +180,6 @@ extension AvailDoctorViewController{
             }
         }
     }
-}
-
-// Mark -> Getting the variables for the vidyo.io
-extension AvailDoctorViewController{
     
     // Getting the token
     func getVidyoToken(){
@@ -247,4 +223,5 @@ extension AvailDoctorViewController{
             }
         }
     }
+
 }

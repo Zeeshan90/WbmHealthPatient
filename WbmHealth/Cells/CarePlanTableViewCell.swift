@@ -11,7 +11,16 @@ import UIKit
 class CarePlanTableViewCell: UITableViewCell {
 
     @IBOutlet weak var vu: UIView!
-    @IBOutlet weak var reasonLbl: UILabel!
+    @IBOutlet weak var frstLeftVu: UILabel!
+    @IBOutlet weak var frstRightVu: UILabel!
+    @IBOutlet weak var secondLeftVu: UILabel!
+    @IBOutlet weak var secondRightVu: UILabel!
+    @IBOutlet weak var thirdLeftVu: UILabel!
+    @IBOutlet weak var thirdRightVu: UILabel!
+    
+    @IBOutlet weak var forthLeftVu: UILabel!
+    @IBOutlet weak var forthRightVu: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

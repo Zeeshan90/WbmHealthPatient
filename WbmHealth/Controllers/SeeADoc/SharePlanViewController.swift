@@ -14,12 +14,12 @@ class SharePlanViewController: UIViewController,UITableViewDataSource,UITableVie
 
     @IBOutlet weak var shareTblVu: UITableView!
     var share: String = ""
-    var shareplanArr = [SharePlan]()
+    var careplanArr = [SharePlan]()
     var shareVaccinationArr = [Vaccination]()
     var medArr = [Medication]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        shareTblVu.tableFooterView = UIView()
         share = WbmDefaults.instance.getString(key: "checkValue")
         getdata(url: "\(AppUtils.returnBaseUrl())/patient/get/" + share + "/" + Utils.userId)
         navigationItem.title = share
@@ -32,7 +32,7 @@ class SharePlanViewController: UIViewController,UITableViewDataSource,UITableVie
         
         switch share {
         case "careplan":
-            return shareplanArr.count
+            return careplanArr.count
             
         case "vaccination":
             return shareVaccinationArr.count
@@ -52,9 +52,9 @@ class SharePlanViewController: UIViewController,UITableViewDataSource,UITableVie
         
         switch share {
         case "careplan":
-            shareplanArr.remove(at: sender.tag)
+            careplanArr.remove(at: sender.tag)
             self.shareTblVu.reloadData()
-            print(shareplanArr)
+            print(careplanArr)
             break
         case "vaccination":
             shareVaccinationArr.remove(at: sender.tag)
@@ -84,13 +84,13 @@ class SharePlanViewController: UIViewController,UITableViewDataSource,UITableVie
         switch share {
         case "careplan":
             cell.frstLeftLbl.text = "Category"
-            cell.frstRightLbl.text = shareplanArr[indexPath.row].text
+            cell.frstRightLbl.text = careplanArr[indexPath.row].text
             
             cell.secondLeftLbl.text = "Period"
-            cell.secondRightLbl.text = shareplanArr[indexPath.row].period.start
+            cell.secondRightLbl.text = careplanArr[indexPath.row].period.start
             
             cell.thirdLeftLbl.text = "Status"
-            cell.thirdRightLbl.text = shareplanArr[indexPath.row].status
+            cell.thirdRightLbl.text = careplanArr[indexPath.row].status
             break
         case "vaccination":
             cell.thirdRightLbl.isHidden = true
@@ -133,9 +133,9 @@ class SharePlanViewController: UIViewController,UITableViewDataSource,UITableVie
                 
                 if self.share == "careplan"{
                     for (_,j) in json{
-                        self.shareplanArr.append(SharePlan(fromJson: j))
+                        self.careplanArr.append(SharePlan(fromJson: j))
                     }
-                    print(self.shareplanArr)
+                    print(self.careplanArr)
                 }else if self.share == "vaccination"{
                     for (_,j) in json{
                         self.shareVaccinationArr.append(Vaccination(fromJson: j))
@@ -162,7 +162,7 @@ class SharePlanViewController: UIViewController,UITableViewDataSource,UITableVie
         case "careplan":
             var careplanArray = [String]()
             
-            for care in shareplanArr{
+            for care in careplanArr{
                careplanArray.append(care.id)
             }
             print(careplanArray)

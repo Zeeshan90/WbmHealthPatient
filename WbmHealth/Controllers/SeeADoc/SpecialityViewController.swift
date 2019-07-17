@@ -9,45 +9,64 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import SkeletonView
-class SpecialityViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,SkeletonTableViewDelegate,SkeletonTableViewDataSource {
+
+class SpecialityViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchResultsUpdating,UISearchBarDelegate {
     
     
     var specialityArr = [Speciality]()
-    
+    var filtered = [Speciality]()
     @IBOutlet weak var specialityTblVu: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        specialityTblVu.tableFooterView = UIView()
+        Utils.setSearchBar(controller: self, updater: self)
         getSpeciality()
-        //specialityTblVu.showGradientSkeleton()
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return specialityArr.count
+        return filtered.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = specialityTblVu.dequeueReusableCell(withIdentifier: "specialitycell", for: indexPath) as! SpecialityTableViewCell
-        cell.titleLbl.text = specialityArr[indexPath.row].specialityDesc
+        cell.titleLbl.text = filtered[indexPath.row].specialityDesc
         cell.img.downloaded(from: "\(AppUtils.returnBaseUrl())\(specialityArr[indexPath.row].image!)")
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       let selectedCellId = specialityArr[indexPath.row].id
-        WbmDefaults.instance.setString(key: "specialityId", value: selectedCellId!)
-        performSegue(withIdentifier: "todoctors", sender: self)
-        specialityTblVu.deselectRow(at: indexPath, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.navigationController?.navigationBar.isHidden = false
+            self.navigationController?.isNavigationBarHidden = false
+            
+            let selectedCellId = self.filtered[indexPath.row].id
+            print(selectedCellId)
+            print(self.specialityArr[indexPath.row].specialityDesc)
+            WbmDefaults.instance.setString(key: "specialityId", value: selectedCellId!)
+            self.performSegue(withIdentifier: "todoctors", sender: self)
+            self.specialityTblVu.deselectRow(at: indexPath, animated: true)
+        }
+    
         
     }
     
-    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return specialityArr.count
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
     }
     
-    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
-        return "specialitycell"
+    func filterContentForSearchText(_ searchText: String) {
+        
+        guard !searchText.isEmpty else {
+            
+            filtered = specialityArr
+            specialityTblVu.reloadData()
+            return
+        }
+        filtered = specialityArr.filter({ (speciality) -> Bool in
+            return speciality.specialityDesc.lowercased().contains(searchText.lowercased())
+        })
+        specialityTblVu.reloadData()
     }
     
     func getSpeciality(){
@@ -68,8 +87,9 @@ class SpecialityViewController: UIViewController,UITableViewDelegate,UITableView
                         self.specialityArr.append(special)
                     }
                 }
-                self.specialityTblVu.hideSkeleton()
+               
                 DispatchQueue.main.async {
+                    self.filtered = self.specialityArr
                     self.specialityTblVu.reloadData()
                 }
             }else

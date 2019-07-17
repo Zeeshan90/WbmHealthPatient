@@ -11,7 +11,7 @@ import GCCalendar
 import SkeletonView
 import Alamofire
 
-class AvailabilityViewController: UIViewController,GCCalendarViewDelegate {
+class AvailabilityViewController: UIViewController,GCCalendarViewDelegate,UITableViewDataSource,UITableViewDelegate {
 
     @IBOutlet weak var navTitle: UINavigationItem!
     @IBOutlet weak var avalibilityTblVu: UITableView!
@@ -25,7 +25,7 @@ class AvailabilityViewController: UIViewController,GCCalendarViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        avalibilityTblVu.tableFooterView = UIView()
         avalibilityTblVu.showSkeleton()
         calender.delegate = self
         calender.displayMode = .month
@@ -63,10 +63,11 @@ class AvailabilityViewController: UIViewController,GCCalendarViewDelegate {
         print("\(hour):\(minutes)")
         let currentTime = "\(hour).\(minutes)"
         for i in intervalArr{
-            if i >= currentTime{
-                print(i)
-                doubleArr.append(i)
-            }
+            print(i)
+            doubleArr.append(i)
+//            if i >= currentTime{
+//
+//            }
         }
         DispatchQueue.main.async {
             self.avalibilityTblVu.reloadData()
@@ -79,7 +80,7 @@ class AvailabilityViewController: UIViewController,GCCalendarViewDelegate {
         intervalArr = [String]()
         let docId = WbmDefaults.instance.getString(key: "docId")
         let url = "\(AppUtils.returnBaseUrl())/patient/doctor/date/intervals/\(docId)"
-        Alamofire.request(url, method: .post, parameters: ["availDate": "\(dateStr!)"]).responseJSON{
+        Alamofire.request(url, method: .post, parameters: ["date": "\(dateStr!)"]).responseJSON{
             response in
             self.avalibilityTblVu.hideSkeleton()
             if response.result.isSuccess{
@@ -93,10 +94,6 @@ class AvailabilityViewController: UIViewController,GCCalendarViewDelegate {
             
         }
     }
-
-}
-
-extension AvailabilityViewController: SkeletonTableViewDelegate,SkeletonTableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return doubleArr.count
@@ -105,17 +102,8 @@ extension AvailabilityViewController: SkeletonTableViewDelegate,SkeletonTableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = avalibilityTblVu.dequeueReusableCell(withIdentifier: "availablecell", for: indexPath) as! AvailabilityTableViewCell
         cell.timeLbl.text = doubleArr[indexPath.row]
-       
+        
         return cell
-    }
-    
-    
-    
-    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return doubleArr.count
-    }
-    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
-        return "availablecell"
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -129,3 +117,4 @@ extension AvailabilityViewController: SkeletonTableViewDelegate,SkeletonTableVie
     }
 
 }
+
